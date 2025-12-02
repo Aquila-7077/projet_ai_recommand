@@ -1,0 +1,2717 @@
+{
+  "version": "15.23.1",
+  "champions": {
+    "266": "Aatrox",
+    "103": "Ahri",
+    "84": "Akali",
+    "166": "Akshan",
+    "12": "Alistar",
+    "799": "Ambessa",
+    "32": "Amumu",
+    "34": "Anivia",
+    "1": "Annie",
+    "523": "Aphelios",
+    "22": "Ashe",
+    "136": "AurelionSol",
+    "893": "Aurora",
+    "268": "Azir",
+    "432": "Bard",
+    "200": "Belveth",
+    "53": "Blitzcrank",
+    "63": "Brand",
+    "201": "Braum",
+    "233": "Briar",
+    "51": "Caitlyn",
+    "164": "Camille",
+    "69": "Cassiopeia",
+    "31": "Chogath",
+    "42": "Corki",
+    "122": "Darius",
+    "131": "Diana",
+    "119": "Draven",
+    "36": "DrMundo",
+    "245": "Ekko",
+    "60": "Elise",
+    "28": "Evelynn",
+    "81": "Ezreal",
+    "9": "Fiddlesticks",
+    "114": "Fiora",
+    "105": "Fizz",
+    "3": "Galio",
+    "41": "Gangplank",
+    "86": "Garen",
+    "150": "Gnar",
+    "79": "Gragas",
+    "104": "Graves",
+    "887": "Gwen",
+    "120": "Hecarim",
+    "74": "Heimerdinger",
+    "910": "Hwei",
+    "420": "Illaoi",
+    "39": "Irelia",
+    "427": "Ivern",
+    "40": "Janna",
+    "59": "JarvanIV",
+    "24": "Jax",
+    "126": "Jayce",
+    "202": "Jhin",
+    "222": "Jinx",
+    "145": "Kaisa",
+    "429": "Kalista",
+    "43": "Karma",
+    "30": "Karthus",
+    "38": "Kassadin",
+    "55": "Katarina",
+    "10": "Kayle",
+    "141": "Kayn",
+    "85": "Kennen",
+    "121": "Khazix",
+    "203": "Kindred",
+    "240": "Kled",
+    "96": "KogMaw",
+    "897": "KSante",
+    "7": "Leblanc",
+    "64": "LeeSin",
+    "89": "Leona",
+    "876": "Lillia",
+    "127": "Lissandra",
+    "236": "Lucian",
+    "117": "Lulu",
+    "99": "Lux",
+    "54": "Malphite",
+    "90": "Malzahar",
+    "57": "Maokai",
+    "11": "MasterYi",
+    "800": "Mel",
+    "902": "Milio",
+    "21": "MissFortune",
+    "62": "MonkeyKing",
+    "82": "Mordekaiser",
+    "25": "Morgana",
+    "950": "Naafiri",
+    "267": "Nami",
+    "75": "Nasus",
+    "111": "Nautilus",
+    "518": "Neeko",
+    "76": "Nidalee",
+    "895": "Nilah",
+    "56": "Nocturne",
+    "20": "Nunu",
+    "2": "Olaf",
+    "61": "Orianna",
+    "516": "Ornn",
+    "80": "Pantheon",
+    "78": "Poppy",
+    "555": "Pyke",
+    "246": "Qiyana",
+    "133": "Quinn",
+    "497": "Rakan",
+    "33": "Rammus",
+    "421": "RekSai",
+    "526": "Rell",
+    "888": "Renata",
+    "58": "Renekton",
+    "107": "Rengar",
+    "92": "Riven",
+    "68": "Rumble",
+    "13": "Ryze",
+    "360": "Samira",
+    "113": "Sejuani",
+    "235": "Senna",
+    "147": "Seraphine",
+    "875": "Sett",
+    "35": "Shaco",
+    "98": "Shen",
+    "102": "Shyvana",
+    "27": "Singed",
+    "14": "Sion",
+    "15": "Sivir",
+    "72": "Skarner",
+    "901": "Smolder",
+    "37": "Sona",
+    "16": "Soraka",
+    "50": "Swain",
+    "517": "Sylas",
+    "134": "Syndra",
+    "223": "TahmKench",
+    "163": "Taliyah",
+    "91": "Talon",
+    "44": "Taric",
+    "17": "Teemo",
+    "412": "Thresh",
+    "18": "Tristana",
+    "48": "Trundle",
+    "23": "Tryndamere",
+    "4": "TwistedFate",
+    "29": "Twitch",
+    "77": "Udyr",
+    "6": "Urgot",
+    "110": "Varus",
+    "67": "Vayne",
+    "45": "Veigar",
+    "161": "Velkoz",
+    "711": "Vex",
+    "254": "Vi",
+    "234": "Viego",
+    "112": "Viktor",
+    "8": "Vladimir",
+    "106": "Volibear",
+    "19": "Warwick",
+    "498": "Xayah",
+    "101": "Xerath",
+    "5": "XinZhao",
+    "157": "Yasuo",
+    "777": "Yone",
+    "83": "Yorick",
+    "804": "Yunara",
+    "350": "Yuumi",
+    "904": "Zaahen",
+    "154": "Zac",
+    "238": "Zed",
+    "221": "Zeri",
+    "115": "Ziggs",
+    "26": "Zilean",
+    "142": "Zoe",
+    "143": "Zyra"
+  },
+  "champions_data": {
+    "Aatrox": {
+      "id": 266,
+      "name": "Aatrox",
+      "key": "Aatrox",
+      "tags": [
+        "Fighter"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 4,
+        "magic": 3,
+        "difficulty": 4
+      }
+    },
+    "Ahri": {
+      "id": 103,
+      "name": "Ahri",
+      "key": "Ahri",
+      "tags": [
+        "Mage",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 4,
+        "magic": 8,
+        "difficulty": 5
+      }
+    },
+    "Akali": {
+      "id": 84,
+      "name": "Akali",
+      "key": "Akali",
+      "tags": [
+        "Assassin"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 3,
+        "magic": 8,
+        "difficulty": 7
+      }
+    },
+    "Akshan": {
+      "id": 166,
+      "name": "Akshan",
+      "key": "Akshan",
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 0,
+        "defense": 0,
+        "magic": 0,
+        "difficulty": 0
+      }
+    },
+    "Alistar": {
+      "id": 12,
+      "name": "Alistar",
+      "key": "Alistar",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 9,
+        "magic": 5,
+        "difficulty": 7
+      }
+    },
+    "Ambessa": {
+      "id": 799,
+      "name": "Ambessa",
+      "key": "Ambessa",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 2,
+        "magic": 0,
+        "difficulty": 10
+      }
+    },
+    "Amumu": {
+      "id": 32,
+      "name": "Amumu",
+      "key": "Amumu",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 6,
+        "magic": 8,
+        "difficulty": 3
+      }
+    },
+    "Anivia": {
+      "id": 34,
+      "name": "Anivia",
+      "key": "Anivia",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 4,
+        "magic": 10,
+        "difficulty": 10
+      }
+    },
+    "Annie": {
+      "id": 1,
+      "name": "Annie",
+      "key": "Annie",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 3,
+        "magic": 10,
+        "difficulty": 6
+      }
+    },
+    "Aphelios": {
+      "id": 523,
+      "name": "Aphelios",
+      "key": "Aphelios",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 2,
+        "magic": 1,
+        "difficulty": 10
+      }
+    },
+    "Ashe": {
+      "id": 22,
+      "name": "Ashe",
+      "key": "Ashe",
+      "tags": [
+        "Marksman",
+        "Support"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 3,
+        "magic": 2,
+        "difficulty": 4
+      }
+    },
+    "AurelionSol": {
+      "id": 136,
+      "name": "Aurelion Sol",
+      "key": "AurelionSol",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 3,
+        "magic": 8,
+        "difficulty": 7
+      }
+    },
+    "Aurora": {
+      "id": 893,
+      "name": "Aurora",
+      "key": "Aurora",
+      "tags": [
+        "Mage",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 4,
+        "magic": 8,
+        "difficulty": 5
+      }
+    },
+    "Azir": {
+      "id": 268,
+      "name": "Azir",
+      "key": "Azir",
+      "tags": [
+        "Mage",
+        "Marksman"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 3,
+        "magic": 8,
+        "difficulty": 9
+      }
+    },
+    "Bard": {
+      "id": 432,
+      "name": "Bard",
+      "key": "Bard",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 4,
+        "magic": 5,
+        "difficulty": 9
+      }
+    },
+    "Belveth": {
+      "id": 200,
+      "name": "Bel'Veth",
+      "key": "Belveth",
+      "tags": [
+        "Fighter"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 2,
+        "magic": 7,
+        "difficulty": 10
+      }
+    },
+    "Blitzcrank": {
+      "id": 53,
+      "name": "Blitzcrank",
+      "key": "Blitzcrank",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 8,
+        "magic": 5,
+        "difficulty": 4
+      }
+    },
+    "Brand": {
+      "id": 63,
+      "name": "Brand",
+      "key": "Brand",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 2,
+        "magic": 9,
+        "difficulty": 4
+      }
+    },
+    "Braum": {
+      "id": 201,
+      "name": "Braum",
+      "key": "Braum",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 9,
+        "magic": 4,
+        "difficulty": 3
+      }
+    },
+    "Briar": {
+      "id": 233,
+      "name": "Briar",
+      "key": "Briar",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 3
+      }
+    },
+    "Caitlyn": {
+      "id": 51,
+      "name": "Caitlyn",
+      "key": "Caitlyn",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 2,
+        "magic": 2,
+        "difficulty": 6
+      }
+    },
+    "Camille": {
+      "id": 164,
+      "name": "Camille",
+      "key": "Camille",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 6,
+        "magic": 3,
+        "difficulty": 4
+      }
+    },
+    "Cassiopeia": {
+      "id": 69,
+      "name": "Cassiopeia",
+      "key": "Cassiopeia",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 3,
+        "magic": 9,
+        "difficulty": 10
+      }
+    },
+    "Chogath": {
+      "id": 31,
+      "name": "Cho'Gath",
+      "key": "Chogath",
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 7,
+        "magic": 7,
+        "difficulty": 5
+      }
+    },
+    "Corki": {
+      "id": 42,
+      "name": "Corki",
+      "key": "Corki",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 3,
+        "magic": 6,
+        "difficulty": 6
+      }
+    },
+    "Darius": {
+      "id": 122,
+      "name": "Darius",
+      "key": "Darius",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 5,
+        "magic": 1,
+        "difficulty": 2
+      }
+    },
+    "Diana": {
+      "id": 131,
+      "name": "Diana",
+      "key": "Diana",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 6,
+        "magic": 8,
+        "difficulty": 4
+      }
+    },
+    "Draven": {
+      "id": 119,
+      "name": "Draven",
+      "key": "Draven",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 3,
+        "magic": 1,
+        "difficulty": 8
+      }
+    },
+    "DrMundo": {
+      "id": 36,
+      "name": "Dr. Mundo",
+      "key": "DrMundo",
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 7,
+        "magic": 6,
+        "difficulty": 5
+      }
+    },
+    "Ekko": {
+      "id": 245,
+      "name": "Ekko",
+      "key": "Ekko",
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 3,
+        "magic": 7,
+        "difficulty": 8
+      }
+    },
+    "Elise": {
+      "id": 60,
+      "name": "Elise",
+      "key": "Elise",
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 5,
+        "magic": 7,
+        "difficulty": 9
+      }
+    },
+    "Evelynn": {
+      "id": 28,
+      "name": "Evelynn",
+      "key": "Evelynn",
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 2,
+        "magic": 7,
+        "difficulty": 10
+      }
+    },
+    "Ezreal": {
+      "id": 81,
+      "name": "Ezreal",
+      "key": "Ezreal",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 2,
+        "magic": 6,
+        "difficulty": 7
+      }
+    },
+    "Fiddlesticks": {
+      "id": 9,
+      "name": "Fiddlesticks",
+      "key": "Fiddlesticks",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 3,
+        "magic": 9,
+        "difficulty": 9
+      }
+    },
+    "Fiora": {
+      "id": 114,
+      "name": "Fiora",
+      "key": "Fiora",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 10,
+        "defense": 4,
+        "magic": 2,
+        "difficulty": 3
+      }
+    },
+    "Fizz": {
+      "id": 105,
+      "name": "Fizz",
+      "key": "Fizz",
+      "tags": [
+        "Assassin",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 4,
+        "magic": 7,
+        "difficulty": 6
+      }
+    },
+    "Galio": {
+      "id": 3,
+      "name": "Galio",
+      "key": "Galio",
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 10,
+        "magic": 6,
+        "difficulty": 5
+      }
+    },
+    "Gangplank": {
+      "id": 41,
+      "name": "Gangplank",
+      "key": "Gangplank",
+      "tags": [
+        "Fighter"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 6,
+        "magic": 4,
+        "difficulty": 9
+      }
+    },
+    "Garen": {
+      "id": 86,
+      "name": "Garen",
+      "key": "Garen",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 7,
+        "magic": 1,
+        "difficulty": 5
+      }
+    },
+    "Gnar": {
+      "id": 150,
+      "name": "Gnar",
+      "key": "Gnar",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 5,
+        "magic": 5,
+        "difficulty": 8
+      }
+    },
+    "Gragas": {
+      "id": 79,
+      "name": "Gragas",
+      "key": "Gragas",
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 7,
+        "magic": 6,
+        "difficulty": 5
+      }
+    },
+    "Graves": {
+      "id": 104,
+      "name": "Graves",
+      "key": "Graves",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 3
+      }
+    },
+    "Gwen": {
+      "id": 887,
+      "name": "Gwen",
+      "key": "Gwen",
+      "tags": [
+        "Fighter"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 4,
+        "magic": 5,
+        "difficulty": 5
+      }
+    },
+    "Hecarim": {
+      "id": 120,
+      "name": "Hecarim",
+      "key": "Hecarim",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 6,
+        "magic": 4,
+        "difficulty": 6
+      }
+    },
+    "Heimerdinger": {
+      "id": 74,
+      "name": "Heimerdinger",
+      "key": "Heimerdinger",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 6,
+        "magic": 8,
+        "difficulty": 8
+      }
+    },
+    "Hwei": {
+      "id": 910,
+      "name": "Hwei",
+      "key": "Hwei",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 1,
+        "magic": 8,
+        "difficulty": 9
+      }
+    },
+    "Illaoi": {
+      "id": 420,
+      "name": "Illaoi",
+      "key": "Illaoi",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 6,
+        "magic": 3,
+        "difficulty": 4
+      }
+    },
+    "Irelia": {
+      "id": 39,
+      "name": "Irelia",
+      "key": "Irelia",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 4,
+        "magic": 5,
+        "difficulty": 5
+      }
+    },
+    "Ivern": {
+      "id": 427,
+      "name": "Ivern",
+      "key": "Ivern",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 5,
+        "magic": 7,
+        "difficulty": 7
+      }
+    },
+    "Janna": {
+      "id": 40,
+      "name": "Janna",
+      "key": "Janna",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 5,
+        "magic": 7,
+        "difficulty": 7
+      }
+    },
+    "JarvanIV": {
+      "id": 59,
+      "name": "Jarvan IV",
+      "key": "JarvanIV",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 8,
+        "magic": 3,
+        "difficulty": 5
+      }
+    },
+    "Jax": {
+      "id": 24,
+      "name": "Jax",
+      "key": "Jax",
+      "tags": [
+        "Fighter"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 5,
+        "magic": 7,
+        "difficulty": 5
+      }
+    },
+    "Jayce": {
+      "id": 126,
+      "name": "Jayce",
+      "key": "Jayce",
+      "tags": [
+        "Fighter",
+        "Marksman"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 4,
+        "magic": 3,
+        "difficulty": 7
+      }
+    },
+    "Jhin": {
+      "id": 202,
+      "name": "Jhin",
+      "key": "Jhin",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 10,
+        "defense": 2,
+        "magic": 6,
+        "difficulty": 6
+      }
+    },
+    "Jinx": {
+      "id": 222,
+      "name": "Jinx",
+      "key": "Jinx",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 2,
+        "magic": 4,
+        "difficulty": 6
+      }
+    },
+    "Kaisa": {
+      "id": 145,
+      "name": "Kai'Sa",
+      "key": "Kaisa",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 6
+      }
+    },
+    "Kalista": {
+      "id": 429,
+      "name": "Kalista",
+      "key": "Kalista",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 2,
+        "magic": 4,
+        "difficulty": 7
+      }
+    },
+    "Karma": {
+      "id": 43,
+      "name": "Karma",
+      "key": "Karma",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 7,
+        "magic": 8,
+        "difficulty": 5
+      }
+    },
+    "Karthus": {
+      "id": 30,
+      "name": "Karthus",
+      "key": "Karthus",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 2,
+        "magic": 10,
+        "difficulty": 7
+      }
+    },
+    "Kassadin": {
+      "id": 38,
+      "name": "Kassadin",
+      "key": "Kassadin",
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 5,
+        "magic": 8,
+        "difficulty": 8
+      }
+    },
+    "Katarina": {
+      "id": 55,
+      "name": "Katarina",
+      "key": "Katarina",
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 3,
+        "magic": 9,
+        "difficulty": 8
+      }
+    },
+    "Kayle": {
+      "id": 10,
+      "name": "Kayle",
+      "key": "Kayle",
+      "tags": [
+        "Mage",
+        "Marksman"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 6,
+        "magic": 7,
+        "difficulty": 7
+      }
+    },
+    "Kayn": {
+      "id": 141,
+      "name": "Kayn",
+      "key": "Kayn",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 10,
+        "defense": 6,
+        "magic": 1,
+        "difficulty": 8
+      }
+    },
+    "Kennen": {
+      "id": 85,
+      "name": "Kennen",
+      "key": "Kennen",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 4,
+        "magic": 7,
+        "difficulty": 4
+      }
+    },
+    "Khazix": {
+      "id": 121,
+      "name": "Kha'Zix",
+      "key": "Khazix",
+      "tags": [
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 4,
+        "magic": 3,
+        "difficulty": 6
+      }
+    },
+    "Kindred": {
+      "id": 203,
+      "name": "Kindred",
+      "key": "Kindred",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 2,
+        "magic": 2,
+        "difficulty": 4
+      }
+    },
+    "Kled": {
+      "id": 240,
+      "name": "Kled",
+      "key": "Kled",
+      "tags": [
+        "Fighter"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 2,
+        "magic": 2,
+        "difficulty": 7
+      }
+    },
+    "KogMaw": {
+      "id": 96,
+      "name": "Kog'Maw",
+      "key": "KogMaw",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 2,
+        "magic": 5,
+        "difficulty": 6
+      }
+    },
+    "KSante": {
+      "id": 897,
+      "name": "K'Santé",
+      "key": "KSante",
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 8,
+        "magic": 7,
+        "difficulty": 9
+      }
+    },
+    "Leblanc": {
+      "id": 7,
+      "name": "LeBlanc",
+      "key": "Leblanc",
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 4,
+        "magic": 10,
+        "difficulty": 9
+      }
+    },
+    "LeeSin": {
+      "id": 64,
+      "name": "Lee Sin",
+      "key": "LeeSin",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 6
+      }
+    },
+    "Leona": {
+      "id": 89,
+      "name": "Leona",
+      "key": "Leona",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 8,
+        "magic": 3,
+        "difficulty": 4
+      }
+    },
+    "Lillia": {
+      "id": 876,
+      "name": "Lillia",
+      "key": "Lillia",
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
+      "info": {
+        "attack": 0,
+        "defense": 2,
+        "magic": 10,
+        "difficulty": 8
+      }
+    },
+    "Lissandra": {
+      "id": 127,
+      "name": "Lissandra",
+      "key": "Lissandra",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 5,
+        "magic": 8,
+        "difficulty": 6
+      }
+    },
+    "Lucian": {
+      "id": 236,
+      "name": "Lucian",
+      "key": "Lucian",
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 6
+      }
+    },
+    "Lulu": {
+      "id": 117,
+      "name": "Lulu",
+      "key": "Lulu",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 5,
+        "magic": 7,
+        "difficulty": 5
+      }
+    },
+    "Lux": {
+      "id": 99,
+      "name": "Lux",
+      "key": "Lux",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 4,
+        "magic": 9,
+        "difficulty": 5
+      }
+    },
+    "Malphite": {
+      "id": 54,
+      "name": "Malphite",
+      "key": "Malphite",
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 9,
+        "magic": 7,
+        "difficulty": 2
+      }
+    },
+    "Malzahar": {
+      "id": 90,
+      "name": "Malzahar",
+      "key": "Malzahar",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 2,
+        "magic": 9,
+        "difficulty": 6
+      }
+    },
+    "Maokai": {
+      "id": 57,
+      "name": "Maokai",
+      "key": "Maokai",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 8,
+        "magic": 6,
+        "difficulty": 3
+      }
+    },
+    "MasterYi": {
+      "id": 11,
+      "name": "Maître Yi",
+      "key": "MasterYi",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 10,
+        "defense": 4,
+        "magic": 2,
+        "difficulty": 4
+      }
+    },
+    "Mel": {
+      "id": 800,
+      "name": "Mel",
+      "key": "Mel",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 4,
+        "magic": 9,
+        "difficulty": 5
+      }
+    },
+    "Milio": {
+      "id": 902,
+      "name": "Milio",
+      "key": "Milio",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 4,
+        "magic": 8,
+        "difficulty": 5
+      }
+    },
+    "MissFortune": {
+      "id": 21,
+      "name": "Miss Fortune",
+      "key": "MissFortune",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 2,
+        "magic": 5,
+        "difficulty": 1
+      }
+    },
+    "MonkeyKing": {
+      "id": 62,
+      "name": "Wukong",
+      "key": "MonkeyKing",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 2,
+        "difficulty": 3
+      }
+    },
+    "Mordekaiser": {
+      "id": 82,
+      "name": "Mordekaiser",
+      "key": "Mordekaiser",
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 6,
+        "magic": 7,
+        "difficulty": 4
+      }
+    },
+    "Morgana": {
+      "id": 25,
+      "name": "Morgana",
+      "key": "Morgana",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 6,
+        "magic": 8,
+        "difficulty": 1
+      }
+    },
+    "Naafiri": {
+      "id": 950,
+      "name": "Naafiri",
+      "key": "Naafiri",
+      "tags": [
+        "Assassin",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 5,
+        "magic": 0,
+        "difficulty": 2
+      }
+    },
+    "Nami": {
+      "id": 267,
+      "name": "Nami",
+      "key": "Nami",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 3,
+        "magic": 7,
+        "difficulty": 5
+      }
+    },
+    "Nasus": {
+      "id": 75,
+      "name": "Nasus",
+      "key": "Nasus",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 5,
+        "magic": 6,
+        "difficulty": 6
+      }
+    },
+    "Nautilus": {
+      "id": 111,
+      "name": "Nautilus",
+      "key": "Nautilus",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 6,
+        "magic": 6,
+        "difficulty": 6
+      }
+    },
+    "Neeko": {
+      "id": 518,
+      "name": "Neeko",
+      "key": "Neeko",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 1,
+        "magic": 9,
+        "difficulty": 5
+      }
+    },
+    "Nidalee": {
+      "id": 76,
+      "name": "Nidalee",
+      "key": "Nidalee",
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 4,
+        "magic": 7,
+        "difficulty": 8
+      }
+    },
+    "Nilah": {
+      "id": 895,
+      "name": "Nilah",
+      "key": "Nilah",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 4,
+        "magic": 4,
+        "difficulty": 10
+      }
+    },
+    "Nocturne": {
+      "id": 56,
+      "name": "Nocturne",
+      "key": "Nocturne",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 5,
+        "magic": 2,
+        "difficulty": 4
+      }
+    },
+    "Nunu": {
+      "id": 20,
+      "name": "Nunu et Willump",
+      "key": "Nunu",
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 6,
+        "magic": 7,
+        "difficulty": 4
+      }
+    },
+    "Olaf": {
+      "id": 2,
+      "name": "Olaf",
+      "key": "Olaf",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 3
+      }
+    },
+    "Orianna": {
+      "id": 61,
+      "name": "Orianna",
+      "key": "Orianna",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 3,
+        "magic": 9,
+        "difficulty": 7
+      }
+    },
+    "Ornn": {
+      "id": 516,
+      "name": "Ornn",
+      "key": "Ornn",
+      "tags": [
+        "Tank"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 9,
+        "magic": 3,
+        "difficulty": 5
+      }
+    },
+    "Pantheon": {
+      "id": 80,
+      "name": "Pantheon",
+      "key": "Pantheon",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 4,
+        "magic": 3,
+        "difficulty": 4
+      }
+    },
+    "Poppy": {
+      "id": 78,
+      "name": "Poppy",
+      "key": "Poppy",
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 7,
+        "magic": 2,
+        "difficulty": 6
+      }
+    },
+    "Pyke": {
+      "id": 555,
+      "name": "Pyke",
+      "key": "Pyke",
+      "tags": [
+        "Support",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 3,
+        "magic": 1,
+        "difficulty": 7
+      }
+    },
+    "Qiyana": {
+      "id": 246,
+      "name": "Qiyana",
+      "key": "Qiyana",
+      "tags": [
+        "Assassin"
+      ],
+      "info": {
+        "attack": 0,
+        "defense": 2,
+        "magic": 4,
+        "difficulty": 8
+      }
+    },
+    "Quinn": {
+      "id": 133,
+      "name": "Quinn",
+      "key": "Quinn",
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 4,
+        "magic": 2,
+        "difficulty": 5
+      }
+    },
+    "Rakan": {
+      "id": 497,
+      "name": "Rakan",
+      "key": "Rakan",
+      "tags": [
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 4,
+        "magic": 8,
+        "difficulty": 5
+      }
+    },
+    "Rammus": {
+      "id": 33,
+      "name": "Rammus",
+      "key": "Rammus",
+      "tags": [
+        "Tank"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 10,
+        "magic": 5,
+        "difficulty": 5
+      }
+    },
+    "RekSai": {
+      "id": 421,
+      "name": "Rek'Sai",
+      "key": "RekSai",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 2,
+        "difficulty": 3
+      }
+    },
+    "Rell": {
+      "id": 526,
+      "name": "Rell",
+      "key": "Rell",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 0,
+        "defense": 0,
+        "magic": 0,
+        "difficulty": 0
+      }
+    },
+    "Renata": {
+      "id": 888,
+      "name": "Renata Glasc",
+      "key": "Renata",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 6,
+        "magic": 9,
+        "difficulty": 8
+      }
+    },
+    "Renekton": {
+      "id": 58,
+      "name": "Renekton",
+      "key": "Renekton",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 2,
+        "difficulty": 3
+      }
+    },
+    "Rengar": {
+      "id": 107,
+      "name": "Rengar",
+      "key": "Rengar",
+      "tags": [
+        "Assassin",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 4,
+        "magic": 2,
+        "difficulty": 8
+      }
+    },
+    "Riven": {
+      "id": 92,
+      "name": "Riven",
+      "key": "Riven",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 1,
+        "difficulty": 8
+      }
+    },
+    "Rumble": {
+      "id": 68,
+      "name": "Rumble",
+      "key": "Rumble",
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 6,
+        "magic": 8,
+        "difficulty": 10
+      }
+    },
+    "Ryze": {
+      "id": 13,
+      "name": "Ryze",
+      "key": "Ryze",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 2,
+        "magic": 10,
+        "difficulty": 7
+      }
+    },
+    "Samira": {
+      "id": 360,
+      "name": "Samira",
+      "key": "Samira",
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 6
+      }
+    },
+    "Sejuani": {
+      "id": 113,
+      "name": "Sejuani",
+      "key": "Sejuani",
+      "tags": [
+        "Tank"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 7,
+        "magic": 6,
+        "difficulty": 4
+      }
+    },
+    "Senna": {
+      "id": 235,
+      "name": "Senna",
+      "key": "Senna",
+      "tags": [
+        "Support",
+        "Marksman"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 2,
+        "magic": 6,
+        "difficulty": 7
+      }
+    },
+    "Seraphine": {
+      "id": 147,
+      "name": "Séraphine",
+      "key": "Seraphine",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 0,
+        "defense": 0,
+        "magic": 0,
+        "difficulty": 0
+      }
+    },
+    "Sett": {
+      "id": 875,
+      "name": "Sett",
+      "key": "Sett",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 1,
+        "difficulty": 2
+      }
+    },
+    "Shaco": {
+      "id": 35,
+      "name": "Shaco",
+      "key": "Shaco",
+      "tags": [
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 4,
+        "magic": 6,
+        "difficulty": 9
+      }
+    },
+    "Shen": {
+      "id": 98,
+      "name": "Shen",
+      "key": "Shen",
+      "tags": [
+        "Tank"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 9,
+        "magic": 3,
+        "difficulty": 4
+      }
+    },
+    "Shyvana": {
+      "id": 102,
+      "name": "Shyvana",
+      "key": "Shyvana",
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 6,
+        "magic": 3,
+        "difficulty": 4
+      }
+    },
+    "Singed": {
+      "id": 27,
+      "name": "Singed",
+      "key": "Singed",
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 8,
+        "magic": 7,
+        "difficulty": 5
+      }
+    },
+    "Sion": {
+      "id": 14,
+      "name": "Sion",
+      "key": "Sion",
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 9,
+        "magic": 3,
+        "difficulty": 5
+      }
+    },
+    "Sivir": {
+      "id": 15,
+      "name": "Sivir",
+      "key": "Sivir",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 3,
+        "magic": 1,
+        "difficulty": 4
+      }
+    },
+    "Skarner": {
+      "id": 72,
+      "name": "Skarner",
+      "key": "Skarner",
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 8,
+        "magic": 5,
+        "difficulty": 5
+      }
+    },
+    "Smolder": {
+      "id": 901,
+      "name": "Smolder",
+      "key": "Smolder",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 2,
+        "magic": 5,
+        "difficulty": 6
+      }
+    },
+    "Sona": {
+      "id": 37,
+      "name": "Sona",
+      "key": "Sona",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 2,
+        "magic": 8,
+        "difficulty": 4
+      }
+    },
+    "Soraka": {
+      "id": 16,
+      "name": "Soraka",
+      "key": "Soraka",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 5,
+        "magic": 7,
+        "difficulty": 3
+      }
+    },
+    "Swain": {
+      "id": 50,
+      "name": "Swain",
+      "key": "Swain",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 6,
+        "magic": 9,
+        "difficulty": 8
+      }
+    },
+    "Sylas": {
+      "id": 517,
+      "name": "Sylas",
+      "key": "Sylas",
+      "tags": [
+        "Mage",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 4,
+        "magic": 8,
+        "difficulty": 5
+      }
+    },
+    "Syndra": {
+      "id": 134,
+      "name": "Syndra",
+      "key": "Syndra",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 3,
+        "magic": 9,
+        "difficulty": 8
+      }
+    },
+    "TahmKench": {
+      "id": 223,
+      "name": "Tahm Kench",
+      "key": "TahmKench",
+      "tags": [
+        "Tank",
+        "Support"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 9,
+        "magic": 6,
+        "difficulty": 5
+      }
+    },
+    "Taliyah": {
+      "id": 163,
+      "name": "Taliyah",
+      "key": "Taliyah",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 7,
+        "magic": 8,
+        "difficulty": 5
+      }
+    },
+    "Talon": {
+      "id": 91,
+      "name": "Talon",
+      "key": "Talon",
+      "tags": [
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 3,
+        "magic": 1,
+        "difficulty": 7
+      }
+    },
+    "Taric": {
+      "id": 44,
+      "name": "Taric",
+      "key": "Taric",
+      "tags": [
+        "Support",
+        "Tank"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 8,
+        "magic": 5,
+        "difficulty": 3
+      }
+    },
+    "Teemo": {
+      "id": 17,
+      "name": "Teemo",
+      "key": "Teemo",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 3,
+        "magic": 7,
+        "difficulty": 6
+      }
+    },
+    "Thresh": {
+      "id": 412,
+      "name": "Thresh",
+      "key": "Thresh",
+      "tags": [
+        "Support",
+        "Tank"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 6,
+        "magic": 6,
+        "difficulty": 7
+      }
+    },
+    "Tristana": {
+      "id": 18,
+      "name": "Tristana",
+      "key": "Tristana",
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 3,
+        "magic": 5,
+        "difficulty": 4
+      }
+    },
+    "Trundle": {
+      "id": 48,
+      "name": "Trundle",
+      "key": "Trundle",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 6,
+        "magic": 2,
+        "difficulty": 5
+      }
+    },
+    "Tryndamere": {
+      "id": 23,
+      "name": "Tryndamere",
+      "key": "Tryndamere",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 10,
+        "defense": 5,
+        "magic": 2,
+        "difficulty": 5
+      }
+    },
+    "TwistedFate": {
+      "id": 4,
+      "name": "Twisted Fate",
+      "key": "TwistedFate",
+      "tags": [
+        "Mage",
+        "Marksman"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 2,
+        "magic": 6,
+        "difficulty": 9
+      }
+    },
+    "Twitch": {
+      "id": 29,
+      "name": "Twitch",
+      "key": "Twitch",
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 2,
+        "magic": 3,
+        "difficulty": 6
+      }
+    },
+    "Udyr": {
+      "id": 77,
+      "name": "Udyr",
+      "key": "Udyr",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 7,
+        "magic": 4,
+        "difficulty": 7
+      }
+    },
+    "Urgot": {
+      "id": 6,
+      "name": "Urgot",
+      "key": "Urgot",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 8
+      }
+    },
+    "Varus": {
+      "id": 110,
+      "name": "Varus",
+      "key": "Varus",
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 3,
+        "magic": 4,
+        "difficulty": 2
+      }
+    },
+    "Vayne": {
+      "id": 67,
+      "name": "Vayne",
+      "key": "Vayne",
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 10,
+        "defense": 1,
+        "magic": 1,
+        "difficulty": 8
+      }
+    },
+    "Veigar": {
+      "id": 45,
+      "name": "Veigar",
+      "key": "Veigar",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 2,
+        "magic": 10,
+        "difficulty": 7
+      }
+    },
+    "Velkoz": {
+      "id": 161,
+      "name": "Vel'Koz",
+      "key": "Velkoz",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 2,
+        "magic": 10,
+        "difficulty": 8
+      }
+    },
+    "Vex": {
+      "id": 711,
+      "name": "Vex",
+      "key": "Vex",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 0,
+        "defense": 0,
+        "magic": 0,
+        "difficulty": 0
+      }
+    },
+    "Vi": {
+      "id": 254,
+      "name": "Vi",
+      "key": "Vi",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 4
+      }
+    },
+    "Viego": {
+      "id": 234,
+      "name": "Viego",
+      "key": "Viego",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 4,
+        "magic": 2,
+        "difficulty": 5
+      }
+    },
+    "Viktor": {
+      "id": 112,
+      "name": "Viktor",
+      "key": "Viktor",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 4,
+        "magic": 10,
+        "difficulty": 9
+      }
+    },
+    "Vladimir": {
+      "id": 8,
+      "name": "Vladimir",
+      "key": "Vladimir",
+      "tags": [
+        "Mage",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 6,
+        "magic": 8,
+        "difficulty": 7
+      }
+    },
+    "Volibear": {
+      "id": 106,
+      "name": "Volibear",
+      "key": "Volibear",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 7,
+        "defense": 7,
+        "magic": 4,
+        "difficulty": 3
+      }
+    },
+    "Warwick": {
+      "id": 19,
+      "name": "Warwick",
+      "key": "Warwick",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 3
+      }
+    },
+    "Xayah": {
+      "id": 498,
+      "name": "Xayah",
+      "key": "Xayah",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 10,
+        "defense": 6,
+        "magic": 1,
+        "difficulty": 5
+      }
+    },
+    "Xerath": {
+      "id": 101,
+      "name": "Xerath",
+      "key": "Xerath",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 3,
+        "magic": 10,
+        "difficulty": 8
+      }
+    },
+    "XinZhao": {
+      "id": 5,
+      "name": "Xin Zhao",
+      "key": "XinZhao",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 6,
+        "magic": 3,
+        "difficulty": 2
+      }
+    },
+    "Yasuo": {
+      "id": 157,
+      "name": "Yasuo",
+      "key": "Yasuo",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 4,
+        "magic": 4,
+        "difficulty": 10
+      }
+    },
+    "Yone": {
+      "id": 777,
+      "name": "Yone",
+      "key": "Yone",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 4,
+        "magic": 4,
+        "difficulty": 8
+      }
+    },
+    "Yorick": {
+      "id": 83,
+      "name": "Yorick",
+      "key": "Yorick",
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "info": {
+        "attack": 6,
+        "defense": 6,
+        "magic": 4,
+        "difficulty": 6
+      }
+    },
+    "Yunara": {
+      "id": 804,
+      "name": "Yunara",
+      "key": "Yunara",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 2,
+        "magic": 0,
+        "difficulty": 4
+      }
+    },
+    "Yuumi": {
+      "id": 350,
+      "name": "Yuumi",
+      "key": "Yuumi",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 5,
+        "defense": 1,
+        "magic": 8,
+        "difficulty": 2
+      }
+    },
+    "Zaahen": {
+      "id": 904,
+      "name": "Zaahen",
+      "key": "Zaahen",
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 6,
+        "magic": 1,
+        "difficulty": 2
+      }
+    },
+    "Zac": {
+      "id": 154,
+      "name": "Zac",
+      "key": "Zac",
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
+      "info": {
+        "attack": 3,
+        "defense": 7,
+        "magic": 7,
+        "difficulty": 8
+      }
+    },
+    "Zed": {
+      "id": 238,
+      "name": "Zed",
+      "key": "Zed",
+      "tags": [
+        "Assassin"
+      ],
+      "info": {
+        "attack": 9,
+        "defense": 2,
+        "magic": 1,
+        "difficulty": 7
+      }
+    },
+    "Zeri": {
+      "id": 221,
+      "name": "Zeri",
+      "key": "Zeri",
+      "tags": [
+        "Marksman"
+      ],
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 3,
+        "difficulty": 6
+      }
+    },
+    "Ziggs": {
+      "id": 115,
+      "name": "Ziggs",
+      "key": "Ziggs",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 4,
+        "magic": 9,
+        "difficulty": 4
+      }
+    },
+    "Zilean": {
+      "id": 26,
+      "name": "Zilean",
+      "key": "Zilean",
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "info": {
+        "attack": 2,
+        "defense": 5,
+        "magic": 8,
+        "difficulty": 6
+      }
+    },
+    "Zoe": {
+      "id": 142,
+      "name": "Zoé",
+      "key": "Zoe",
+      "tags": [
+        "Mage"
+      ],
+      "info": {
+        "attack": 1,
+        "defense": 7,
+        "magic": 8,
+        "difficulty": 5
+      }
+    },
+    "Zyra": {
+      "id": 143,
+      "name": "Zyra",
+      "key": "Zyra",
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "info": {
+        "attack": 4,
+        "defense": 3,
+        "magic": 8,
+        "difficulty": 7
+      }
+    }
+  }
+}

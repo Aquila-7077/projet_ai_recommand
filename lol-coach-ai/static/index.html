@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Coach AI - Web Interface</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 LoL Coach AI</h1>
+            <p>Recommendations personnalisées basées sur TES stats</p>
+        </header>
+
+        <div id="alert-box" style="display: none;"></div>
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <div class="status-card">
+                <h3>👤 Invocateur</h3>
+                <div class="value" id="summoner-name">Chargement...</div>
+            </div>
+            <div class="status-card">
+                <h3>📊 Parties</h3>
+                <div class="value" id="games-count">0</div>
+            </div>
+            <div class="status-card">
+                <h3>🏆 Winrate Global</h3>
+                <div class="value" id="winrate">0%</div>
+            </div>
+            <div class="status-card">
+                <h3>📈 W/L</h3>
+                <div class="value" id="wins-losses">0W / 0L</div>
+            </div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div style="text-align: center; margin-bottom: 30px;">
+            <button class="btn btn-secondary" id="load-champs-btn">📈 Charger Mes Champions</button>
+            <button class="btn btn-primary" id="sync-btn">🔄 Synchroniser Stats</button>
+        </div>
+
+        <!-- LIVE GAME SECTION -->
+        <div id="live-game-section" class="section" style="display: none; border-color: #ff8c00; background: rgba(255, 140, 0, 0.05);">
+            <!-- Dynamically filled -->
+        </div>
+
+        <!-- BUILD RECOMMENDATIONS SECTION (Auto-detected) -->
+        <div class="section">
+            <h2>🔨 Recommandations Live</h2>
+            <div id="game-detection-status" style="text-align: center; padding: 20px; font-size: 14px; opacity: 0.8;">
+                🔍 En attente d'une partie...
+            </div>
+            <div id="recommendations-section"></div>
+        </div>
+
+        <!-- MY CHAMPIONS -->
+        <div class="section">
+            <h2>🏆 Mes Champions</h2>
+            <div id="champions-grid" class="champions-grid">
+                <!-- Dynamically filled -->
+            </div>
+        </div>
+
+        <!-- INFO SECTION -->
+        <div class="section">
+            <h2>ℹ️ Information</h2>
+            <div style="opacity: 0.9; line-height: 1.8;">
+                <p>
+                    <strong>LoL Coach AI</strong> analyse tes statistiques personnelles et te recommande les meilleurs builds contre n'importe quelle composition ennemie.
+                </p>
+                <p>
+                    <strong>Fonctionnalités:</strong><br>
+                    ✅ Recommandations items personnalisées (basées sur TON winrate)<br>
+                    ✅ Scoring intelligent vs composition ennemie<br>
+                    ✅ Recommandations runes & spells<br>
+                    ✅ Détection automatique des games en cours<br>
+                    ✅ Suggestions real-time pendant le champ select
+                </p>
+                <p>
+                    <strong>Comment ça marche:</strong><br>
+                    1. Clique sur "Synchroniser Stats" pour charger tes données<br>
+                    2. Rentre la composition ennemie<br>
+                    3. Reçois une build personnalisée avec explications mathématiques
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
