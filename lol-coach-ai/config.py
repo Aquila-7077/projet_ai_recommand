@@ -3,7 +3,7 @@
 # ============================================
 
 # Ta clé API Riot (à régénérer toutes les 24h sur developer.riotgames.com)
-API_KEY = "RGAPI-f3687874-e895-4607-98e2-d467af05a9ef"
+API_KEY = "RGAPI-067c983a-527e-4156-9a1c-a1a8f9b42ab2"
 
 # Ton pseudo LoL (le nom avant le #)
 SUMMONER_NAME = "AcousticPrime"

@@ -34,6 +34,12 @@ import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import difflib
+import os  # Pour les chemins de fichiers
+import re  # Pour les expressions régulières
+import time  # Pour le sleep (délai de retentative)
+import psutil # Pour la recherche de processus (le fix principal)
+# Assure-toi que tu importes bien LCU_LOCKFILE de config.py
+from config import LCU_LOCKFILE
 
 # Import config (use getattr to allow optional values)
 try:
@@ -3556,3 +3562,64 @@ if __name__ == "__main__":
         print("   2. Ton pseudo/tag dans config.py")
         print("   3. Ta connexion internet")
         input("\n[Appuie sur Entrée pour quitter...]")
+
+def find_and_read_lockfile(max_retries=10, delay_sec=0.5):
+    """
+    Tente de trouver et de lire le lockfile LCU avec des retentatives
+    pour contrer les problèmes de timing (Champion Select).
+    
+    Retourne (port, token) ou lève une exception si non trouvé.
+    """
+    
+    # 1. Tentative de trouver le chemin du lockfile via les processus en cours
+    lockfile_path = None
+    
+    for proc in psutil.process_iter(['name', 'cmdline']):
+        if proc.name() == 'LeagueClientUx.exe':
+            # On cherche le dossier d'installation dans la ligne de commande
+            try:
+                for part in proc.cmdline():
+                    if 'LeagueClient' in part and 'lockfile' not in part:
+                        # Exemple: 'C:\Riot Games\League of Legends\LeagueClient.exe'
+                        base_dir = os.path.dirname(os.path.dirname(part.replace('"', '')))
+                        lockfile_path = os.path.join(base_dir, 'lockfile')
+                        break
+            except (psutil.AccessDenied, IndexError):
+                continue
+        if lockfile_path:
+            break
+            
+    # 2. Si le chemin est toujours inconnu, on ne peut pas continuer
+    if not lockfile_path:
+        # Si LCU_LOCKFILE est renseigné dans config.py, on utilise ça
+        if LCU_LOCKFILE:
+            lockfile_path = LCU_LOCKFILE
+        else:
+            raise FileNotFoundError("Impossible de localiser le processus ou le chemin du lockfile LCU.")
+
+
+    # 3. Boucle de Retentative (le fix pour le Champion Select)
+    for i in range(max_retries):
+        try:
+            with open(lockfile_path, 'r') as f:
+                content = f.read()
+            
+            # Le format est "NomProcessus:PID:Port:Token:Protocole"
+            match = re.match(r'^.+?:.+?:(\d+):([a-zA-Z0-9_-]+):.+?$', content)
+            
+            if match:
+                port = match.group(1)
+                token = match.group(2)
+                return port, token
+                
+        except FileNotFoundError:
+            # Le fichier n'existe pas encore ou a été supprimé temporairement.
+            pass
+        except Exception as e:
+            # Erreur de lecture, etc.
+            print(f"Erreur de lecture LCU (Tentative {i+1}): {e}")
+        
+        # Attendre avant la prochaine tentative (essentiel pour le Pick/Ban)
+        time.sleep(delay_sec)
+        
+    raise Exception(f"Impossible de lire le lockfile LCU après {max_retries} tentatives.")
