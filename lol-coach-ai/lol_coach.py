@@ -320,7 +320,13 @@ class RiotAPI:
         self.lcu_error = None
         self.lcu_detected = False
         self.liveclient_available = False
+        # NOUVEAU: Variables LCU
+        self.lcu_port = None
+        self.lcu_token = None
+        self.lcu_connected = False
         self.load_matches_cache()
+        # NOUVEAU: Détection LCU au démarrage
+        self._detect_lcu()
     
     def _rate_limit(self):
         """Gère le rate limit"""
@@ -343,7 +349,111 @@ class RiotAPI:
         os.makedirs(DATA_DIR, exist_ok=True)
         with open(MATCHES_CACHE, 'w', encoding='utf-8') as f:
             json.dump(self.matches_cache, f)
+    def _detect_lcu(self):
+        """Détecte et configure la connexion LCU au démarrage"""
+        print("\n🔍 Détection LCU...")
+        
+        # Chemins possibles du lockfile
+        possible_paths = [
+            os.path.join(os.getenv('LOCALAPPDATA', ''), 'Riot Games', 'League of Legends', 'lockfile'),
+            os.path.join(os.getenv('PROGRAMFILES', ''), 'Riot Games', 'League of Legends', 'lockfile'),
+            os.path.join(os.getenv('PROGRAMFILES(X86)', ''), 'Riot Games', 'League of Legends', 'lockfile'),
+        ]
+        
+        # Ajouter le chemin de config si défini
+        if LCU_LOCKFILE:
+            possible_paths.insert(0, LCU_LOCKFILE)
+        
+        for path in possible_paths:
+            if not path or not os.path.exists(path):
+                continue
+            
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    content = f.read().strip()
+                
+                # Format: name:pid:port:password:protocol
+                parts = content.split(':')
+                if len(parts) >= 5:
+                    self.lcu_port = parts[2]
+                    self.lcu_token = parts[3]
+                    self.lcu_lockfile_path = path
+                    
+                    # Test de connexion
+                    if self._test_lcu_connection():
+                        self.lcu_connected = True
+                        print(f"   ✅ LCU détecté sur port {self.lcu_port}")
+                        return True
+                    
+            except Exception as e:
+                print(f"   ⚠️ Erreur lecture {path}: {e}")
+                continue
+        
+        print("   ⚠️ LCU non détecté (normal si League n'est pas lancé)")
+        return False
     
+    def _test_lcu_connection(self):
+        """Test si la connexion LCU fonctionne"""
+        if not self.lcu_port or not self.lcu_token:
+            return False
+        
+        try:
+            url = f"https://127.0.0.1:{self.lcu_port}/lol-summoner/v1/current-summoner"
+            response = requests.get(
+                url,
+                auth=('riot', self.lcu_token),
+                verify=False,
+                timeout=2
+            )
+            return response.status_code == 200
+        except:
+            return False
+    
+    def lcu_request(self, method, endpoint, data=None):
+        """Effectue une requête vers le LCU avec retry automatique"""
+        # Retry si LCU n'était pas détecté au démarrage
+        if not self.lcu_connected:
+            self._detect_lcu()
+        
+        if not self.lcu_connected:
+            raise Exception("LCU non connecté")
+        
+        url = f"https://127.0.0.1:{self.lcu_port}{endpoint}"
+        
+        try:
+            if method == "GET":
+                response = requests.get(
+                    url,
+                    auth=('riot', self.lcu_token),
+                    verify=False,
+                    timeout=3
+                )
+            elif method == "POST":
+                response = requests.post(
+                    url,
+                    auth=('riot', self.lcu_token),
+                    json=data,
+                    verify=False,
+                    timeout=3
+                )
+            else:
+                raise ValueError(f"Méthode {method} non supportée")
+            
+            if response.status_code == 200:
+                return response.json()
+            elif response.status_code == 404:
+                return None
+            else:
+                print(f"⚠️ LCU erreur {response.status_code}: {endpoint}")
+                return None
+                
+        except requests.exceptions.Timeout:
+            print(f"⏱️ Timeout LCU: {endpoint}")
+            return None
+        except Exception as e:
+            print(f"❌ Erreur LCU: {e}")
+            return None
+            
     def _request(self, url):
         """Requête avec gestion d'erreurs"""
         self._rate_limit()
@@ -444,231 +554,216 @@ class RiotAPI:
         return data
     
     def get_current_game(self, puuid):
-        # First, try to detect champion select locally via the League Client (LCU) lockfile
+        """
+        Détecte la partie en cours (champion select ou in-game)
+        ORDRE: 1. LCU Champ Select, 2. Live Client API, 3. Spectator API
+        """
+        
+        print("\n🔍 Recherche de partie en cours...")
+        
+        # 1. CHAMPION SELECT (via LCU)
         try:
-            local = self.get_local_champ_select()
-            if local:
-                return local
-        except Exception:
-            pass
-
-        # Next, try the Live Client Data (local) for in-game live data (port 2999)
+            champ_select = self.get_local_champ_select()
+            if champ_select:
+                print("✅ Champion Select détecté (LCU)")
+                return champ_select
+        except Exception as e:
+            print(f"⚠️ Champ select check: {e}")
+        
+        # 2. IN-GAME (via Live Client API port 2999)
         try:
-            live = self.get_local_in_game()
-            if live:
-                return live
-        except Exception:
-            pass
-
-        # Fallback: spectator endpoint (returns active game once match started)
-        url = f"https://{REGION}.api.riotgames.com/lol/spectator/v5/active-games/by-summoner/{puuid}"
-        return self._request(url)
+            in_game = self.get_local_in_game()
+            if in_game:
+                print("✅ Partie en cours détectée (Live Client)")
+                return in_game
+        except Exception as e:
+            print(f"⚠️ Live client check: {e}")
+        
+        # 3. SPECTATOR API (fallback)
+        try:
+            url = f"https://{REGION}.api.riotgames.com/lol/spectator/v5/active-games/by-summoner/{puuid}"
+            data = self._request(url)
+            
+            if data:
+                print("✅ Partie détectée (Spectator API)")
+                return self._parse_spectator_game(data, puuid)
+        except Exception as e:
+            print(f"⚠️ Spectator API check: {e}")
+        
+        print("⚪ Aucune partie détectée")
+        return None
+    
+    def _parse_spectator_game(self, game, puuid):
+        """Parse les données de l'API Spectator"""
+        my_team = []
+        enemy_team = []
+        my_champion = None
+        my_team_id = None
+        
+        # Trouver le joueur
+        for p in game.get("participants", []):
+            if p.get("puuid") == puuid:
+                my_team_id = p.get("teamId")
+                my_champion = self.get_champion_name(p.get("championId"))
+                break
+        
+        # Séparer les équipes
+        for p in game.get("participants", []):
+            champ_name = self.get_champion_name(p.get("championId"))
+            if p.get("teamId") == my_team_id:
+                if champ_name != my_champion:
+                    my_team.append(champ_name)
+            else:
+                enemy_team.append(champ_name)
+        
+        game_length = game.get("gameLength", 0)
+        is_champ_select = game_length == 0
+        
+        return {
+            'ingame': True,
+            'phase': 'champ_select' if is_champ_select else 'in_game',
+            'my_champion': my_champion,
+            'my_team': my_team,
+            'enemy_team': enemy_team,
+            'game_time_seconds': game_length,
+            'is_ranked': game.get("gameQueueConfigId") in [420, 440]
+        }
 
     def get_local_champ_select(self):
-        """Try to read the League lockfile and query the local LCU to detect champ select.
-        Returns a dict in the same shape as the /live-game route expects, or None.
-        """
-        # Allow explicit override from environment or config
-        env_lock = os.getenv('LCU_LOCKFILE')
-        cfg_lock = globals().get('LCU_LOCKFILE')
-
-        possible_paths = []
-        if env_lock:
-            possible_paths.append(env_lock)
-        if cfg_lock:
-            possible_paths.append(cfg_lock)
-
-        # Common default locations
-        possible_paths += [
-            os.path.join(os.getenv('LOCALAPPDATA', ''), 'Riot Games', 'League of Legends', 'lockfile'),
-            os.path.join(os.getenv('PROGRAMFILES', ''), 'Riot Games', 'League of Legends', 'lockfile'),
-            os.path.join(os.getenv('PROGRAMFILES(X86)', ''), 'Riot Games', 'League of Legends', 'lockfile'),
-            os.path.join(os.getcwd(), 'lockfile')
-        ]
-
-        attempted = []
-
-        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-        for p in possible_paths:
-            if not p:
-                continue
-            if not os.path.exists(p):
-                attempted.append((p, 'missing'))
-                continue
-            try:
-                with open(p, 'r', encoding='utf-8') as fh:
-                    content = fh.read().strip()
-                self.lcu_lockfile_path = p
-                # lockfile format (commonly): <name>:<pid>:<port>:<password>:<protocol>
-                parts = content.split(':')
-                if len(parts) < 5:
-                    attempted.append((p, 'invalid_format'))
-                    continue
-                port = parts[2]
-                password = parts[3]
-                base = f"https://127.0.0.1:{port}"
-                auth = ('riot', password)
-
-                # Query champ select session
-                try:
-                    url = f"{base}/lol-champ-select/v1/session"
-                    resp = requests.get(url, auth=auth, verify=False, timeout=1)
-                    if resp.status_code != 200:
-                        continue
-                    data = resp.json()
-
-                    # Build simple representation for frontend
-                    my_team = []
-                    enemy_team = []
-
-                    # LCU champ select returns 'myTeam' and 'theirTeam' arrays
-                    # mark as detected LCU champ select
-                    self.lcu_detected = True
-                    self.lcu_error = None
-
-                    if isinstance(data.get('myTeam'), list):
-                        for pinfo in data.get('myTeam', []):
-                            name = pinfo.get('summonerName') or pinfo.get('displayName')
-                            if name:
-                                my_team.append(name)
-                    if isinstance(data.get('theirTeam'), list):
-                        for pinfo in data.get('theirTeam', []):
-                            name = pinfo.get('summonerName') or pinfo.get('displayName')
-                            if name:
-                                enemy_team.append(name)
-
-                    # Fallback to participants splitting by cellId if present
-                    if not my_team and isinstance(data.get('participants'), list):
-                        for pinfo in data.get('participants', []):
-                            name = pinfo.get('summonerName') or pinfo.get('displayName')
-                            cell = pinfo.get('cellId')
-                            if name is None:
-                                continue
-                            if cell is not None and int(cell) < 5:
-                                my_team.append(name)
-                            else:
-                                enemy_team.append(name)
-
-                    return {
-                        'ingame': True,
-                        'phase': 'champ_select',
-                        'my_team': my_team,
-                        'enemy_team': enemy_team,
-                        'is_ranked': False,
-                        'recommendations': []
-                    }
-                except Exception:
-                    attempted.append((p, 'http_error'))
-                    continue
-            except Exception:
-                attempted.append((p, 'read_error'))
-                continue
-
-        # If we reach here, no lockfile/session found
-        self.lcu_error = {
-            'attempted_paths': attempted,
-            'message': 'No valid LCU lockfile/session detected'
-        }
-        self.lcu_detected = False
-        self.lcu_lockfile_path = None
-        return None
-
-    def get_local_in_game(self):
-        """Try to read the Live Client Data API (http://127.0.0.1:2999) to get real-time in-game info.
-        Returns a dict similar to the /live-game route or None.
-        """
+        """Détecte le champion select via LCU"""
         try:
-            url = "http://127.0.0.1:2999/liveclientdata/allgamedata"
-            resp = requests.get(url, timeout=1)
-            if resp.status_code != 200:
-                self.liveclient_available = False
+            session = self.lcu_request("GET", "/lol-champ-select/v1/session")
+            
+            if not session:
                 return None
-            data = resp.json()
-            self.liveclient_available = True
-            self.lcu_detected = True
-            self.lcu_error = None
-
-            # Build participants lists
+            
+            print("🎪 Champion Select détecté!")
+            
             my_team = []
             enemy_team = []
-            participants = []
+            
+            # Parser myTeam
+            for cell in session.get('myTeam', []):
+                champ_id = cell.get('championId', 0)
+                if champ_id > 0:
+                    champ_name = self.get_champion_name(champ_id)
+                    my_team.append(champ_name)
+            
+            # Parser theirTeam
+            for cell in session.get('theirTeam', []):
+                champ_id = cell.get('championId', 0)
+                if champ_id > 0:
+                    champ_name = self.get_champion_name(champ_id)
+                    enemy_team.append(champ_name)
+            
+            return {
+                'ingame': True,
+                'phase': 'champ_select',
+                'my_team': my_team,
+                'enemy_team': enemy_team,
+                'is_ranked': False,
+                'raw_session': session
+            }
+            
+        except Exception as e:
+            print(f"⚠️ Erreur champ select: {e}")
+            return None
 
-            # Live client returns 'allPlayers'
-            players = data.get('allPlayers') or data.get('players') or []
-            my_summoner = getattr(self, 'local_summoner_name', None)
-
-            # Try to determine local summoner name from config env
-            if not my_summoner:
-                my_summoner = os.getenv('SUMMONER_NAME') or globals().get('SUMMONER_NAME')
-
+    def get_local_in_game(self):
+        """Détecte la partie en cours via Live Client API (port 2999)"""
+        try:
+            url = "https://127.0.0.1:2999/liveclientdata/allgamedata"
+            response = requests.get(url, verify=False, timeout=2)
+            
+            if response.status_code != 200:
+                return None
+            
+            data = response.json()
+            print("🎮 Partie en cours détectée!")
+            
+            my_team = []
+            enemy_team = []
+            my_champion = None
             my_team_id = None
-            for p in players:
-                name = p.get('summonerName') or p.get('displayName') or p.get('summonerName', None)
-                champ = p.get('championName') or p.get('characterName') or None
-                team = p.get('team') or p.get('teamId') or None
-                items = []
-                for it in p.get('items', []) or []:
-                    # items may be dicts or ints
-                    if isinstance(it, dict):
-                        items.append(it.get('itemID') or it.get('itemId') or it.get('id'))
-                    else:
-                        items.append(it)
-                deaths = p.get('scores', {}).get('deaths') if isinstance(p.get('scores'), dict) else p.get('deaths')
-                gold = p.get('totalGold') or p.get('currentGold') or None
-
-                # Also provide keys compatible with spectator API parsing used elsewhere
-                pdict = {
-                    'name': name,
-                    'champion': champ,
-                    'team': team,
-                    'items': items,
-                    'deaths': deaths,
-                    'gold': gold,
-                    # compatibility fields expected by other functions
-                    'teamId': team,
-                    'goldEarned': gold or 0,
-                    'kills': (p.get('scores', {}) or {}).get('kills') if isinstance(p.get('scores'), dict) else p.get('kills', 0),
-                    'deaths': deaths or 0
-                }
-
-                # map first 6 items to item0..item5 for compatibility
-                for idx in range(6):
-                    key = f'item{idx}'
-                    try:
-                        pdict[key] = int(items[idx]) if idx < len(items) and items[idx] is not None else 0
-                    except Exception:
-                        pdict[key] = 0
-
-                participants.append(pdict)
-
-                # Identify local player's team
-                if name and my_summoner and name.lower() == my_summoner.lower():
+            
+            # Récupérer le nom du joueur local
+            try:
+                player_data = requests.get(
+                    "https://127.0.0.1:2999/liveclientdata/activeplayername",
+                    verify=False,
+                    timeout=1
+                ).text.strip().strip('"')
+            except:
+                player_data = None
+            
+            participants = []
+            
+            for player in data.get('allPlayers', []):
+                summ_name = player.get('summonerName', '')
+                champ_name = player.get('championName', '')
+                team = player.get('team', '')
+                
+                # Identifier le joueur local
+                if player_data and summ_name.lower() == player_data.lower():
                     my_team_id = team
-
-            # Split into my_team / enemy_team by team id
+                    my_champion = champ_name
+                
+                # Parser items
+                items = []
+                for item in player.get('items', []):
+                    item_id = item.get('itemID', 0)
+                    if item_id > 0:
+                        items.append(item_id)
+                
+                # Construire participant
+                p = {
+                    'name': summ_name,
+                    'champion': champ_name,
+                    'championName': champ_name,
+                    'team': team,
+                    'teamId': 100 if team == 'ORDER' else 200,
+                    'items': items,
+                    'kills': player.get('scores', {}).get('kills', 0),
+                    'deaths': player.get('scores', {}).get('deaths', 0),
+                    'assists': player.get('scores', {}).get('assists', 0),
+                    'goldEarned': player.get('currentGold', 0),
+                }
+                
+                # Ajouter items individuels pour compatibilité
+                for i in range(6):
+                    p[f'item{i}'] = items[i] if i < len(items) else 0
+                
+                participants.append(p)
+            
+            # Séparer les équipes
             for p in participants:
-                if my_team_id is not None and p.get('team') == my_team_id:
-                    if p.get('champion'):
-                        my_team.append(p.get('champion'))
+                if my_team_id and p['team'] == my_team_id:
+                    if p['champion'] != my_champion:
+                        my_team.append(p['champion'])
                 else:
-                    if p.get('champion'):
-                        enemy_team.append(p.get('champion'))
-
+                    enemy_team.append(p['champion'])
+            
+            # Récupérer le temps de jeu
+            game_time = data.get('gameData', {}).get('gameTime', 0)
+            
             return {
                 'ingame': True,
                 'phase': 'in_game',
-                'participants': participants,
+                'my_champion': my_champion,
                 'my_team': my_team,
                 'enemy_team': enemy_team,
+                'participants': participants,
+                'gameTime': game_time,
+                'game_time_seconds': int(game_time),
                 'raw_liveclient': data
             }
-        except Exception as e:
-            self.liveclient_available = False
-            self.lcu_error = str(e)
+            
+        except requests.exceptions.ConnectionError:
+            # Normal si pas en jeu
             return None
-
-        return None
+        except Exception as e:
+            print(f"⚠️ Erreur live client: {e}")
+            return None
     
     def get_champion_mastery(self, puuid):
         url = f"https://{REGION}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/{puuid}"
@@ -3447,6 +3542,7 @@ class LoLCoachAI:
             print("   ║  6. 🔄 Rafraîchir mes champions                                ║")
             print("   ║  7. 🗑️  Reset mes stats                                        ║")
             print("   ║  8. 🌐 État de connexion & URLs d'accès Web                    ║")
+            print("   ║  9. 🔧 Diagnostic LCU (test de détection)                      ║")
             print("   ║  0. ❌ Quitter                                                 ║")
             print("   ╚════════════════════════════════════════════════════════════════╝")
             
@@ -3485,6 +3581,10 @@ class LoLCoachAI:
                 
             elif choice == "8":
                 self.show_connection_status()
+                input("\n[Appuie sur Entrée pour continuer...]")
+                
+            elif choice == "9":
+                test_lcu_detection()
                 input("\n[Appuie sur Entrée pour continuer...]")
                 
             elif choice == "0":
@@ -3546,7 +3646,54 @@ class LoLCoachAI:
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║                              LANCEMENT                                         ║
 # ╚═══════════════════════════════════════════════════════════════════════════════╝
-
+def test_lcu_detection():
+    """Fonction de test pour diagnostiquer les problèmes LCU"""
+    print("\n" + "="*70)
+    print("🔧 DIAGNOSTIC LCU")
+    print("="*70)
+    
+    api = RiotAPI(API_KEY)
+    api.load_all_champions()
+    
+    print("\n1️⃣ Test détection LCU...")
+    print(f"   Port: {api.lcu_port}")
+    print(f"   Token: {api.lcu_token[:10]}..." if api.lcu_token else "   Token: None")
+    print(f"   Connecté: {'✅' if api.lcu_connected else '❌'}")
+    
+    if not api.lcu_connected:
+        print("\n   ⚠️ LCU non détecté. Assure-toi que:")
+        print("      1. League Client est lancé")
+        print("      2. Tu es connecté à ton compte")
+        print("      3. Le lockfile existe dans le dossier d'installation")
+        return
+    
+    print("\n2️⃣ Test Champion Select...")
+    champ_select = api.get_local_champ_select()
+    if champ_select:
+        print("   ✅ Champion Select actif!")
+        print(f"   Alliés: {champ_select.get('my_team', [])}")
+        print(f"   Ennemis: {champ_select.get('enemy_team', [])}")
+    else:
+        print("   ⚪ Pas en champion select")
+    
+    print("\n3️⃣ Test Live Client (port 2999)...")
+    in_game = api.get_local_in_game()
+    if in_game:
+        print("   ✅ Partie en cours!")
+        print(f"   Champion: {in_game.get('my_champion')}")
+        print(f"   Temps: {in_game.get('game_time_seconds')}s")
+    else:
+        print("   ⚪ Pas en partie")
+    
+    print("\n4️⃣ Test complet get_current_game()...")
+    game = api.get_current_game(None)
+    if game:
+        print(f"   ✅ Détecté: {game.get('phase')}")
+    else:
+        print("   ⚪ Aucune partie détectée")
+    
+    print("\n" + "="*70)
+    
 if __name__ == "__main__":
     try:
         app = LoLCoachAI()
