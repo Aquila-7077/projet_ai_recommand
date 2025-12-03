@@ -13,4 +13,5 @@ BUT also can take in consideration the matchup for in live game (queue and ing) 
 Feel free to give a feedback on this
 
 ALSO if you want to try it you HAD to put your own API RIOT KEY (DONT FORGET THEY EXPIRE EVERY 24h)
+https://developer.riotgames.com/
 AND delete my stats in the folder (My_champions and my_stats)
