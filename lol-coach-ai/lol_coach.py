@@ -41,6 +41,8 @@ import psutil # Pour la recherche de processus (le fix principal)
 # Assure-toi que tu importes bien LCU_LOCKFILE de config.py
 from config import LCU_LOCKFILE
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # Import config (use getattr to allow optional values)
 try:
     import config as cfg
@@ -610,7 +612,13 @@ class RiotAPI:
                 self.champions_data = cache["champions_data"]
     
     def get_champion_name(self, champion_id):
-        return self.all_champions.get(int(champion_id), f"Champion_{champion_id}")
+        """Retourne le nom d'un champion avec protection contre None"""
+        if champion_id is None or champion_id == 0:
+            return None
+        try:
+            return self.all_champions.get(int(champion_id), f"Champion_{champion_id}")
+        except (ValueError, TypeError):
+            return None
     
     def get_account(self, game_name, tag_line):
         url = f"https://{REGION_ACCOUNT}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{game_name}/{tag_line}"
@@ -686,19 +694,21 @@ class RiotAPI:
         
         # Trouver le joueur
         for p in game.get("participants", []):
-            if p.get("puuid") == puuid:
+            champ_name = self.api.get_champion_name(p.get("championId"))
+            
+            if p.get("puuid") == self.puuid:
                 my_team_id = p.get("teamId")
-                my_champion = self.get_champion_name(p.get("championId"))
-                break
+                my_champion = champ_name
         
-        # Séparer les équipes
         for p in game.get("participants", []):
-            champ_name = self.get_champion_name(p.get("championId"))
-            if p.get("teamId") == my_team_id:
-                if champ_name != my_champion:
-                    my_team.append(champ_name)
-            else:
-                enemy_team.append(champ_name)
+            champ_name = self.api.get_champion_name(p.get("championId"))
+            # Ignorer les champions None (pas encore sélectionnés)
+            if champ_name:
+                if p.get("teamId") == my_team_id:
+                    if champ_name != my_champion:
+                        my_team.append(champ_name)
+                else:
+                    enemy_team.append(champ_name)
         
         game_length = game.get("gameLength", 0)
         is_champ_select = game_length == 0
@@ -3306,8 +3316,18 @@ class LoLCoachAI:
             print(f"   Mode: {'RANKED' if is_ranked else 'Normal'}")
             
             # Afficher la compo ennemie connue (si dispo)
-            if any(e for e in enemy_team):
-                print(f"\n   👹 Ennemis picks actuels: {', '.join([e for e in enemy_team if e])}")
+            enemy_picks = [e for e in enemy_team if e]
+            if enemy_picks:
+                print(f"\n   👹 Ennemis ({len(enemy_picks)}/5): {', '.join(enemy_picks)}")
+            else:
+                print(f"\n   👹 Ennemis: En attente des picks...")
+            
+            # Afficher la compo alliée
+            ally_picks = [t for t in my_team if t]
+            if ally_picks:
+                print(f"   👥 Alliés ({len(ally_picks)}/4): {', '.join(ally_picks)}")
+            else:
+                print(f"   👥 Alliés: En attente des picks...")
             
             # Afficher la compo alliée
             if any(t for t in my_team if t):
