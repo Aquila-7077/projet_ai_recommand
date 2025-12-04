@@ -328,7 +328,7 @@ class RiotAPI:
         self.lcu_connected = False
         self.load_matches_cache()
         # NOUVEAU: Détection LCU au démarrage
-        self._detect_lcu()
+        self._detect_lcu(verbose=True)
     
     def _rate_limit(self):
         """Gère le rate limit"""
@@ -351,9 +351,10 @@ class RiotAPI:
         os.makedirs(DATA_DIR, exist_ok=True)
         with open(MATCHES_CACHE, 'w', encoding='utf-8') as f:
             json.dump(self.matches_cache, f)
-    def _detect_lcu(self):
+    def _detect_lcu(self, verbose=True):
         """Détecte et configure la connexion LCU au démarrage"""
-        print("\n🔍 Détection LCU...")
+        if verbose:
+            print("\n🔍 Détection LCU...")
         
         # 1. Vérifier si League est en cours d'exécution
         league_running = False
@@ -362,15 +363,19 @@ class RiotAPI:
             for proc in psutil.process_iter(['name']):
                 if proc.info['name'] in ['LeagueClient.exe', 'LeagueClientUx.exe']:
                     league_running = True
-                    print(f"   ✅ Processus League détecté: {proc.info['name']}")
+                    if verbose:
+                        print(f"   ✅ Processus League détecté: {proc.info['name']}")
                     break
         except ImportError:
-            print("   ⚠️ psutil non installé, impossible de vérifier les processus")
+            if verbose:
+                print("   ⚠️ psutil non installé, impossible de vérifier les processus")
         except Exception as e:
-            print(f"   ⚠️ Erreur vérification processus: {e}")
+            if verbose:
+                print(f"   ⚠️ Erreur vérification processus: {e}")
         
         if not league_running:
-            print("   ⚪ League Client n'est pas lancé")
+            if verbose:
+                print("   ⚪ League Client n'est pas lancé")
             return False
         
         # 2. Chercher le lockfile
@@ -392,32 +397,29 @@ class RiotAPI:
                     try:
                         exe_path = proc.info.get('exe')
                         if exe_path:
-                            # Le lockfile est dans le même dossier que LeagueClient.exe
                             league_dir = os.path.dirname(exe_path)
                             lockfile_path = os.path.join(league_dir, 'lockfile')
                             if lockfile_path not in possible_paths:
                                 possible_paths.insert(0, lockfile_path)
-                                print(f"   📂 Chemin détecté: {league_dir}")
+                                if verbose:
+                                    print(f"   📂 Chemin détecté: {league_dir}")
                     except (psutil.AccessDenied, psutil.NoSuchProcess):
                         pass
         except:
             pass
         
-        # 4. Tentatives de lecture avec retry
-        print(f"   🔄 Recherche du lockfile dans {len(possible_paths)} emplacements...")
+        # 4. Tentatives de lecture (UNE SEULE tentative si non-verbose)
+        if verbose:
+            print(f"   🔄 Recherche du lockfile dans {len(possible_paths)} emplacements...")
         
-        for attempt in range(3):  # 3 tentatives
+        attempts = 3 if verbose else 1
+        
+        for attempt in range(attempts):
             for path in possible_paths:
                 if not path:
                     continue
                 
-                # Afficher le chemin testé (pour debug)
-                if attempt == 0:
-                    print(f"   📍 Test: {path}")
-                
                 if not os.path.exists(path):
-                    if attempt == 0:
-                        print(f"      ❌ Fichier inexistant")
                     continue
                 
                 try:
@@ -425,15 +427,10 @@ class RiotAPI:
                         content = f.read().strip()
                     
                     if not content:
-                        if attempt == 0:
-                            print(f"      ⚠️ Fichier vide")
                         continue
                     
-                    # Format: name:pid:port:password:protocol
                     parts = content.split(':')
                     if len(parts) < 5:
-                        if attempt == 0:
-                            print(f"      ⚠️ Format invalide: {len(parts)} parties")
                         continue
                     
                     self.lcu_port = parts[2]
@@ -441,37 +438,23 @@ class RiotAPI:
                     self.lcu_lockfile_path = path
                     
                     # Test de connexion
-                    print(f"   🔌 Test de connexion sur port {self.lcu_port}...")
                     if self._test_lcu_connection():
                         self.lcu_connected = True
-                        print(f"   ✅ LCU connecté! (port {self.lcu_port})")
+                        if verbose:
+                            print(f"   ✅ LCU connecté! (port {self.lcu_port})")
                         return True
-                    else:
-                        if attempt == 0:
-                            print(f"      ❌ Connexion échouée")
                         
-                except PermissionError:
-                    if attempt == 0:
-                        print(f"      ❌ Permission refusée")
-                except Exception as e:
-                    if attempt == 0:
-                        print(f"      ❌ Erreur: {e}")
+                except:
+                    pass
             
             # Attendre entre les tentatives
-            if attempt < 2 and league_running:
-                print(f"   ⏳ Nouvelle tentative dans 2 secondes...")
-                time.sleep(2)
+            if attempt < attempts - 1 and league_running:
+                if verbose:
+                    print(f"   ⏳ Nouvelle tentative dans 1 seconde...")
+                time.sleep(1)
         
-        # Si on arrive ici, la détection a échoué
-        if league_running:
+        if verbose and league_running:
             print("   ⚠️ League est lancé mais le LCU n'est pas accessible")
-            print("   💡 Causes possibles:")
-            print("      • Mise à jour en cours (attends qu'elle se termine)")
-            print("      • Client pas encore complètement démarré")
-            print("      • Problème de permissions")
-            print("\n   🔄 Le système réessayera automatiquement plus tard")
-        else:
-            print("   ⚪ LCU non détecté (League n'est pas lancé)")
         
         return False
     
@@ -494,52 +477,68 @@ class RiotAPI:
     
     def lcu_request(self, method, endpoint, data=None):
         """Effectue une requête vers le LCU avec retry automatique"""
-        # Retry si LCU n'était pas détecté au démarrage
-        if not self.lcu_connected:
-            print("   🔄 LCU non connecté, nouvelle tentative de détection...")
-            self._detect_lcu()
+        max_attempts = 2
         
-        if not self.lcu_connected:
-            # Message plus informatif
-            print("   ❌ LCU toujours inaccessible")
-            return None
-        
-        url = f"https://127.0.0.1:{self.lcu_port}{endpoint}"
-        
-        try:
-            if method == "GET":
-                response = requests.get(
-                    url,
-                    auth=('riot', self.lcu_token),
-                    verify=False,
-                    timeout=3
-                )
-            elif method == "POST":
-                response = requests.post(
-                    url,
-                    auth=('riot', self.lcu_token),
-                    json=data,
-                    verify=False,
-                    timeout=3
-                )
-            else:
-                raise ValueError(f"Méthode {method} non supportée")
+        for attempt in range(max_attempts):
+            # Retry si LCU n'était pas détecté au démarrage
+            if not self.lcu_connected or attempt > 0:
+                if attempt > 0:
+                    print("   🔄 Reconnexion LCU...")
+                self._detect_lcu()
             
-            if response.status_code == 200:
-                return response.json()
-            elif response.status_code == 404:
-                return None
-            else:
-                print(f"⚠️ LCU erreur {response.status_code}: {endpoint}")
-                return None
+            if not self.lcu_connected:
+                if attempt == max_attempts - 1:
+                    print("   ❌ LCU toujours inaccessible")
+                    return None
+                continue
+            
+            url = f"https://127.0.0.1:{self.lcu_port}{endpoint}"
+            
+            try:
+                if method == "GET":
+                    response = requests.get(
+                        url,
+                        auth=('riot', self.lcu_token),
+                        verify=False,
+                        timeout=3
+                    )
+                elif method == "POST":
+                    response = requests.post(
+                        url,
+                        auth=('riot', self.lcu_token),
+                        json=data,
+                        verify=False,
+                        timeout=3
+                    )
+                else:
+                    raise ValueError(f"Méthode {method} non supportée")
                 
-        except requests.exceptions.Timeout:
-            print(f"⏱️ Timeout LCU: {endpoint}")
-            return None
-        except Exception as e:
-            print(f"❌ Erreur LCU: {e}")
-            return None
-            
+                if response.status_code == 200:
+                    return response.json()
+                elif response.status_code == 404:
+                    return None
+                else:
+                    print(f"⚠️ LCU erreur {response.status_code}: {endpoint}")
+                    return None
+                    
+            except requests.exceptions.ConnectionError as e:
+                # Le port a changé, on réessaye avec une nouvelle détection
+                if attempt < max_attempts - 1:
+                    print(f"   ⚠️ Connexion refusée (port {self.lcu_port}), retry...")
+                    self.lcu_connected = False
+                    continue
+                else:
+                    print(f"❌ Impossible de se connecter au LCU")
+                    return None
+            except requests.exceptions.Timeout:
+                print(f"⏱️ Timeout LCU: {endpoint}")
+                return None
+            except Exception as e:
+                print(f"❌ Erreur LCU: {e}")
+                return None
+        
+        return None
+    
     def _request(self, url):
         """Requête avec gestion d'erreurs"""
         self._rate_limit()
@@ -652,6 +651,10 @@ class RiotAPI:
         """
         
         print("\n🔍 Recherche de partie en cours...")
+        
+        # NOUVEAU: Forcer une re-détection LCU avant de vérifier
+        if not self.lcu_connected:
+            self._detect_lcu(verbose=False)
         
         # 1. CHAMPION SELECT (via LCU)
         try:
