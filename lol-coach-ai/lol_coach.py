@@ -3242,7 +3242,10 @@ class LoLCoachAI:
                     print(f"\n🩹 ANTI-HEAL: {anti_heal.get('name', 'N/A')}")
                     print(f"   → {anti_heal.get('why', '')}")
                     print(f"   ⏰ Acheter: {when_text}")
-            
+
+            else:
+                print("\n🩹 ANTI-HEAL: Aucun anti-heal recommandé")
+
             situational = build.get('situational', [])
             if situational:
                 print(f"\n🔄 ITEMS SITUATIONNELS:")
@@ -3274,105 +3277,170 @@ class LoLCoachAI:
         """Vérifie si une game est en cours (champ select ou en jeu) et donne des recommandations"""
         self.clear_screen()
         self.print_banner()
-        
+    
         print("\n" + "═" * 80)
         print("                      🎮 DÉTECTION CHAMP SELECT / GAME EN COURS")
         print("═" * 80)
-        
+    
         print("\n🔍 Vérification...")
+    
+        # ====================================================================
+        # ORDRE DE DÉTECTION CORRIGÉ:
+        # 1. Live Client (port 2999) - En jeu = PRIORITÉ MAX
+        # 2. LCU Champ Select - Champion select
+        # 3. Spectator API - Fallback
+        # ====================================================================
         
-        game = self.api.get_current_game(self.puuid)
+        game = None
+        detection_method = None
         
+        # ===== 1. VÉRIFIER SI EN JEU (Live Client) =====
+        print("   🎮 Check si en partie...")
+        try:
+            live_game = self.api.get_local_in_game()
+            if live_game:
+                game = live_game
+                detection_method = "live_client"
+                print("   ✅ Partie en cours détectée!")
+        except Exception as e:
+            print(f"   ⚪ Pas en partie: {e}")
+        
+        # ===== 2. SI PAS EN JEU, VÉRIFIER CHAMP SELECT =====
+        if not game:
+            print("   🎪 Check champion select...")
+            try:
+                champ_select = self.api.get_local_champ_select()
+                if champ_select:
+                    game = champ_select
+                    detection_method = "champ_select"
+                    print("   ✅ Champion Select détecté!")
+            except Exception as e:
+                print(f"   ⚪ Pas en champ select: {e}")
+        
+        # ===== 3. FALLBACK SPECTATOR API =====
+        if not game:
+            print("   🔍 Check Spectator API...")
+            try:
+                spectator_game = self.api.get_current_game(self.puuid)
+                if spectator_game:
+                    game = spectator_game
+                    detection_method = "spectator"
+                    print("   ✅ Partie détectée (Spectator)")
+            except Exception as e:
+                print(f"   ⚪ Spectator API: {e}")
+        
+        # ===== AUCUNE GAME DÉTECTÉE =====
         if not game:
             print("\n⚪ Tu n'es pas en game actuellement")
             print("\n💡 Astuce: Lance cette fonction pendant le champ select ou en game!")
             return
         
-        queue_id = game.get("gameQueueConfigId", 0)
-        game_length = game.get("gameLength", 0)
-        is_ranked = queue_id in [420, 440]
+        # ====================================================================
+        # TRAITEMENT SELON LE TYPE DE DÉTECTION
+        # ====================================================================
         
-        my_team = []
-        enemy_team = []
-        my_champion = None
-        my_team_id = None
+        phase = game.get("phase", "unknown")
         
-        for p in game.get("participants", []):
-            champ_name = self.api.get_champion_name(p.get("championId"))
-            
-            if p.get("puuid") == self.puuid:
-                my_team_id = p.get("teamId")
-                my_champion = champ_name
+        # ===== CAS 1: CHAMPION SELECT =====
+        if phase == "champ_select" or detection_method == "champ_select":
+            self._handle_champ_select(game)
         
-        for p in game.get("participants", []):
-            champ_name = self.api.get_champion_name(p.get("championId"))
-            if p.get("teamId") == my_team_id:
-                my_team.append(champ_name)
-            else:
-                enemy_team.append(champ_name)
+        # ===== CAS 2: EN JEU =====
+        elif phase == "in_game" or detection_method == "live_client":
+            self._handle_in_game(game)
         
-        # Détecter si c'est champ select ou game en cours
-        is_champ_select = game_length == 0
-        
-        if is_champ_select:
-            print(f"\n🎪 CHAMP SELECT DÉTECTÉ!")
-            print(f"   Mode: {'RANKED' if is_ranked else 'Normal'}")
-            
-            # Afficher la compo ennemie connue (si dispo)
-            enemy_picks = [e for e in enemy_team if e]
-            if enemy_picks:
-                print(f"\n   👹 Ennemis ({len(enemy_picks)}/5): {', '.join(enemy_picks)}")
-            else:
-                print(f"\n   👹 Ennemis: En attente des picks...")
-            
-            # Afficher la compo alliée
-            ally_picks = [t for t in my_team if t]
-            if ally_picks:
-                print(f"   👥 Alliés ({len(ally_picks)}/4): {', '.join(ally_picks)}")
-            else:
-                print(f"   👥 Alliés: En attente des picks...")
-            
-            # Afficher la compo alliée
-            if any(t for t in my_team if t):
-                print(f"   👥 Votre équipe: {', '.join([t for t in my_team if t])}")
-            
-            # Recommandations de champions
-            if any(e for e in enemy_team):
-                print("\n" + "─" * 80)
-                print("🎯 CHAMPIONS RECOMMANDÉS")
-                print("─" * 80)
-                
-                reco = self.recommender.recommend_champion(enemy_team, [t for t in my_team if t])
-                
-                if reco:
-                    for i, r in enumerate(reco[:3], 1):
-                        emoji = "🥇" if i == 1 else "🥈" if i == 2 else "🥉"
-                        print(f"\n{emoji} {r['champion'].upper()}")
-                        print(f"   📊 {r['winrate']:.0f}% WR sur {r['games']} games")
-                        
-                        for reason in r['reasons'][:3]:
-                            print(f"   {reason}")
-                        
-                        # Runes recommandées pour ce champion
-                        print(f"\n   🔮 RUNES SUGGÉRÉES:")
-                        runes = self._get_suggested_runes(r['champion'], enemy_team)
-                        if runes:
-                            print(f"      Primaire: {runes.get('primary', 'Standard')}")
-                            print(f"      Secondaire: {runes.get('secondary', 'Flex')}")
-                        else:
-                            print(f"      Adapt selon la compo!")
-            else:
-                print("\n⏳ En attente de picks ennemis...")
+        # ===== CAS 3: DONNÉES SPECTATOR (fallback) =====
         else:
-            print(f"\n🔴 TU ES EN GAME!")
-            print(f"   Mode: {'RANKED' if is_ranked else 'Normal'}")
-            print(f"   Durée: {game_length // 60}:{game_length % 60:02d}")
+            # Déterminer si c'est champ select ou in-game selon gameLength
+            game_length = game.get("gameLength", 0)
+            if game_length == 0:
+                self._handle_champ_select(game)
+            else:
+                self._handle_in_game(game)
+    
+    def _handle_champ_select(self, game):
+        """Gère l'affichage et recommandations pour le champion select"""
+        
+        my_team = game.get("my_team", [])
+        enemy_team = game.get("enemy_team", [])
+        is_ranked = game.get("is_ranked", False)
+        
+        print(f"\n🎪 CHAMP SELECT DÉTECTÉ!")
+        print(f"   Mode: {'RANKED' if is_ranked else 'Normal'}")
+        
+        # Afficher les picks
+        enemy_picks = [e for e in enemy_team if e]
+        ally_picks = [t for t in my_team if t]
+        
+        if enemy_picks:
+            print(f"\n   👹 Ennemis ({len(enemy_picks)}/5): {', '.join(enemy_picks)}")
+        else:
+            print(f"\n   👹 Ennemis: En attente des picks...")
+        
+        if ally_picks:
+            print(f"   👥 Alliés ({len(ally_picks)}/4): {', '.join(ally_picks)}")
+        else:
+            print(f"   👥 Alliés: En attente des picks...")
+        
+        # Recommandations seulement si on a des infos
+        if enemy_picks or ally_picks:
+            print("\n" + "─" * 80)
+            print("🎯 CHAMPIONS RECOMMANDÉS")
+            print("─" * 80)
             
+            reco = self.recommender.recommend_champion(enemy_team, ally_picks)
+            
+            if reco:
+                for i, r in enumerate(reco[:3], 1):
+                    emoji = "🥇" if i == 1 else "🥈" if i == 2 else "🥉"
+                    print(f"\n{emoji} {r['champion'].upper()}")
+                    print(f"   📊 {r['winrate']:.0f}% WR sur {r['games']} games")
+                    
+                    for reason in r['reasons'][:3]:
+                        print(f"   {reason}")
+            else:
+                print("\n⚠️ Pas assez de données pour des recommandations.")
+        else:
+            print("\n⏳ En attente de plus de picks pour générer des recommandations...")
+
+    def _handle_in_game(self, game):
+        """Gère l'affichage et recommandations pour une partie en cours"""
+        
+        my_champion = game.get("my_champion")
+        my_team = game.get("my_team", [])
+        enemy_team = game.get("enemy_team", [])
+        game_time = game.get("game_time_seconds", 0)
+        is_ranked = game.get("is_ranked", False)
+        
+        print(f"\n🔴 TU ES EN GAME!")
+        print(f"   Mode: {'RANKED' if is_ranked else 'Normal/Practice'}")
+        
+        if game_time > 0:
+            mins = game_time // 60
+            secs = game_time % 60
+            print(f"   Durée: {mins}:{secs:02d}")
+        
+        if my_champion:
             print(f"\n   🎮 Tu joues: {my_champion}")
-            print(f"   👥 Ton équipe: {', '.join(my_team)}")
-            print(f"   👹 Ennemis: {', '.join(enemy_team)}")
+        else:
+            print(f"\n   ⚠️ Champion non détecté")
+            return
+        
+        # Nettoyer les équipes (enlever None/vides)
+        my_team_clean = [c for c in my_team if c]
+        enemy_team_clean = [c for c in enemy_team if c]
+        
+        if my_team_clean:
+            print(f"   👥 Ton équipe: {', '.join(my_team_clean)}")
             
-            prediction = self.stats.predict_win_chance(my_champion, my_team, enemy_team)
+        if enemy_team_clean:
+            print(f"   👹 Ennemis: {', '.join(enemy_team_clean)}")
+        else:
+            print(f"   👹 Ennemis: Non détectés (Practice Tool?)")
+        
+        # ===== PRÉDICTION DE VICTOIRE =====
+        if enemy_team_clean:  # Seulement si on a des ennemis
+            prediction = self.stats.predict_win_chance(my_champion, my_team_clean, enemy_team_clean)
             
             print(f"\n{'─' * 80}")
             print(f"🔮 PRÉDICTION DE VICTOIRE")
@@ -3382,86 +3450,71 @@ class LoLCoachAI:
             print(f"\n   {prediction['win_chance']:.0f}% de chances de victoire {confidence_icon}")
             print(f"   Confiance: {prediction['confidence']}")
             
-            if prediction['factors']:
-                print(f"\n   Facteurs:")
-                for key, value in prediction['factors'].items():
-                    print(f"   • {key}: {value}")
-            
-            if prediction['recommendations']:
-                print(f"\n   Conseils:")
-                for rec in prediction['recommendations']:
-                    print(f"   {rec}")
-            
-            print(f"\n{'─' * 80}")
-            print(f"⚡ RECOMMANDATIONS BUILD (adaptive)")
-            print(f"{'─' * 80}")
-            
-            build = self.recommender.recommend_build(my_champion, enemy_team)
-            
-            # Analyser les items ennemis actuels pour adapter les recommandations
-            enemy_items_analysis = self._analyze_enemy_items(game, my_team_id)
-            
-            # Afficher l'analyse des items ennemis
-            if enemy_items_analysis["key_threats"]:
-                print(f"\n⚠️ MENACES ENNEMIES ACTUELLES:")
-                for threat in enemy_items_analysis["key_threats"]:
-                    print(f"   • {threat}")
-            
-            if enemy_items_analysis["fed_enemies"]:
-                print(f"\n🔥 ENNEMIS FED:")
-                for enemy in enemy_items_analysis["fed_enemies"]:
-                    print(f"   • {enemy}")
-            
-            # Adapter la recommandation de build
-            adaptive_build = self._adapt_build_to_game_state(
-                build, 
-                enemy_items_analysis,
-                my_champion
-            )
-            
-            if adaptive_build.get('updated_notes'):
-                print(f"\n📝 AJUSTEMENTS SELON LE JEU:")
-                for note in adaptive_build['updated_notes']:
-                    print(f"   {note}")
-            
-            if adaptive_build.get('warnings'):
-                print(f"\n⚠️ ALERTES MISES À JOUR:")
-                for w in adaptive_build['warnings']:
-                    print(f"   {w}")
-            
-            # Show prioritized build sequence
-            if adaptive_build.get('priority_sequence'):
-                print(f"\n📋 ORDRE DE BUILD (adapté au jeu actuel):")
-                for seq in adaptive_build['priority_sequence']:
-                    print(f"   {seq['step']}. {seq['item']}")
-                    print(f"      └─ {seq['reason']}")
-            
-            boots = adaptive_build.get('boots', {})
-            if boots and boots.get('name'):
-                print(f"\n🥾 BOTTES: {boots.get('name', 'N/A')}")
-                print(f"   → {boots.get('why', 'Standard')}")
-            
-            if adaptive_build.get('your_best_items'):
-                print(f"\n📊 Tes items avec le meilleur WR sur {my_champion}:")
-                for item in adaptive_build['your_best_items'][:3]:
-                    print(f"      • {item.get('name', 'Unknown')}: {item.get('winrate', 0)}%")
-            
-            anti_heal = adaptive_build.get('anti_heal')
-            if anti_heal:
-                when_text = anti_heal.get('when', 'Quand nécessaire')
-                if "Optionnel" in when_text:
-                    print(f"\n🟡 ANTI-HEAL (optionnel): {anti_heal.get('name', 'N/A')}")
-                    print(f"   → {anti_heal.get('why', '')}")
-                    print(f"   ⏰ {when_text}")
-                else:
-                    print(f"\n🩹 ANTI-HEAL: {anti_heal.get('name', 'N/A')}")
-                    print(f"   → {anti_heal.get('why', '')}")
-                    print(f"   ⏰ Acheter: {when_text}")
-            
-            playstyle = self.stats.get_playstyle_analysis(my_champion)
-            if playstyle:
-                print(f"\n   🎯 Rappel: Tu es {playstyle['playstyle']} player sur {my_champion}")
-                print(f"   💡 {playstyle['tip']}")
+        if prediction['factors']:
+            print(f"\n   Facteurs:")
+            for key, value in list(prediction['factors'].items())[:3]:
+                print(f"   • {key}: {value}")
+       
+        if prediction['recommendations']:
+            print(f"\n   Conseils:")
+            for rec in prediction['recommendations'][:2]:
+                print(f"   {rec}")
+     
+        # ===== RECOMMANDATIONS BUILD =====
+        print(f"\n{'─' * 80}")
+        print(f"⚡ RECOMMANDATIONS BUILD")
+        print(f"{'─' * 80}")
+        
+        # Utiliser enemy_team même vide (pour Practice Tool)
+        build = self.recommender.recommend_build(
+            my_champion, 
+            enemy_team_clean if enemy_team_clean else [],
+            live_game=game,
+            my_team_id=game.get('participants', [{}])[0].get('teamId') if game.get('participants') else None
+        )
+        
+        # Afficher warnings
+        if build.get('warnings'):
+            print(f"\n⚠️ ALERTES:")
+            for w in build['warnings'][:3]:
+                print(f"   {w}")
+                
+        # Afficher boots
+        boots = build.get('boots', {})
+        if boots and boots.get('name'):
+            print(f"\n🥾 BOTTES: {boots.get('name', 'N/A')}")
+            print(f"   → {boots.get('why', 'Standard')}")
+     
+        # Afficher meilleurs items
+        your_best = build.get('your_best_items', [])
+        if your_best:
+            print(f"\n📊 TES MEILLEURS ITEMS SUR {my_champion.upper()}:")
+            for item in your_best[:4]:
+                wr = item.get('winrate', 0)
+                games = item.get('games', 0)
+                star = "⭐" if wr >= 55 else ""
+                print(f"   • {item.get('name', 'Unknown')}: {wr}% WR ({games}g) {star}")
+                
+        # Afficher anti-heal si nécessaire
+        anti_heal = build.get('anti_heal')
+
+        if anti_heal:
+            when_text = anti_heal.get('when', 'Quand nécessaire')
+            if "Optionnel" in when_text:
+                print(f"\n🟡 ANTI-HEAL (optionnel): {anti_heal.get('name', 'N/A')}")
+            else:
+                print(f"\n🩹 ANTI-HEAL: {anti_heal.get('name', 'N/A')}")
+                print(f"   → {anti_heal.get('why', '')}")
+        else:
+            # 🔥 Ici on NE DOIT PAS appeler anti_heal.get(), car anti_heal == None
+            print("\n🩹 ANTI-HEAL: Aucun anti-heal recommandé")
+
+        # Afficher playstyle
+        playstyle = self.stats.get_playstyle_analysis(my_champion)
+        if playstyle:
+            print(f"\n💡 RAPPEL PLAYSTYLE:")
+            print(f"   🎯 Tu es {playstyle['playstyle']} player sur {my_champion}")
+            print(f"   💬 {playstyle['tip']}")
     
     def _get_suggested_runes(self, champion, enemy_champions):
         """Retourne les runes suggérées basées sur la composition ennemie"""
