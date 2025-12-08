@@ -15,3 +15,16 @@ Feel free to give a feedback on this
 ALSO if you want to try it you HAD to put your own API RIOT KEY (DONT FORGET THEY EXPIRE EVERY 24h)
 https://developer.riotgames.com/
 AND delete my stats in the folder (My_champions and my_stats)
+
+FOR THE MOMENT IT KINDA WORK (not a 100% the features i wanted cuz it just recommand BOOTS and ANTI-HEAL) + some stats are broken 
+
+Also if you really want to try it by yourself
+this is what you have to do :
+
+- Download Python
+-(Maybe download all library)
+-Change the Username , Tag and API KEY
+-Delete the stats (cuz those are mine)
+
+Run lol-ai-recommander for starting it
+Run App.py for the selfhosted web server
