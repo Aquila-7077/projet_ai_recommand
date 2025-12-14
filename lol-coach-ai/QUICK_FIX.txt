@@ -1,0 +1,78 @@
+================================================================================
+                    🎮 FIX RAPIDE - OPTION 5 AMÉLIORÉE
+================================================================================
+
+PROBLÈME:
+  L'option 5 (recommandations in-game) affichait une build basique et incomplète
+
+SOLUTION:
+  Remplacer la fonction _handle_in_game() par une version améliorée
+
+================================================================================
+ÉTAPES RAPIDES
+================================================================================
+
+1. OUVRIR lol_coach.py
+
+2. CHERCHER la fonction:
+   def _handle_in_game(self, game):
+   (ligne ~3406)
+
+3. SÉLECTIONNER tout le contenu de cette fonction
+   (du "def" jusqu'à la prochaine fonction "def")
+
+4. COPIER le contenu du fichier:
+   FIX_INGAME_RECOMMENDATIONS.py
+
+5. REMPLACER l'ancien code par le nouveau
+
+6. RENOMMER la fonction:
+   _handle_in_game_improved  →  _handle_in_game
+
+7. SAUVEGARDER le fichier
+
+8. TESTER:
+   python -m py_compile lol_coach.py
+
+================================================================================
+RÉSULTAT
+================================================================================
+
+Avant:
+  ❌ Boots seulement
+  ❌ Anti-heal basique
+  ❌ Pas de mythique
+  ❌ Pas de raisons détaillées
+
+Après:
+  ✅ Mythique adapté
+  ✅ Boots optimales
+  ✅ Items core (top 3)
+  ✅ Items défensifs
+  ✅ Anti-heal intelligent
+  ✅ Items situationnels
+  ✅ Séquence d'achat
+  ✅ Raisons détaillées
+  ✅ Analyse composition
+  ✅ Playstyle personnalisé
+
+================================================================================
+FICHIERS FOURNIS
+================================================================================
+
+1. FIX_INGAME_RECOMMENDATIONS.py
+   → Code de la nouvelle fonction _handle_in_game_improved
+
+2. FIX_OPTION5_README.md
+   → Guide détaillé avec exemples
+
+3. QUICK_FIX.txt
+   → Ce fichier (résumé rapide)
+
+================================================================================
+BESOIN D'AIDE?
+================================================================================
+
+Consultez: FIX_OPTION5_README.md
+
+================================================================================

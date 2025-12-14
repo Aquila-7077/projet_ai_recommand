@@ -1,5 +1,125 @@
 {
   "champions": {
+    "Darius": {
+      "games": 22,
+      "wins": 14,
+      "kills": 173,
+      "deaths": 146,
+      "assists": 163,
+      "cs": 2389,
+      "damage": 434652,
+      "vision": 354,
+      "gold": 300343,
+      "total_duration": 564.4666666666666,
+      "roles": {
+        "JUNGLE": {
+          "games": 21,
+          "wins": 14
+        },
+        "TOP": {
+          "games": 1,
+          "wins": 0
+        }
+      },
+      "matchups": {
+        "MasterYi": {
+          "games": 2,
+          "wins": 2
+        },
+        "Kayn": {
+          "games": 2,
+          "wins": 2
+        },
+        "Briar": {
+          "games": 4,
+          "wins": 3
+        },
+        "LeeSin": {
+          "games": 1,
+          "wins": 1
+        },
+        "Shyvana": {
+          "games": 1,
+          "wins": 1
+        },
+        "Rammus": {
+          "games": 1,
+          "wins": 0
+        },
+        "Amumu": {
+          "games": 1,
+          "wins": 0
+        },
+        "Nidalee": {
+          "games": 1,
+          "wins": 1
+        },
+        "Malphite": {
+          "games": 1,
+          "wins": 1
+        },
+        "Nunu": {
+          "games": 1,
+          "wins": 1
+        },
+        "XinZhao": {
+          "games": 1,
+          "wins": 0
+        },
+        "Diana": {
+          "games": 1,
+          "wins": 1
+        },
+        "Jax": {
+          "games": 1,
+          "wins": 0
+        },
+        "Zed": {
+          "games": 1,
+          "wins": 0
+        },
+        "Neeko": {
+          "games": 1,
+          "wins": 1
+        },
+        "Warwick": {
+          "games": 1,
+          "wins": 0
+        },
+        "KSante": {
+          "games": 1,
+          "wins": 0
+        }
+      }
+    },
+    "Amumu": {
+      "games": 2,
+      "wins": 1,
+      "kills": 12,
+      "deaths": 16,
+      "assists": 25,
+      "cs": 301,
+      "damage": 65240,
+      "vision": 48,
+      "gold": 30630,
+      "total_duration": 67.38333333333334,
+      "roles": {
+        "JUNGLE": {
+          "games": 2,
+          "wins": 1
+        }
+      },
+      "matchups": {
+        "Pantheon": {
+          "games": 1,
+          "wins": 0
+        },
+        "MasterYi": {
+          "games": 1,
+          "wins": 1
+        }
+      }
+    },
     "MonkeyKing": {
       "games": 1,
       "wins": 0,
@@ -249,28 +369,24 @@
       }
     },
     "Veigar": {
-      "games": 2,
+      "games": 1,
       "wins": 0,
-      "kills": 1,
-      "deaths": 6,
-      "assists": 2,
-      "cs": 307,
-      "damage": 12470,
-      "vision": 12,
-      "gold": 17806,
-      "total_duration": 47.583333333333336,
+      "kills": 0,
+      "deaths": 2,
+      "assists": 1,
+      "cs": 140,
+      "damage": 5212,
+      "vision": 9,
+      "gold": 9873,
+      "total_duration": 22.483333333333334,
       "roles": {
         "TOP": {
-          "games": 2,
+          "games": 1,
           "wins": 0
         }
       },
       "matchups": {
         "Malphite": {
-          "games": 1,
-          "wins": 0
-        },
-        "Yorick": {
           "games": 1,
           "wins": 0
         }
@@ -537,60 +653,48 @@
       }
     },
     "Nunu": {
-      "games": 6,
-      "wins": 4,
-      "kills": 30,
-      "deaths": 43,
-      "assists": 57,
-      "cs": 576,
-      "damage": 121875,
-      "vision": 77,
-      "gold": 68772,
-      "total_duration": 167.08333333333334,
+      "games": 2,
+      "wins": 2,
+      "kills": 15,
+      "deaths": 12,
+      "assists": 23,
+      "cs": 235,
+      "damage": 49198,
+      "vision": 37,
+      "gold": 27441,
+      "total_duration": 61.050000000000004,
       "roles": {
         "JUNGLE": {
-          "games": 6,
-          "wins": 4
+          "games": 2,
+          "wins": 2
         }
       },
       "matchups": {
         "DrMundo": {
-          "games": 2,
+          "games": 1,
           "wins": 1
         },
         "Jax": {
-          "games": 1,
-          "wins": 1
-        },
-        "Kayn": {
-          "games": 1,
-          "wins": 0
-        },
-        "Elise": {
-          "games": 1,
-          "wins": 1
-        },
-        "Warwick": {
           "games": 1,
           "wins": 1
         }
       }
     },
     "Jax": {
-      "games": 4,
-      "wins": 3,
-      "kills": 25,
-      "deaths": 20,
-      "assists": 14,
-      "cs": 305,
-      "damage": 62962,
-      "vision": 60,
-      "gold": 43613,
-      "total_duration": 78.70000000000002,
+      "games": 3,
+      "wins": 2,
+      "kills": 15,
+      "deaths": 15,
+      "assists": 7,
+      "cs": 159,
+      "damage": 42605,
+      "vision": 32,
+      "gold": 24346,
+      "total_duration": 45.88333333333334,
       "roles": {
         "JUNGLE": {
-          "games": 4,
-          "wins": 3
+          "games": 3,
+          "wins": 2
         }
       },
       "matchups": {
@@ -605,10 +709,6 @@
         "Qiyana": {
           "games": 1,
           "wins": 0
-        },
-        "Teemo": {
-          "games": 1,
-          "wins": 1
         }
       }
     },
@@ -663,78 +763,6 @@
           "wins": 0
         },
         "Gragas": {
-          "games": 1,
-          "wins": 1
-        }
-      }
-    },
-    "Darius": {
-      "games": 12,
-      "wins": 7,
-      "kills": 87,
-      "deaths": 81,
-      "assists": 97,
-      "cs": 1245,
-      "damage": 210617,
-      "vision": 198,
-      "gold": 156664,
-      "total_duration": 312.7833333333333,
-      "roles": {
-        "JUNGLE": {
-          "games": 11,
-          "wins": 7
-        },
-        "TOP": {
-          "games": 1,
-          "wins": 0
-        }
-      },
-      "matchups": {
-        "Diana": {
-          "games": 1,
-          "wins": 1
-        },
-        "Jax": {
-          "games": 1,
-          "wins": 0
-        },
-        "Zed": {
-          "games": 1,
-          "wins": 0
-        },
-        "Neeko": {
-          "games": 1,
-          "wins": 1
-        },
-        "Warwick": {
-          "games": 1,
-          "wins": 0
-        },
-        "MasterYi": {
-          "games": 1,
-          "wins": 1
-        },
-        "XinZhao": {
-          "games": 1,
-          "wins": 0
-        },
-        "Amumu": {
-          "games": 1,
-          "wins": 0
-        },
-        "Nidalee": {
-          "games": 1,
-          "wins": 1
-        },
-        "Malphite": {
-          "games": 1,
-          "wins": 1
-        },
-        "Briar": {
-          "games": 1,
-          "wins": 1
-        },
-        "Nunu": {
           "games": 1,
           "wins": 1
         }
@@ -817,20 +845,20 @@
       }
     },
     "Aatrox": {
-      "games": 4,
-      "wins": 2,
-      "kills": 2,
-      "deaths": 11,
-      "assists": 6,
-      "cs": 272,
-      "damage": 30740,
-      "vision": 23,
-      "gold": 26125,
-      "total_duration": 62.36666666666667,
+      "games": 2,
+      "wins": 1,
+      "kills": 0,
+      "deaths": 0,
+      "assists": 4,
+      "cs": 109,
+      "damage": 6746,
+      "vision": 9,
+      "gold": 10315,
+      "total_duration": 19.983333333333334,
       "roles": {
         "TOP": {
-          "games": 4,
-          "wins": 2
+          "games": 2,
+          "wins": 1
         }
       },
       "matchups": {
@@ -841,44 +869,28 @@
         "Darius": {
           "games": 1,
           "wins": 0
-        },
-        "Gragas": {
-          "games": 1,
-          "wins": 1
-        },
-        "Chogath": {
-          "games": 1,
-          "wins": 0
         }
       }
     },
     "Gwen": {
-      "games": 3,
-      "wins": 1,
-      "kills": 9,
-      "deaths": 24,
-      "assists": 11,
-      "cs": 374,
-      "damage": 43064,
-      "vision": 43,
-      "gold": 29840,
-      "total_duration": 86.83333333333334,
+      "games": 1,
+      "wins": 0,
+      "kills": 1,
+      "deaths": 11,
+      "assists": 5,
+      "cs": 105,
+      "damage": 13080,
+      "vision": 12,
+      "gold": 7691,
+      "total_duration": 26.366666666666667,
       "roles": {
         "JUNGLE": {
-          "games": 3,
-          "wins": 1
+          "games": 1,
+          "wins": 0
         }
       },
       "matchups": {
         "Kayn": {
-          "games": 1,
-          "wins": 0
-        },
-        "Sejuani": {
-          "games": 1,
-          "wins": 1
-        },
-        "Shyvana": {
           "games": 1,
           "wins": 0
         }
@@ -908,53 +920,25 @@
         }
       }
     },
-    "Amumu": {
-      "games": 2,
-      "wins": 1,
-      "kills": 12,
-      "deaths": 16,
-      "assists": 25,
-      "cs": 301,
-      "damage": 65240,
-      "vision": 48,
-      "gold": 30630,
-      "total_duration": 67.38333333333334,
-      "roles": {
-        "JUNGLE": {
-          "games": 2,
-          "wins": 1
-        }
-      },
-      "matchups": {
-        "MasterYi": {
-          "games": 1,
-          "wins": 1
-        },
-        "Pantheon": {
-          "games": 1,
-          "wins": 0
-        }
-      }
-    },
     "Mordekaiser": {
-      "games": 8,
-      "wins": 3,
-      "kills": 44,
-      "deaths": 48,
-      "assists": 40,
-      "cs": 867,
-      "damage": 151101,
-      "vision": 93,
-      "gold": 95168,
-      "total_duration": 209.3666666666667,
+      "games": 2,
+      "wins": 0,
+      "kills": 1,
+      "deaths": 13,
+      "assists": 5,
+      "cs": 219,
+      "damage": 19673,
+      "vision": 27,
+      "gold": 13479,
+      "total_duration": 52.2,
       "roles": {
         "TOP": {
-          "games": 2,
-          "wins": 1
+          "games": 1,
+          "wins": 0
         },
         "JUNGLE": {
-          "games": 6,
-          "wins": 2
+          "games": 1,
+          "wins": 0
         }
       },
       "matchups": {
@@ -965,30 +949,6 @@
         "Ivern": {
           "games": 1,
           "wins": 0
-        },
-        "Garen": {
-          "games": 1,
-          "wins": 1
-        },
-        "MasterYi": {
-          "games": 1,
-          "wins": 0
-        },
-        "Kayn": {
-          "games": 1,
-          "wins": 0
-        },
-        "Graves": {
-          "games": 1,
-          "wins": 0
-        },
-        "Ambessa": {
-          "games": 1,
-          "wins": 1
-        },
-        "Khazix": {
-          "games": 1,
-          "wins": 1
         }
       }
     },
@@ -1048,24 +1008,20 @@
       "matchups": {}
     },
     "Trundle": {
-      "games": 5,
-      "wins": 3,
-      "kills": 27,
-      "deaths": 41,
-      "assists": 36,
-      "cs": 516,
-      "damage": 91179,
-      "vision": 80,
-      "gold": 56930,
-      "total_duration": 138.13333333333333,
+      "games": 4,
+      "wins": 2,
+      "kills": 19,
+      "deaths": 33,
+      "assists": 31,
+      "cs": 340,
+      "damage": 65771,
+      "vision": 63,
+      "gold": 43781,
+      "total_duration": 104.16666666666667,
       "roles": {
         "JUNGLE": {
           "games": 4,
           "wins": 2
-        },
-        "TOP": {
-          "games": 1,
-          "wins": 1
         }
       },
       "matchups": {
@@ -1084,18 +1040,31 @@
         "Zac": {
           "games": 1,
           "wins": 1
-        },
-        "Sett": {
-          "games": 1,
-          "wins": 1
         }
       }
     }
   },
-  "games_analyzed": 108,
-  "wins": 54,
-  "losses": 54,
+  "games_analyzed": 101,
+  "wins": 52,
+  "losses": 49,
   "analyzed_matches": [
+    "EUW1_7631501861",
+    "EUW1_7631440567",
+    "EUW1_7631396476",
+    "EUW1_7631365499",
+    "EUW1_7630977821",
+    "EUW1_7630892483",
+    "EUW1_7630847255",
+    "EUW1_7630191503",
+    "EUW1_7630139056",
+    "EUW1_7621770426",
+    "EUW1_7621592233",
+    "EUW1_7621454258",
+    "EUW1_7621422842",
+    "EUW1_7620669834",
+    "EUW1_7619100988",
+    "EUW1_7619081358",
+    "EUW1_7618431727",
     "EUW1_7616968658",
     "EUW1_7610624342",
     "EUW1_7604474334",
@@ -1179,34 +1148,309 @@
     "EUW1_7314143869",
     "EUW1_7312213833",
     "EUW1_7311812105",
-    "EUW1_7311789051",
-    "EUW1_7311126754",
-    "EUW1_7311077339",
-    "EUW1_7310029179",
-    "EUW1_7308679332",
-    "EUW1_7308442537",
-    "EUW1_7307711638",
-    "EUW1_7307641740",
-    "EUW1_7307247476",
-    "EUW1_7307214253",
-    "EUW1_7304105941",
-    "EUW1_7303869296",
-    "EUW1_7303750087",
-    "EUW1_7303626878",
-    "EUW1_7300855032",
-    "EUW1_7300485568",
-    "EUW1_7300435542",
-    "EUW1_7618431727",
-    "EUW1_7619081358",
-    "EUW1_7619100988",
-    "EUW1_7621770426",
-    "EUW1_7621592233",
-    "EUW1_7621454258",
-    "EUW1_7621422842",
-    "EUW1_7620669834"
+    "EUW1_7642516018"
   ],
-  "last_update": "2025-12-01T15:28:32.627922",
+  "last_update": "2025-12-14T11:40:30.307879",
   "builds_history": {
+    "Darius": {
+      "items": {
+        "3053": {
+          "games": 5,
+          "wins": 3,
+          "name": "Gage de Sterak"
+        },
+        "3142": {
+          "games": 20,
+          "wins": 13,
+          "name": "Lame spectre de Youmuu"
+        },
+        "323110": {
+          "games": 1,
+          "wins": 1,
+          "name": "Cœur gelé"
+        },
+        "3742": {
+          "games": 18,
+          "wins": 10,
+          "name": "Plaque du mort"
+        },
+        "3065": {
+          "games": 1,
+          "wins": 1,
+          "name": "Visage spirituel"
+        },
+        "323075": {
+          "games": 3,
+          "wins": 2,
+          "name": "Cotte épineuse"
+        },
+        "3161": {
+          "games": 4,
+          "wins": 3,
+          "name": "Lance de Shojin"
+        },
+        "3071": {
+          "games": 1,
+          "wins": 1,
+          "name": "Couperet noir"
+        },
+        "4401": {
+          "games": 9,
+          "wins": 5,
+          "name": "Force de la nature"
+        },
+        "6694": {
+          "games": 1,
+          "wins": 1,
+          "name": "Rancune de Serylda"
+        },
+        "6333": {
+          "games": 2,
+          "wins": 0,
+          "name": "Danse de la mort"
+        },
+        "6631": {
+          "games": 2,
+          "wins": 1,
+          "name": "Estropieur"
+        }
+      },
+      "first_items": {
+        "3053": {
+          "games": 2,
+          "wins": 2,
+          "name": "Gage de Sterak"
+        },
+        "3742": {
+          "games": 3,
+          "wins": 2,
+          "name": "Plaque du mort"
+        },
+        "3142": {
+          "games": 10,
+          "wins": 6,
+          "name": "Lame spectre de Youmuu"
+        },
+        "323075": {
+          "games": 2,
+          "wins": 1,
+          "name": "Cotte épineuse"
+        },
+        "3161": {
+          "games": 1,
+          "wins": 1,
+          "name": "Lance de Shojin"
+        },
+        "4401": {
+          "games": 3,
+          "wins": 2,
+          "name": "Force de la nature"
+        },
+        "6333": {
+          "games": 1,
+          "wins": 0,
+          "name": "Danse de la mort"
+        }
+      },
+      "item_combos": {
+        "3053_3142_323110": {
+          "games": 1,
+          "wins": 1,
+          "items": [
+            "Gage de Sterak",
+            "Lame spectre de Youmuu",
+            "Cœur gelé"
+          ]
+        },
+        "3065_3142_3742": {
+          "games": 1,
+          "wins": 1,
+          "items": [
+            "Plaque du mort",
+            "Lame spectre de Youmuu",
+            "Visage spirituel"
+          ]
+        },
+        "3142_3742": {
+          "games": 6,
+          "wins": 4,
+          "items": [
+            "Lame spectre de Youmuu",
+            "Plaque du mort"
+          ]
+        },
+        "3071_3142_323075": {
+          "games": 1,
+          "wins": 1,
+          "items": [
+            "Cotte épineuse",
+            "Lame spectre de Youmuu",
+            "Couperet noir"
+          ]
+        },
+        "3142_3742_4401": {
+          "games": 4,
+          "wins": 2,
+          "items": [
+            "Plaque du mort",
+            "Lame spectre de Youmuu",
+            "Force de la nature"
+          ]
+        },
+        "3142_3161_3742": {
+          "games": 2,
+          "wins": 1,
+          "items": [
+            "Lance de Shojin",
+            "Lame spectre de Youmuu",
+            "Plaque du mort"
+          ]
+        },
+        "3053_3142_3742": {
+          "games": 1,
+          "wins": 1,
+          "items": [
+            "Gage de Sterak",
+            "Lame spectre de Youmuu",
+            "Plaque du mort"
+          ]
+        },
+        "3142_4401_323075": {
+          "games": 1,
+          "wins": 0,
+          "items": [
+            "Cotte épineuse",
+            "Lame spectre de Youmuu",
+            "Force de la nature"
+          ]
+        },
+        "3142_4401": {
+          "games": 2,
+          "wins": 2,
+          "items": [
+            "Lame spectre de Youmuu",
+            "Force de la nature"
+          ]
+        },
+        "3742_6333_6631": {
+          "games": 1,
+          "wins": 0,
+          "items": [
+            "Danse de la mort",
+            "Estropieur",
+            "Plaque du mort"
+          ]
+        },
+        "4401_6631": {
+          "games": 1,
+          "wins": 1,
+          "items": [
+            "Force de la nature",
+            "Estropieur"
+          ]
+        },
+        "3142_3742_6333": {
+          "games": 1,
+          "wins": 0,
+          "items": [
+            "Lame spectre de Youmuu",
+            "Plaque du mort",
+            "Danse de la mort"
+          ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        }
+      }
+    },
+    "Amumu": {
+      "items": {
+        "6653": {
+          "games": 2,
+          "wins": 1,
+          "name": "Tourment de Liandry"
+        },
+        "8020": {
+          "games": 1,
+          "wins": 0,
+          "name": "Masque abyssal"
+        },
+        "2503": {
+          "games": 1,
+          "wins": 1,
+          "name": "Torche noire"
+        },
+        "2502": {
+          "games": 1,
+          "wins": 1,
+          "name": "Désespoir infini"
+        },
+        "3118": {
+          "games": 1,
+          "wins": 1,
+          "name": "Malfaisance"
+        },
+        "3165": {
+          "games": 1,
+          "wins": 1,
+          "name": "Morellonomicon"
+        }
+      },
+      "first_items": {
+        "6653": {
+          "games": 1,
+          "wins": 0,
+          "name": "Tourment de Liandry"
+        },
+        "2503": {
+          "games": 1,
+          "wins": 1,
+          "name": "Torche noire"
+        }
+      },
+      "item_combos": {
+        "6653_8020": {
+          "games": 1,
+          "wins": 0,
+          "items": [
+            "Tourment de Liandry",
+            "Masque abyssal"
+          ]
+        },
+        "2502_2503_6653": {
+          "games": 1,
+          "wins": 1,
+          "items": [
+            "Torche noire",
+            "Tourment de Liandry",
+            "Désespoir infini"
+          ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
+      }
+    },
     "MonkeyKing": {
       "items": {
         "3078": {
@@ -1222,7 +1466,20 @@
           "name": "Force de la trinité"
         }
       },
-      "item_combos": {}
+      "item_combos": {},
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        }
+      }
     },
     "Zaahen": {
       "items": {
@@ -1263,6 +1520,19 @@
             "Force de la trinité",
             "Gage de Sterak"
           ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
         }
       }
     },
@@ -1363,6 +1633,19 @@
             "Lance de Shojin"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
       }
     },
     "Ornn": {
@@ -1380,7 +1663,20 @@
           "name": "Cœuracier"
         }
       },
-      "item_combos": {}
+      "item_combos": {},
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "12": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        }
+      }
     },
     "XinZhao": {
       "items": {
@@ -1458,6 +1754,19 @@
             "Éclipse",
             "Gueule de Malmortius"
           ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
         }
       }
     },
@@ -1585,6 +1894,19 @@
             "Cotte épineuse"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "6": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
       }
     },
     "Teemo": {
@@ -1627,6 +1949,19 @@
             "Torche noire"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "14": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
       }
     },
     "Veigar": {
@@ -1640,25 +1975,10 @@
           "games": 1,
           "wins": 0,
           "name": "Bâton du vide"
-        },
-        "6657": {
-          "games": 1,
-          "wins": 0,
-          "name": "Bâton séculaire"
-        },
-        "3040": {
-          "games": 1,
-          "wins": 0,
-          "name": "Étreinte du séraphin"
         }
       },
       "first_items": {
         "326657": {
-          "games": 1,
-          "wins": 0,
-          "name": "Bâton séculaire"
-        },
-        "6657": {
           "games": 1,
           "wins": 0,
           "name": "Bâton séculaire"
@@ -1672,14 +1992,19 @@
             "Bâton séculaire",
             "Bâton du vide"
           ]
-        },
-        "3040_6657": {
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
           "games": 1,
           "wins": 0,
-          "items": [
-            "Bâton séculaire",
-            "Étreinte du séraphin"
-          ]
+          "name": "Spell"
+        },
+        "12": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
         }
       }
     },
@@ -1747,6 +2072,19 @@
             "Visage spirituel"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
       }
     },
     "DrMundo": {
@@ -1802,6 +2140,19 @@
             "Cœuracier"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
       }
     },
     "Vi": {
@@ -1838,6 +2189,19 @@
             "Couperet noir",
             "Gage de Sterak"
           ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
         }
       }
     },
@@ -1902,6 +2266,19 @@
             "Étreinte du séraphin"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        }
       }
     },
     "Sylas": {
@@ -1932,6 +2309,19 @@
             "Flamme-ombre",
             "Lame d'infini"
           ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
         }
       }
     },
@@ -1969,6 +2359,19 @@
             "Arc-bouclier immortel",
             "Tueur de krakens"
           ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
         }
       }
     },
@@ -2011,6 +2414,19 @@
             "Sablier de Zhonya",
             "Torche noire"
           ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
         }
       }
     },
@@ -2080,6 +2496,19 @@
             "Couperet noir",
             "Lance de Shojin"
           ]
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
         }
       }
     },
@@ -2154,13 +2583,26 @@
             "Lame du roi déchu"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        }
       }
     },
     "Nunu": {
       "items": {
         "6653": {
-          "games": 6,
-          "wins": 4,
+          "games": 2,
+          "wins": 2,
           "name": "Tourment de Liandry"
         },
         "328020": {
@@ -2169,8 +2611,8 @@
           "name": "Masque abyssal"
         },
         "323075": {
-          "games": 2,
-          "wins": 2,
+          "games": 1,
+          "wins": 1,
           "name": "Cotte épineuse"
         },
         "3135": {
@@ -2187,43 +2629,18 @@
           "games": 1,
           "wins": 1,
           "name": "Rookern kaénique"
-        },
-        "3742": {
-          "games": 1,
-          "wins": 0,
-          "name": "Plaque du mort"
-        },
-        "8010": {
-          "games": 1,
-          "wins": 1,
-          "name": "Malédiction du sanguinaire"
-        },
-        "3083": {
-          "games": 1,
-          "wins": 1,
-          "name": "Armure de Warmog"
-        },
-        "2502": {
-          "games": 1,
-          "wins": 1,
-          "name": "Désespoir infini"
         }
       },
       "first_items": {
         "6653": {
-          "games": 4,
-          "wins": 2,
+          "games": 1,
+          "wins": 1,
           "name": "Tourment de Liandry"
         },
         "3110": {
           "games": 1,
           "wins": 1,
           "name": "Cœur gelé"
-        },
-        "8010": {
-          "games": 1,
-          "wins": 1,
-          "name": "Malédiction du sanguinaire"
         }
       },
       "item_combos": {
@@ -2244,23 +2661,19 @@
             "Tourment de Liandry",
             "Rookern kaénique"
           ]
-        },
-        "3742_6653": {
-          "games": 1,
-          "wins": 0,
-          "items": [
-            "Tourment de Liandry",
-            "Plaque du mort"
-          ]
-        },
-        "3083_6653_8010": {
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
           "games": 1,
           "wins": 1,
-          "items": [
-            "Malédiction du sanguinaire",
-            "Tourment de Liandry",
-            "Armure de Warmog"
-          ]
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
         }
       }
     },
@@ -2272,13 +2685,13 @@
           "name": "Tueur de krakens"
         },
         "3157": {
-          "games": 2,
-          "wins": 2,
+          "games": 1,
+          "wins": 1,
           "name": "Sablier de Zhonya"
         },
         "6610": {
-          "games": 2,
-          "wins": 2,
+          "games": 1,
+          "wins": 1,
           "name": "Ciel éventré"
         },
         "3078": {
@@ -2287,14 +2700,9 @@
           "name": "Force de la trinité"
         },
         "3153": {
-          "games": 2,
-          "wins": 1,
-          "name": "Lame du roi déchu"
-        },
-        "3074": {
           "games": 1,
-          "wins": 1,
-          "name": "Hydre vorace"
+          "wins": 0,
+          "name": "Lame du roi déchu"
         }
       },
       "first_items": {
@@ -2307,11 +2715,6 @@
           "games": 1,
           "wins": 0,
           "name": "Lame du roi déchu"
-        },
-        "3157": {
-          "games": 1,
-          "wins": 1,
-          "name": "Sablier de Zhonya"
         }
       },
       "item_combos": {
@@ -2323,15 +2726,19 @@
             "Sablier de Zhonya",
             "Ciel éventré"
           ]
-        },
-        "3074_3157_6610": {
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
           "games": 1,
-          "wins": 1,
-          "items": [
-            "Sablier de Zhonya",
-            "Hydre vorace",
-            "Ciel éventré"
-          ]
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
         }
       }
     },
@@ -2370,6 +2777,19 @@
             "Danseur fantôme"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        }
       }
     },
     "Diana": {
@@ -2387,121 +2807,7 @@
           "name": "Fléau de liche"
         }
       },
-      "item_combos": {}
-    },
-    "Darius": {
-      "items": {
-        "3142": {
-          "games": 10,
-          "wins": 6,
-          "name": "Lame spectre de Youmuu"
-        },
-        "4401": {
-          "games": 7,
-          "wins": 4,
-          "name": "Force de la nature"
-        },
-        "6333": {
-          "games": 1,
-          "wins": 0,
-          "name": "Danse de la mort"
-        },
-        "6631": {
-          "games": 2,
-          "wins": 1,
-          "name": "Estropieur"
-        },
-        "3742": {
-          "games": 9,
-          "wins": 4,
-          "name": "Plaque du mort"
-        },
-        "3053": {
-          "games": 1,
-          "wins": 0,
-          "name": "Gage de Sterak"
-        },
-        "3161": {
-          "games": 1,
-          "wins": 0,
-          "name": "Lance de Shojin"
-        }
-      },
-      "first_items": {
-        "3142": {
-          "games": 7,
-          "wins": 5,
-          "name": "Lame spectre de Youmuu"
-        },
-        "6333": {
-          "games": 1,
-          "wins": 0,
-          "name": "Danse de la mort"
-        },
-        "3742": {
-          "games": 1,
-          "wins": 0,
-          "name": "Plaque du mort"
-        },
-        "4401": {
-          "games": 3,
-          "wins": 2,
-          "name": "Force de la nature"
-        }
-      },
-      "item_combos": {
-        "3142_4401": {
-          "games": 2,
-          "wins": 2,
-          "items": [
-            "Lame spectre de Youmuu",
-            "Force de la nature"
-          ]
-        },
-        "3742_6333_6631": {
-          "games": 1,
-          "wins": 0,
-          "items": [
-            "Danse de la mort",
-            "Estropieur",
-            "Plaque du mort"
-          ]
-        },
-        "3142_3161_3742": {
-          "games": 1,
-          "wins": 0,
-          "items": [
-            "Plaque du mort",
-            "Lame spectre de Youmuu",
-            "Lance de Shojin"
-          ]
-        },
-        "4401_6631": {
-          "games": 1,
-          "wins": 1,
-          "items": [
-            "Force de la nature",
-            "Estropieur"
-          ]
-        },
-        "3142_3742_4401": {
-          "games": 3,
-          "wins": 1,
-          "items": [
-            "Force de la nature",
-            "Lame spectre de Youmuu",
-            "Plaque du mort"
-          ]
-        },
-        "3142_3742": {
-          "games": 4,
-          "wins": 3,
-          "items": [
-            "Lame spectre de Youmuu",
-            "Plaque du mort"
-          ]
-        }
-      },
+      "item_combos": {},
       "runes": {},
       "spells": {
         "4": {
@@ -2519,7 +2825,20 @@
     "KSante": {
       "items": {},
       "first_items": {},
-      "item_combos": {}
+      "item_combos": {},
+      "runes": {},
+      "spells": {
+        "6": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
+      }
     },
     "Chogath": {
       "items": {
@@ -2579,6 +2898,19 @@
             "Désespoir infini"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
       }
     },
     "Illaoi": {
@@ -2621,24 +2953,27 @@
             "Visage spirituel"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "12": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        }
       }
     },
     "Aatrox": {
       "items": {
         "3161": {
-          "games": 2,
+          "games": 1,
           "wins": 1,
           "name": "Lance de Shojin"
-        },
-        "6692": {
-          "games": 2,
-          "wins": 1,
-          "name": "Éclipse"
-        },
-        "6610": {
-          "games": 1,
-          "wins": 0,
-          "name": "Ciel éventré"
         }
       },
       "first_items": {
@@ -2646,77 +2981,50 @@
           "games": 1,
           "wins": 1,
           "name": "Lance de Shojin"
-        },
-        "6692": {
-          "games": 2,
-          "wins": 1,
-          "name": "Éclipse"
         }
       },
-      "item_combos": {
-        "3161_6610_6692": {
+      "item_combos": {},
+      "runes": {},
+      "spells": {
+        "4": {
           "games": 1,
           "wins": 0,
-          "items": [
-            "Éclipse",
-            "Ciel éventré",
-            "Lance de Shojin"
-          ]
+          "name": "Spell"
+        },
+        "12": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
         }
       }
     },
     "Gwen": {
       "items": {
         "3115": {
-          "games": 3,
-          "wins": 1,
+          "games": 1,
+          "wins": 0,
           "name": "Dent de Nashor"
-        },
-        "4633": {
-          "games": 1,
-          "wins": 1,
-          "name": "Créateur de failles"
-        },
-        "3157": {
-          "games": 1,
-          "wins": 0,
-          "name": "Sablier de Zhonya"
-        },
-        "4645": {
-          "games": 1,
-          "wins": 0,
-          "name": "Flamme-ombre"
         }
       },
       "first_items": {
         "3115": {
-          "games": 2,
-          "wins": 1,
-          "name": "Dent de Nashor"
-        },
-        "3157": {
           "games": 1,
           "wins": 0,
-          "name": "Sablier de Zhonya"
+          "name": "Dent de Nashor"
         }
       },
-      "item_combos": {
-        "3115_4633": {
-          "games": 1,
-          "wins": 1,
-          "items": [
-            "Dent de Nashor",
-            "Créateur de failles"
-          ]
-        },
-        "3115_3157_4645": {
+      "item_combos": {},
+      "runes": {},
+      "spells": {
+        "6": {
           "games": 1,
           "wins": 0,
-          "items": [
-            "Sablier de Zhonya",
-            "Flamme-ombre",
-            "Dent de Nashor"
-          ]
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
         }
       }
     },
@@ -2749,152 +3057,62 @@
             "Égide solaire"
           ]
         }
-      }
-    },
-    "Amumu": {
-      "items": {
-        "2503": {
-          "games": 1,
-          "wins": 1,
-          "name": "Torche noire"
-        },
-        "6653": {
-          "games": 2,
-          "wins": 1,
-          "name": "Tourment de Liandry"
-        },
-        "2502": {
-          "games": 1,
-          "wins": 1,
-          "name": "Désespoir infini"
-        },
-        "3118": {
-          "games": 1,
-          "wins": 1,
-          "name": "Malfaisance"
-        },
-        "3165": {
-          "games": 1,
-          "wins": 1,
-          "name": "Morellonomicon"
-        },
-        "8020": {
-          "games": 1,
-          "wins": 0,
-          "name": "Masque abyssal"
-        }
       },
-      "first_items": {
-        "2503": {
+      "runes": {},
+      "spells": {
+        "4": {
           "games": 1,
           "wins": 1,
-          "name": "Torche noire"
+          "name": "Spell"
         },
-        "6653": {
-          "games": 1,
-          "wins": 0,
-          "name": "Tourment de Liandry"
-        }
-      },
-      "item_combos": {
-        "2502_2503_6653": {
+        "11": {
           "games": 1,
           "wins": 1,
-          "items": [
-            "Torche noire",
-            "Tourment de Liandry",
-            "Désespoir infini"
-          ]
-        },
-        "6653_8020": {
-          "games": 1,
-          "wins": 0,
-          "items": [
-            "Tourment de Liandry",
-            "Masque abyssal"
-          ]
+          "name": "Spell"
         }
       }
     },
     "Mordekaiser": {
       "items": {
         "6653": {
-          "games": 6,
-          "wins": 3,
+          "games": 1,
+          "wins": 0,
           "name": "Tourment de Liandry"
         },
         "3116": {
-          "games": 7,
-          "wins": 3,
-          "name": "Sceptre de Rylai"
-        },
-        "4633": {
-          "games": 5,
-          "wins": 2,
-          "name": "Créateur de failles"
-        },
-        "3065": {
-          "games": 3,
-          "wins": 1,
-          "name": "Visage spirituel"
-        },
-        "8010": {
           "games": 1,
           "wins": 0,
-          "name": "Malédiction du sanguinaire"
+          "name": "Sceptre de Rylai"
         }
       },
       "first_items": {
         "6653": {
-          "games": 2,
-          "wins": 1,
+          "games": 1,
+          "wins": 0,
           "name": "Tourment de Liandry"
-        },
-        "3116": {
-          "games": 2,
-          "wins": 1,
-          "name": "Sceptre de Rylai"
-        },
-        "4633": {
-          "games": 3,
-          "wins": 1,
-          "name": "Créateur de failles"
         }
       },
       "item_combos": {
         "3116_6653": {
-          "games": 2,
-          "wins": 1,
+          "games": 1,
+          "wins": 0,
           "items": [
             "Tourment de Liandry",
             "Sceptre de Rylai"
           ]
-        },
-        "3065_3116_4633": {
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
           "games": 1,
           "wins": 0,
-          "items": [
-            "Créateur de failles",
-            "Sceptre de Rylai",
-            "Visage spirituel"
-          ]
+          "name": "Spell"
         },
-        "3116_4633": {
+        "11": {
           "games": 1,
           "wins": 0,
-          "items": [
-            "Sceptre de Rylai",
-            "Créateur de failles"
-          ]
-        },
-        "3116_4633_6653": {
-          "games": 3,
-          "wins": 2,
-          "items": [
-            "Créateur de failles",
-            "Sceptre de Rylai",
-            "Tourment de Liandry"
-          ]
+          "name": "Spell"
         }
       }
     },
@@ -2946,6 +3164,19 @@
             "Éclipse"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
+        }
       }
     },
     "Jhin": {
@@ -2988,30 +3219,43 @@
             "Lame d'infini"
           ]
         }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        },
+        "7": {
+          "games": 1,
+          "wins": 0,
+          "name": "Spell"
+        }
       }
     },
     "Trundle": {
       "items": {
         "3074": {
-          "games": 3,
-          "wins": 1,
+          "games": 2,
+          "wins": 0,
           "name": "Hydre vorace"
         },
         "3153": {
-          "games": 5,
-          "wins": 3,
+          "games": 4,
+          "wins": 2,
           "name": "Lame du roi déchu"
         },
         "3078": {
-          "games": 3,
-          "wins": 3,
+          "games": 2,
+          "wins": 2,
           "name": "Force de la trinité"
         }
       },
       "first_items": {
         "3074": {
-          "games": 3,
-          "wins": 1,
+          "games": 2,
+          "wins": 0,
           "name": "Hydre vorace"
         },
         "3078": {
@@ -3036,20 +3280,48 @@
             "Force de la trinité",
             "Lame du roi déchu"
           ]
-        },
-        "3074_3078_3153": {
+        }
+      },
+      "runes": {},
+      "spells": {
+        "4": {
           "games": 1,
           "wins": 1,
-          "items": [
-            "Hydre vorace",
-            "Force de la trinité",
-            "Lame du roi déchu"
-          ]
+          "name": "Spell"
+        },
+        "11": {
+          "games": 1,
+          "wins": 1,
+          "name": "Spell"
         }
       }
     }
   },
   "phase_stats": {
+    "Darius": {
+      "early_wins": 7,
+      "mid_wins": 7,
+      "late_wins": 0,
+      "early_games": 10,
+      "mid_games": 10,
+      "late_games": 2,
+      "total_cs_per_min": 4.27707392853293,
+      "total_gold_per_min": 534.2328468820747,
+      "total_damage_share": 18.80699027998023,
+      "games_for_avg": 22
+    },
+    "Amumu": {
+      "early_wins": 0,
+      "mid_wins": 1,
+      "late_wins": 0,
+      "early_games": 0,
+      "mid_games": 1,
+      "late_games": 1,
+      "total_cs_per_min": 4.560561779710216,
+      "total_gold_per_min": 466.98503897130576,
+      "total_damage_share": 17.591535829952793,
+      "games_for_avg": 2
+    },
     "MonkeyKing": {
       "early_wins": 0,
       "mid_wins": 0,
@@ -3139,12 +3411,12 @@
       "mid_wins": 0,
       "late_wins": 0,
       "early_games": 1,
-      "mid_games": 1,
+      "mid_games": 0,
       "late_games": 0,
-      "total_cs_per_min": 6.440110573273991,
-      "total_gold_per_min": 377.5905274380609,
-      "total_damage_share": 11.116352248098877,
-      "games_for_avg": 2
+      "total_cs_per_min": 6.226834692364714,
+      "total_gold_per_min": 439.1252779836916,
+      "total_damage_share": 9.466896739624012,
+      "games_for_avg": 1
     },
     "Warwick": {
       "early_wins": 0,
@@ -3255,28 +3527,28 @@
       "games_for_avg": 3
     },
     "Nunu": {
-      "early_wins": 1,
-      "mid_wins": 3,
+      "early_wins": 0,
+      "mid_wins": 2,
       "late_wins": 0,
-      "early_games": 2,
-      "mid_games": 4,
+      "early_games": 0,
+      "mid_games": 2,
       "late_games": 0,
-      "total_cs_per_min": 3.420002954916793,
-      "total_gold_per_min": 401.8150121683227,
-      "total_damage_share": 21.003230452917638,
-      "games_for_avg": 6
+      "total_cs_per_min": 3.811287560028961,
+      "total_gold_per_min": 457.318507957728,
+      "total_damage_share": 22.377217041801643,
+      "games_for_avg": 2
     },
     "Jax": {
       "early_wins": 1,
-      "mid_wins": 2,
+      "mid_wins": 1,
       "late_wins": 0,
       "early_games": 2,
-      "mid_games": 2,
+      "mid_games": 1,
       "late_games": 0,
-      "total_cs_per_min": 3.338968588559652,
-      "total_gold_per_min": 485.8719467132861,
-      "total_damage_share": 14.979231332666107,
-      "games_for_avg": 4
+      "total_cs_per_min": 2.9689718306239747,
+      "total_gold_per_min": 452.12585954187256,
+      "total_damage_share": 15.361227533887325,
+      "games_for_avg": 3
     },
     "Garen": {
       "early_wins": 0,
@@ -3301,18 +3573,6 @@
       "total_gold_per_min": 510.72328256418507,
       "total_damage_share": 15.269872513527135,
       "games_for_avg": 2
-    },
-    "Darius": {
-      "early_wins": 4,
-      "mid_wins": 3,
-      "late_wins": 0,
-      "early_games": 6,
-      "mid_games": 4,
-      "late_games": 2,
-      "total_cs_per_min": 3.9934806260656512,
-      "total_gold_per_min": 506.87265206757485,
-      "total_damage_share": 18.62429042414549,
-      "games_for_avg": 12
     },
     "KSante": {
       "early_wins": 1,
@@ -3351,28 +3611,28 @@
       "games_for_avg": 1
     },
     "Aatrox": {
-      "early_wins": 2,
-      "mid_wins": 0,
-      "late_wins": 0,
-      "early_games": 4,
-      "mid_games": 0,
-      "late_games": 0,
-      "total_cs_per_min": 4.015716496392204,
-      "total_gold_per_min": 388.22569357945594,
-      "total_damage_share": 13.936364303640982,
-      "games_for_avg": 4
-    },
-    "Gwen": {
       "early_wins": 1,
       "mid_wins": 0,
       "late_wins": 0,
-      "early_games": 1,
+      "early_games": 2,
+      "mid_games": 0,
+      "late_games": 0,
+      "total_cs_per_min": 4.094891035077011,
+      "total_gold_per_min": 418.8730118838186,
+      "total_damage_share": 9.30144868515722,
+      "games_for_avg": 2
+    },
+    "Gwen": {
+      "early_wins": 0,
+      "mid_wins": 0,
+      "late_wins": 0,
+      "early_games": 0,
       "mid_games": 1,
-      "late_games": 1,
-      "total_cs_per_min": 4.2890276846340845,
-      "total_gold_per_min": 362.7028567108551,
-      "total_damage_share": 14.721101931482002,
-      "games_for_avg": 3
+      "late_games": 0,
+      "total_cs_per_min": 3.982300884955752,
+      "total_gold_per_min": 291.69405815423517,
+      "total_damage_share": 16.59035273525196,
+      "games_for_avg": 1
     },
     "Nautilus": {
       "early_wins": 0,
@@ -3386,29 +3646,17 @@
       "total_damage_share": 12.50662111734703,
       "games_for_avg": 1
     },
-    "Amumu": {
-      "early_wins": 0,
-      "mid_wins": 1,
-      "late_wins": 0,
-      "early_games": 0,
-      "mid_games": 1,
-      "late_games": 1,
-      "total_cs_per_min": 4.560561779710216,
-      "total_gold_per_min": 466.98503897130576,
-      "total_damage_share": 17.591535829952793,
-      "games_for_avg": 2
-    },
     "Mordekaiser": {
-      "early_wins": 2,
-      "mid_wins": 1,
+      "early_wins": 0,
+      "mid_wins": 0,
       "late_wins": 0,
-      "early_games": 4,
-      "mid_games": 3,
+      "early_games": 1,
+      "mid_games": 0,
       "late_games": 1,
-      "total_cs_per_min": 4.089115987534334,
-      "total_gold_per_min": 451.6972305287916,
-      "total_damage_share": 22.786371818704602,
-      "games_for_avg": 8
+      "total_cs_per_min": 4.278919267287458,
+      "total_gold_per_min": 250.24282729815337,
+      "total_damage_share": 21.606338373381348,
+      "games_for_avg": 2
     },
     "Naafiri": {
       "early_wins": 1,
@@ -3436,18 +3684,294 @@
     },
     "Trundle": {
       "early_wins": 0,
-      "mid_wins": 3,
+      "mid_wins": 2,
       "late_wins": 0,
       "early_games": 2,
-      "mid_games": 3,
+      "mid_games": 2,
       "late_games": 0,
-      "total_cs_per_min": 3.6360262817007416,
-      "total_gold_per_min": 434.9320698014488,
-      "total_damage_share": 17.153707418010704,
-      "games_for_avg": 5
+      "total_cs_per_min": 3.249645217189715,
+      "total_gold_per_min": 446.8863826394459,
+      "total_damage_share": 16.98471553339027,
+      "games_for_avg": 4
     }
   },
   "ally_synergies": {
+    "Darius+Chogath": {
+      "my_champ": "Darius",
+      "ally_champ": "Chogath",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius+Cassiopeia": {
+      "my_champ": "Darius",
+      "ally_champ": "Cassiopeia",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Jhin": {
+      "my_champ": "Darius",
+      "ally_champ": "Jhin",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius+Pantheon": {
+      "my_champ": "Darius",
+      "ally_champ": "Pantheon",
+      "games": 3,
+      "wins": 2
+    },
+    "Darius+Nasus": {
+      "my_champ": "Darius",
+      "ally_champ": "Nasus",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius+Lux": {
+      "my_champ": "Darius",
+      "ally_champ": "Lux",
+      "games": 7,
+      "wins": 5
+    },
+    "Darius+MissFortune": {
+      "my_champ": "Darius",
+      "ally_champ": "MissFortune",
+      "games": 5,
+      "wins": 2
+    },
+    "Darius+Shen": {
+      "my_champ": "Darius",
+      "ally_champ": "Shen",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Shaco": {
+      "my_champ": "Darius",
+      "ally_champ": "Shaco",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Zed": {
+      "my_champ": "Darius",
+      "ally_champ": "Zed",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius+Jinx": {
+      "my_champ": "Darius",
+      "ally_champ": "Jinx",
+      "games": 4,
+      "wins": 4
+    },
+    "Darius+Leona": {
+      "my_champ": "Darius",
+      "ally_champ": "Leona",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius+Mordekaiser": {
+      "my_champ": "Darius",
+      "ally_champ": "Mordekaiser",
+      "games": 4,
+      "wins": 2
+    },
+    "Darius+Caitlyn": {
+      "my_champ": "Darius",
+      "ally_champ": "Caitlyn",
+      "games": 4,
+      "wins": 2
+    },
+    "Darius+Zaahen": {
+      "my_champ": "Darius",
+      "ally_champ": "Zaahen",
+      "games": 3,
+      "wins": 2
+    },
+    "Darius+Vex": {
+      "my_champ": "Darius",
+      "ally_champ": "Vex",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Sylas": {
+      "my_champ": "Darius",
+      "ally_champ": "Sylas",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Malphite": {
+      "my_champ": "Darius",
+      "ally_champ": "Malphite",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Aurora": {
+      "my_champ": "Darius",
+      "ally_champ": "Aurora",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Zilean": {
+      "my_champ": "Darius",
+      "ally_champ": "Zilean",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Garen": {
+      "my_champ": "Darius",
+      "ally_champ": "Garen",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Ahri": {
+      "my_champ": "Darius",
+      "ally_champ": "Ahri",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius+Swain": {
+      "my_champ": "Darius",
+      "ally_champ": "Swain",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Ashe": {
+      "my_champ": "Darius",
+      "ally_champ": "Ashe",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Heimerdinger": {
+      "my_champ": "Darius",
+      "ally_champ": "Heimerdinger",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Aphelios": {
+      "my_champ": "Darius",
+      "ally_champ": "Aphelios",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Yone": {
+      "my_champ": "Darius",
+      "ally_champ": "Yone",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius+Orianna": {
+      "my_champ": "Darius",
+      "ally_champ": "Orianna",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius+Jax": {
+      "my_champ": "Darius",
+      "ally_champ": "Jax",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius+Milio": {
+      "my_champ": "Darius",
+      "ally_champ": "Milio",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius+Ambessa": {
+      "my_champ": "Darius",
+      "ally_champ": "Ambessa",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Neeko": {
+      "my_champ": "Darius",
+      "ally_champ": "Neeko",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius+Seraphine": {
+      "my_champ": "Darius",
+      "ally_champ": "Seraphine",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Yasuo": {
+      "my_champ": "Darius",
+      "ally_champ": "Yasuo",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius+Kalista": {
+      "my_champ": "Darius",
+      "ally_champ": "Kalista",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Teemo": {
+      "my_champ": "Darius",
+      "ally_champ": "Teemo",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Anivia": {
+      "my_champ": "Darius",
+      "ally_champ": "Anivia",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Zyra": {
+      "my_champ": "Darius",
+      "ally_champ": "Zyra",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+KogMaw": {
+      "my_champ": "Darius",
+      "ally_champ": "KogMaw",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius+Ekko": {
+      "my_champ": "Darius",
+      "ally_champ": "Ekko",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+Warwick": {
+      "my_champ": "Darius",
+      "ally_champ": "Warwick",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius+TwistedFate": {
+      "my_champ": "Darius",
+      "ally_champ": "TwistedFate",
+      "games": 1,
+      "wins": 1
+    },
+    "Amumu+Sett": {
+      "my_champ": "Amumu",
+      "ally_champ": "Sett",
+      "games": 1,
+      "wins": 0
+    },
+    "Amumu+Ahri": {
+      "my_champ": "Amumu",
+      "ally_champ": "Ahri",
+      "games": 1,
+      "wins": 0
+    },
+    "Amumu+Jinx": {
+      "my_champ": "Amumu",
+      "ally_champ": "Jinx",
+      "games": 1,
+      "wins": 0
+    },
+    "Amumu+Seraphine": {
+      "my_champ": "Amumu",
+      "ally_champ": "Seraphine",
+      "games": 1,
+      "wins": 0
+    },
     "MonkeyKing+Sett": {
       "my_champ": "MonkeyKing",
       "ally_champ": "Sett",
@@ -4279,8 +4803,8 @@
     "Nunu+Jinx": {
       "my_champ": "Nunu",
       "ally_champ": "Jinx",
-      "games": 2,
-      "wins": 2
+      "games": 1,
+      "wins": 1
     },
     "Nunu+Brand": {
       "my_champ": "Nunu",
@@ -4486,18 +5010,6 @@
       "games": 1,
       "wins": 1
     },
-    "Darius+Caitlyn": {
-      "my_champ": "Darius",
-      "ally_champ": "Caitlyn",
-      "games": 3,
-      "wins": 2
-    },
-    "Darius+Pantheon": {
-      "my_champ": "Darius",
-      "ally_champ": "Pantheon",
-      "games": 1,
-      "wins": 1
-    },
     "Nasus+Garen": {
       "my_champ": "Nasus",
       "ally_champ": "Garen",
@@ -4615,14 +5127,14 @@
     "Aatrox+Warwick": {
       "my_champ": "Aatrox",
       "ally_champ": "Warwick",
-      "games": 2,
+      "games": 1,
       "wins": 1
     },
     "Aatrox+Yasuo": {
       "my_champ": "Aatrox",
       "ally_champ": "Yasuo",
-      "games": 2,
-      "wins": 2
+      "games": 1,
+      "wins": 1
     },
     "Aatrox+Mel": {
       "my_champ": "Aatrox",
@@ -4948,12 +5460,6 @@
       "games": 1,
       "wins": 0
     },
-    "Darius+MissFortune": {
-      "my_champ": "Darius",
-      "ally_champ": "MissFortune",
-      "games": 3,
-      "wins": 0
-    },
     "Darius+TahmKench": {
       "my_champ": "Darius",
       "ally_champ": "TahmKench",
@@ -5008,16 +5514,10 @@
       "games": 1,
       "wins": 1
     },
-    "Darius+Yasuo": {
-      "my_champ": "Darius",
-      "ally_champ": "Yasuo",
-      "games": 2,
-      "wins": 2
-    },
     "Darius+Twitch": {
       "my_champ": "Darius",
       "ally_champ": "Twitch",
-      "games": 1,
+      "games": 2,
       "wins": 1
     },
     "Darius+Poppy": {
@@ -5025,12 +5525,6 @@
       "ally_champ": "Poppy",
       "games": 1,
       "wins": 1
-    },
-    "Darius+Nasus": {
-      "my_champ": "Darius",
-      "ally_champ": "Nasus",
-      "games": 1,
-      "wins": 0
     },
     "Darius+Lissandra": {
       "my_champ": "Darius",
@@ -5043,12 +5537,6 @@
       "ally_champ": "Ezreal",
       "games": 1,
       "wins": 0
-    },
-    "Darius+Neeko": {
-      "my_champ": "Darius",
-      "ally_champ": "Neeko",
-      "games": 2,
-      "wins": 1
     },
     "Nunu+Kennen": {
       "my_champ": "Nunu",
@@ -5095,7 +5583,7 @@
     "Mordekaiser+Mel": {
       "my_champ": "Mordekaiser",
       "ally_champ": "Mel",
-      "games": 2,
+      "games": 1,
       "wins": 0
     },
     "Naafiri+Garen": {
@@ -5263,8 +5751,8 @@
     "Trundle+Samira": {
       "my_champ": "Trundle",
       "ally_champ": "Samira",
-      "games": 2,
-      "wins": 2
+      "games": 1,
+      "wins": 1
     },
     "Trundle+Sona": {
       "my_champ": "Trundle",
@@ -5296,1815 +5784,123 @@
       "games": 1,
       "wins": 1
     },
-    "Nunu+Sett": {
-      "my_champ": "Nunu",
-      "ally_champ": "Sett",
-      "games": 2,
-      "wins": 1
-    },
-    "Nunu+Vladimir": {
-      "my_champ": "Nunu",
-      "ally_champ": "Vladimir",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu+Ezreal": {
-      "my_champ": "Nunu",
-      "ally_champ": "Ezreal",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu+Bard": {
-      "my_champ": "Nunu",
-      "ally_champ": "Bard",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu+AurelionSol": {
-      "my_champ": "Nunu",
-      "ally_champ": "AurelionSol",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu+Seraphine": {
-      "my_champ": "Nunu",
-      "ally_champ": "Seraphine",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox+Evelynn": {
-      "my_champ": "Aatrox",
-      "ally_champ": "Evelynn",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox+Ziggs": {
-      "my_champ": "Aatrox",
-      "ally_champ": "Ziggs",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox+Xerath": {
-      "my_champ": "Aatrox",
-      "ally_champ": "Xerath",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+Warwick": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Warwick",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+Fizz": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Fizz",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+MissFortune": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "MissFortune",
-      "games": 2,
-      "wins": 1
-    },
-    "Mordekaiser+Nidalee": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Nidalee",
-      "games": 1,
-      "wins": 1
-    },
-    "Trundle+Diana": {
-      "my_champ": "Trundle",
-      "ally_champ": "Diana",
-      "games": 1,
-      "wins": 1
-    },
-    "Trundle+Yone": {
-      "my_champ": "Trundle",
-      "ally_champ": "Yone",
-      "games": 1,
-      "wins": 1
-    },
-    "Trundle+Morgana": {
-      "my_champ": "Trundle",
-      "ally_champ": "Morgana",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox+Heimerdinger": {
-      "my_champ": "Aatrox",
-      "ally_champ": "Heimerdinger",
-      "games": 1,
-      "wins": 0
-    },
-    "Aatrox+Ezreal": {
-      "my_champ": "Aatrox",
-      "ally_champ": "Ezreal",
-      "games": 1,
-      "wins": 0
-    },
-    "Aatrox+Poppy": {
-      "my_champ": "Aatrox",
-      "ally_champ": "Poppy",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar+Kayn": {
-      "my_champ": "Veigar",
-      "ally_champ": "Kayn",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar+Leblanc": {
-      "my_champ": "Veigar",
-      "ally_champ": "Leblanc",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar+Samira": {
-      "my_champ": "Veigar",
-      "ally_champ": "Samira",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar+Neeko": {
-      "my_champ": "Veigar",
-      "ally_champ": "Neeko",
-      "games": 1,
-      "wins": 0
-    },
-    "Jax+Vladimir": {
-      "my_champ": "Jax",
-      "ally_champ": "Vladimir",
-      "games": 1,
-      "wins": 1
-    },
-    "Jax+Yone": {
-      "my_champ": "Jax",
-      "ally_champ": "Yone",
-      "games": 1,
-      "wins": 1
-    },
-    "Jax+Hwei": {
-      "my_champ": "Jax",
-      "ally_champ": "Hwei",
-      "games": 1,
-      "wins": 1
-    },
-    "Jax+Amumu": {
-      "my_champ": "Jax",
-      "ally_champ": "Amumu",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+Gwen": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Gwen",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser+Morgana": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Morgana",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser+Teemo": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Teemo",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser+TahmKench": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "TahmKench",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser+Heimerdinger": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Heimerdinger",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser+Jhin": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Jhin",
-      "games": 2,
-      "wins": 1
-    },
-    "Mordekaiser+Pyke": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Pyke",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser+Pantheon": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Pantheon",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser+Veigar": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Veigar",
-      "games": 2,
-      "wins": 1
-    },
-    "Mordekaiser+Neeko": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Neeko",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser+Tryndamere": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Tryndamere",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+Seraphine": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Seraphine",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+Kled": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Kled",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+Caitlyn": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Caitlyn",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+Kaisa": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Kaisa",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser+Sona": {
-      "my_champ": "Mordekaiser",
-      "ally_champ": "Sona",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen+Yorick": {
-      "my_champ": "Gwen",
-      "ally_champ": "Yorick",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen+Aurora": {
-      "my_champ": "Gwen",
-      "ally_champ": "Aurora",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen+Ezreal": {
-      "my_champ": "Gwen",
-      "ally_champ": "Ezreal",
-      "games": 2,
-      "wins": 1
-    },
-    "Gwen+Neeko": {
-      "my_champ": "Gwen",
-      "ally_champ": "Neeko",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu+Belveth": {
-      "my_champ": "Nunu",
-      "ally_champ": "Belveth",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu+Yasuo": {
-      "my_champ": "Nunu",
-      "ally_champ": "Yasuo",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu+TahmKench": {
-      "my_champ": "Nunu",
-      "ally_champ": "TahmKench",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu+Chogath": {
-      "my_champ": "Nunu",
-      "ally_champ": "Chogath",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen+Mordekaiser": {
-      "my_champ": "Gwen",
-      "ally_champ": "Mordekaiser",
-      "games": 1,
-      "wins": 0
-    },
-    "Gwen+Viktor": {
-      "my_champ": "Gwen",
-      "ally_champ": "Viktor",
-      "games": 1,
-      "wins": 0
-    },
-    "Gwen+Zyra": {
-      "my_champ": "Gwen",
-      "ally_champ": "Zyra",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu+KSante": {
-      "my_champ": "Nunu",
-      "ally_champ": "KSante",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu+Lucian": {
-      "my_champ": "Nunu",
-      "ally_champ": "Lucian",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu+Caitlyn": {
-      "my_champ": "Nunu",
-      "ally_champ": "Caitlyn",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu+Graves": {
-      "my_champ": "Nunu",
-      "ally_champ": "Graves",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu+Sett": {
-      "my_champ": "Amumu",
-      "ally_champ": "Sett",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu+Ahri": {
-      "my_champ": "Amumu",
-      "ally_champ": "Ahri",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu+Jinx": {
-      "my_champ": "Amumu",
-      "ally_champ": "Jinx",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu+Seraphine": {
-      "my_champ": "Amumu",
-      "ally_champ": "Seraphine",
-      "games": 1,
-      "wins": 0
-    },
-    "Darius+Zaahen": {
+    "Darius+Zoe": {
       "my_champ": "Darius",
-      "ally_champ": "Zaahen",
-      "games": 2,
-      "wins": 1
-    },
-    "Darius+Ekko": {
-      "my_champ": "Darius",
-      "ally_champ": "Ekko",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+Warwick": {
-      "my_champ": "Darius",
-      "ally_champ": "Warwick",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+TwistedFate": {
-      "my_champ": "Darius",
-      "ally_champ": "TwistedFate",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+KogMaw": {
-      "my_champ": "Darius",
-      "ally_champ": "KogMaw",
+      "ally_champ": "Zoe",
       "games": 1,
       "wins": 0
-    },
-    "Darius+Lux": {
-      "my_champ": "Darius",
-      "ally_champ": "Lux",
-      "games": 4,
-      "wins": 3
-    },
-    "Darius+Jax": {
-      "my_champ": "Darius",
-      "ally_champ": "Jax",
-      "games": 1,
-      "wins": 0
-    },
-    "Darius+Ahri": {
-      "my_champ": "Darius",
-      "ally_champ": "Ahri",
-      "games": 1,
-      "wins": 0
-    },
-    "Darius+Milio": {
-      "my_champ": "Darius",
-      "ally_champ": "Milio",
-      "games": 1,
-      "wins": 0
-    },
-    "Darius+Ambessa": {
-      "my_champ": "Darius",
-      "ally_champ": "Ambessa",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+Jinx": {
-      "my_champ": "Darius",
-      "ally_champ": "Jinx",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+Seraphine": {
-      "my_champ": "Darius",
-      "ally_champ": "Seraphine",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+Mordekaiser": {
-      "my_champ": "Darius",
-      "ally_champ": "Mordekaiser",
-      "games": 2,
-      "wins": 2
-    },
-    "Darius+Kalista": {
-      "my_champ": "Darius",
-      "ally_champ": "Kalista",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+Teemo": {
-      "my_champ": "Darius",
-      "ally_champ": "Teemo",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+Anivia": {
-      "my_champ": "Darius",
-      "ally_champ": "Anivia",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+Jhin": {
-      "my_champ": "Darius",
-      "ally_champ": "Jhin",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius+Zyra": {
-      "my_champ": "Darius",
-      "ally_champ": "Zyra",
-      "games": 1,
-      "wins": 1
     }
   },
   "recent_games": [
     {
-      "match_id": "EUW1_7603411335",
-      "champion": "Kayn",
-      "won": true,
-      "kda": 2.89,
-      "cs_per_min": 3.6,
-      "damage_share": 17.3,
-      "duration": 32.2,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.486424",
-      "kills": 8,
-      "deaths": 9,
-      "assists": 18
-    },
-    {
-      "match_id": "EUW1_7597737263",
-      "champion": "Nasus",
-      "won": false,
-      "kda": 0.88,
-      "cs_per_min": 2.7,
-      "damage_share": 22.3,
-      "duration": 31.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.486639",
-      "kills": 5,
-      "deaths": 17,
-      "assists": 10
-    },
-    {
-      "match_id": "EUW1_7597703246",
-      "champion": "Nasus",
-      "won": true,
-      "kda": 1.75,
-      "cs_per_min": 4.5,
-      "damage_share": 13.9,
-      "duration": 19.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.486832",
-      "kills": 5,
-      "deaths": 4,
-      "assists": 2
-    },
-    {
-      "match_id": "EUW1_7597471486",
-      "champion": "XinZhao",
-      "won": false,
-      "kda": 1.64,
-      "cs_per_min": 2.7,
-      "damage_share": 23.1,
-      "duration": 27.7,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.487044",
-      "kills": 7,
-      "deaths": 11,
-      "assists": 11
-    },
-    {
-      "match_id": "EUW1_7596831339",
-      "champion": "XinZhao",
-      "won": true,
-      "kda": 9.0,
-      "cs_per_min": 4.4,
-      "damage_share": 16.2,
-      "duration": 22.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.487240",
-      "kills": 7,
-      "deaths": 2,
-      "assists": 11
-    },
-    {
-      "match_id": "EUW1_7596760891",
-      "champion": "XinZhao",
-      "won": false,
-      "kda": 1.46,
-      "cs_per_min": 3.6,
-      "damage_share": 18.4,
-      "duration": 35.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.487424",
-      "kills": 4,
-      "deaths": 13,
-      "assists": 15
-    },
-    {
-      "match_id": "EUW1_7596695218",
-      "champion": "XinZhao",
-      "won": true,
-      "kda": 6.0,
-      "cs_per_min": 4.2,
-      "damage_share": 20.7,
-      "duration": 20.5,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.487605",
-      "kills": 8,
-      "deaths": 2,
-      "assists": 4
-    },
-    {
-      "match_id": "EUW1_7590409644",
-      "champion": "Teemo",
-      "won": true,
-      "kda": 2.5,
-      "cs_per_min": 4.8,
-      "damage_share": 22.3,
-      "duration": 35.5,
-      "role": "TOP",
-      "date": "2025-11-25T16:29:21.487794",
-      "kills": 4,
-      "deaths": 6,
-      "assists": 11
-    },
-    {
-      "match_id": "EUW1_7590362007",
-      "champion": "Veigar",
-      "won": false,
-      "kda": 0.5,
-      "cs_per_min": 6.2,
-      "damage_share": 9.5,
-      "duration": 22.5,
-      "role": "TOP",
-      "date": "2025-11-25T16:29:21.487980",
-      "kills": 0,
-      "deaths": 2,
-      "assists": 1
-    },
-    {
-      "match_id": "EUW1_7590096119",
-      "champion": "Warwick",
-      "won": true,
-      "kda": 1.27,
-      "cs_per_min": 3.7,
-      "damage_share": 14.6,
-      "duration": 29.6,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.488178",
-      "kills": 5,
-      "deaths": 11,
-      "assists": 9
-    },
-    {
-      "match_id": "EUW1_7590085221",
-      "champion": "Warwick",
-      "won": false,
-      "kda": 0.0,
-      "cs_per_min": 0.0,
-      "damage_share": 0.0,
-      "duration": 1.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.488340",
-      "kills": 0,
-      "deaths": 0,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7589966502",
-      "champion": "Warwick",
-      "won": true,
-      "kda": 5.75,
-      "cs_per_min": 3.7,
-      "damage_share": 28.6,
-      "duration": 37.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.488607",
-      "kills": 28,
-      "deaths": 8,
-      "assists": 18
-    },
-    {
-      "match_id": "EUW1_7589882412",
-      "champion": "DrMundo",
-      "won": false,
-      "kda": 1.71,
-      "cs_per_min": 3.8,
-      "damage_share": 25.4,
-      "duration": 27.3,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.488803",
-      "kills": 2,
-      "deaths": 7,
-      "assists": 10
-    },
-    {
-      "match_id": "EUW1_7589864405",
-      "champion": "Kayn",
-      "won": false,
-      "kda": 0.5,
-      "cs_per_min": 4.7,
-      "damage_share": 15.1,
-      "duration": 9.5,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.488979",
-      "kills": 1,
-      "deaths": 2,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7589831872",
-      "champion": "Nasus",
-      "won": false,
-      "kda": 0.44,
-      "cs_per_min": 4.3,
-      "damage_share": 22.1,
-      "duration": 26.7,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.489228",
-      "kills": 2,
-      "deaths": 9,
-      "assists": 2
-    },
-    {
-      "match_id": "EUW1_7589302514",
-      "champion": "Nasus",
-      "won": false,
-      "kda": 1.4,
-      "cs_per_min": 3.5,
-      "damage_share": 40.4,
-      "duration": 22.0,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.489426",
-      "kills": 9,
-      "deaths": 10,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7589089429",
-      "champion": "Vi",
-      "won": true,
-      "kda": 1.25,
-      "cs_per_min": 3.5,
-      "damage_share": 17.6,
-      "duration": 26.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.489635",
-      "kills": 2,
-      "deaths": 8,
-      "assists": 8
-    },
-    {
-      "match_id": "EUW1_7588860296",
-      "champion": "Malphite",
-      "won": true,
-      "kda": 4.67,
-      "cs_per_min": 4.6,
-      "damage_share": 16.6,
-      "duration": 19.2,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.489853",
-      "kills": 6,
-      "deaths": 3,
-      "assists": 8
-    },
-    {
-      "match_id": "EUW1_7588221482",
-      "champion": "Malphite",
-      "won": true,
-      "kda": 2.44,
-      "cs_per_min": 4.2,
-      "damage_share": 16.7,
-      "duration": 31.1,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.490079",
-      "kills": 11,
-      "deaths": 9,
-      "assists": 11
-    },
-    {
-      "match_id": "EUW1_7588208656",
-      "champion": "Malphite",
-      "won": false,
-      "kda": 0.0,
-      "cs_per_min": 0.0,
-      "damage_share": 0,
-      "duration": 1.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.490292",
-      "kills": 0,
-      "deaths": 0,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7588160151",
-      "champion": "Malphite",
-      "won": false,
-      "kda": 2.0,
-      "cs_per_min": 3.6,
-      "damage_share": 23.9,
-      "duration": 26.6,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.490498",
-      "kills": 10,
-      "deaths": 10,
-      "assists": 10
-    },
-    {
-      "match_id": "EUW1_7588083973",
-      "champion": "Sylas",
-      "won": false,
-      "kda": 0.23,
-      "cs_per_min": 2.5,
-      "damage_share": 9.7,
-      "duration": 34.6,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:29:21.490681",
-      "kills": 2,
-      "deaths": 13,
-      "assists": 1
-    },
-    {
-      "match_id": "EUW1_7588035652",
-      "champion": "XinZhao",
-      "won": false,
-      "kda": 2.14,
-      "cs_per_min": 4.2,
-      "damage_share": 32.3,
-      "duration": 30.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.142775",
-      "kills": 9,
-      "deaths": 7,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7586588818",
-      "champion": "XinZhao",
-      "won": true,
-      "kda": 2.25,
-      "cs_per_min": 4.5,
-      "damage_share": 21.8,
-      "duration": 16.3,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.143175",
-      "kills": 3,
-      "deaths": 4,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7585364558",
-      "champion": "Viego",
-      "won": false,
-      "kda": 0.5,
-      "cs_per_min": 3.7,
-      "damage_share": 10.2,
-      "duration": 40.7,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.143440",
-      "kills": 2,
-      "deaths": 16,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7577122942",
-      "champion": "Morgana",
-      "won": true,
-      "kda": 2.14,
-      "cs_per_min": 4.1,
-      "damage_share": 31.3,
-      "duration": 31.7,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.143723",
-      "kills": 8,
-      "deaths": 7,
-      "assists": 7
-    },
-    {
-      "match_id": "EUW1_7577080368",
-      "champion": "Pantheon",
-      "won": true,
-      "kda": 2.0,
-      "cs_per_min": 2.2,
-      "damage_share": 24.1,
-      "duration": 26.3,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.143936",
-      "kills": 11,
-      "deaths": 7,
-      "assists": 3
-    },
-    {
-      "match_id": "EUW1_7576301823",
-      "champion": "Briar",
-      "won": false,
-      "kda": 1.33,
-      "cs_per_min": 3.9,
-      "damage_share": 42.5,
-      "duration": 15.3,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.144139",
-      "kills": 4,
-      "deaths": 6,
-      "assists": 4
-    },
-    {
-      "match_id": "EUW1_7576250328",
-      "champion": "Nunu",
-      "won": true,
-      "kda": 1.0,
-      "cs_per_min": 3.5,
-      "damage_share": 29.6,
-      "duration": 27.0,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.144316",
-      "kills": 8,
-      "deaths": 9,
-      "assists": 1
-    },
-    {
-      "match_id": "EUW1_7575200477",
-      "champion": "Briar",
-      "won": true,
-      "kda": 2.0,
-      "cs_per_min": 3.6,
-      "damage_share": 17.3,
-      "duration": 31.1,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.144514",
-      "kills": 8,
-      "deaths": 9,
-      "assists": 10
-    },
-    {
-      "match_id": "EUW1_7575154465",
-      "champion": "Briar",
-      "won": false,
-      "kda": 0.86,
-      "cs_per_min": 3.5,
-      "damage_share": 23.2,
-      "duration": 20.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.144683",
-      "kills": 6,
-      "deaths": 7,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7574928648",
-      "champion": "Jax",
-      "won": true,
-      "kda": 3.17,
-      "cs_per_min": 3.8,
-      "damage_share": 29.6,
-      "duration": 25.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.144921",
-      "kills": 14,
-      "deaths": 6,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7574915384",
-      "champion": "Jax",
-      "won": true,
-      "kda": 0.0,
-      "cs_per_min": 2.0,
-      "damage_share": 0.0,
-      "duration": 2.0,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.145103",
-      "kills": 0,
-      "deaths": 0,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7574738052",
-      "champion": "Jax",
-      "won": false,
-      "kda": 0.33,
-      "cs_per_min": 3.1,
-      "damage_share": 16.5,
-      "duration": 18.1,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.145260",
-      "kills": 1,
-      "deaths": 9,
-      "assists": 2
-    },
-    {
-      "match_id": "EUW1_7574048704",
-      "champion": "DrMundo",
-      "won": true,
-      "kda": 3.75,
-      "cs_per_min": 4.5,
-      "damage_share": 20.9,
-      "duration": 23.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.145427",
-      "kills": 6,
-      "deaths": 4,
-      "assists": 9
-    },
-    {
-      "match_id": "EUW1_7573995186",
-      "champion": "Garen",
-      "won": false,
-      "kda": 3.2,
-      "cs_per_min": 4.7,
-      "damage_share": 28.1,
-      "duration": 25.6,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.145596",
-      "kills": 10,
-      "deaths": 5,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7573758620",
-      "champion": "Diana",
-      "won": false,
-      "kda": 1.33,
-      "cs_per_min": 3.7,
-      "damage_share": 28.7,
-      "duration": 16.3,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.145752",
-      "kills": 3,
-      "deaths": 6,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7573712158",
+      "match_id": "EUW1_7631440567",
       "champion": "Darius",
       "won": true,
-      "kda": 1.83,
-      "cs_per_min": 4.2,
-      "damage_share": 12.7,
-      "duration": 22.7,
+      "kda": 1.11,
+      "cs_per_min": 4.3,
+      "damage_share": 13.7,
+      "duration": 31.9,
       "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.145909",
+      "date": "2025-12-14T10:06:19.585088",
       "kills": 4,
+      "deaths": 9,
+      "assists": 6
+    },
+    {
+      "match_id": "EUW1_7631396476",
+      "champion": "Darius",
+      "won": true,
+      "kda": 20.0,
+      "cs_per_min": 5.4,
+      "damage_share": 25.3,
+      "duration": 23.0,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.585327",
+      "kills": 13,
+      "deaths": 1,
+      "assists": 7
+    },
+    {
+      "match_id": "EUW1_7631365499",
+      "champion": "Darius",
+      "won": false,
+      "kda": 0.67,
+      "cs_per_min": 4.9,
+      "damage_share": 13.2,
+      "duration": 16.1,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.585557",
+      "kills": 3,
       "deaths": 6,
-      "assists": 7
+      "assists": 1
     },
     {
-      "match_id": "EUW1_7573358523",
-      "champion": "Nasus",
-      "won": false,
-      "kda": 2.88,
-      "cs_per_min": 4.3,
-      "damage_share": 22.7,
-      "duration": 30.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.146073",
-      "kills": 9,
-      "deaths": 8,
-      "assists": 14
-    },
-    {
-      "match_id": "EUW1_7573337428",
-      "champion": "KSante",
+      "match_id": "EUW1_7630977821",
+      "champion": "Darius",
       "won": true,
-      "kda": 0.0,
-      "cs_per_min": 4.1,
-      "damage_share": 7.1,
-      "duration": 8.6,
+      "kda": 12.0,
+      "cs_per_min": 5.9,
+      "damage_share": 16.1,
+      "duration": 19.5,
       "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.146230",
-      "kills": 0,
-      "deaths": 2,
-      "assists": 0
+      "date": "2025-12-14T10:06:19.585836",
+      "kills": 7,
+      "deaths": 1,
+      "assists": 5
     },
     {
-      "match_id": "EUW1_7573264822",
-      "champion": "Chogath",
+      "match_id": "EUW1_7630892483",
+      "champion": "Darius",
       "won": true,
-      "kda": 1.75,
-      "cs_per_min": 4.2,
-      "damage_share": 14.6,
-      "duration": 19.2,
+      "kda": 2.43,
+      "cs_per_min": 4.5,
+      "damage_share": 23.3,
+      "duration": 27.8,
       "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.146387",
-      "kills": 4,
-      "deaths": 4,
-      "assists": 3
-    },
-    {
-      "match_id": "EUW1_7573229286",
-      "champion": "Chogath",
-      "won": true,
-      "kda": 2.86,
-      "cs_per_min": 3.9,
-      "damage_share": 19.0,
-      "duration": 29.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.146548",
+      "date": "2025-12-14T10:06:19.586100",
       "kills": 8,
-      "deaths": 7,
-      "assists": 12
-    },
-    {
-      "match_id": "EUW1_7558438467",
-      "champion": "Illaoi",
-      "won": false,
-      "kda": 1.57,
-      "cs_per_min": 4.3,
-      "damage_share": 31.2,
-      "duration": 25.1,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.146707",
-      "kills": 9,
-      "deaths": 7,
-      "assists": 2
-    },
-    {
-      "match_id": "EUW1_7558403917",
-      "champion": "Aatrox",
-      "won": true,
-      "kda": 4.0,
-      "cs_per_min": 6.0,
-      "damage_share": 15.1,
-      "duration": 17.3,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.146862",
-      "kills": 0,
-      "deaths": 0,
-      "assists": 4
-    },
-    {
-      "match_id": "EUW1_7558396597",
-      "champion": "Aatrox",
-      "won": false,
-      "kda": 0.0,
-      "cs_per_min": 2.2,
-      "damage_share": 3.6,
-      "duration": 2.7,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.147002",
-      "kills": 0,
-      "deaths": 0,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7529295520",
-      "champion": "Kayn",
-      "won": true,
-      "kda": 1.38,
-      "cs_per_min": 3.7,
-      "damage_share": 21.2,
-      "duration": 22.1,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.147158",
-      "kills": 4,
-      "deaths": 8,
-      "assists": 7
-    },
-    {
-      "match_id": "EUW1_7529285312",
-      "champion": "Kayn",
-      "won": false,
-      "kda": 0.0,
-      "cs_per_min": 5.0,
-      "damage_share": 0.0,
-      "duration": 3.2,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.147290",
-      "kills": 0,
-      "deaths": 0,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7528832077",
-      "champion": "Kayn",
-      "won": true,
-      "kda": 2.14,
-      "cs_per_min": 3.8,
-      "damage_share": 21.3,
-      "duration": 25.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.147491",
-      "kills": 6,
       "deaths": 7,
       "assists": 9
     },
     {
-      "match_id": "EUW1_7528474209",
-      "champion": "Kayn",
+      "match_id": "EUW1_7630847255",
+      "champion": "Darius",
       "won": true,
-      "kda": 1.83,
-      "cs_per_min": 4.1,
-      "damage_share": 16.8,
-      "duration": 38.4,
+      "kda": 5.25,
+      "cs_per_min": 5.3,
+      "damage_share": 22.7,
+      "duration": 22.6,
       "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.147715",
-      "kills": 7,
-      "deaths": 12,
-      "assists": 15
+      "date": "2025-12-14T10:06:19.586337",
+      "kills": 14,
+      "deaths": 4,
+      "assists": 7
     },
     {
-      "match_id": "EUW1_7528461482",
-      "champion": "Kayn",
+      "match_id": "EUW1_7630191503",
+      "champion": "Darius",
       "won": true,
-      "kda": 3.0,
-      "cs_per_min": 5.2,
-      "damage_share": 11.1,
-      "duration": 8.6,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.147885",
-      "kills": 3,
-      "deaths": 1,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7528409983",
-      "champion": "Gwen",
-      "won": false,
-      "kda": 0.55,
-      "cs_per_min": 4.0,
-      "damage_share": 16.6,
-      "duration": 26.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.148340",
-      "kills": 1,
-      "deaths": 11,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7528361544",
-      "champion": "Nautilus",
-      "won": true,
-      "kda": 1.27,
+      "kda": 3.57,
       "cs_per_min": 3.9,
-      "damage_share": 12.5,
-      "duration": 38.6,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.148528",
-      "kills": 2,
-      "deaths": 11,
-      "assists": 12
-    },
-    {
-      "match_id": "EUW1_7528317216",
-      "champion": "Pantheon",
-      "won": false,
-      "kda": 1.0,
-      "cs_per_min": 3.3,
-      "damage_share": 16.2,
-      "duration": 25.2,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.148679",
-      "kills": 9,
-      "deaths": 10,
-      "assists": 1
-    },
-    {
-      "match_id": "EUW1_7527789704",
-      "champion": "Pantheon",
-      "won": false,
-      "kda": 1.14,
-      "cs_per_min": 3.1,
-      "damage_share": 17.6,
+      "damage_share": 17.2,
       "duration": 26.8,
       "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.148833",
-      "kills": 2,
-      "deaths": 7,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7527718571",
-      "champion": "Pantheon",
-      "won": true,
-      "kda": 4.5,
-      "cs_per_min": 4.1,
-      "damage_share": 13.6,
-      "duration": 18.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.148977",
-      "kills": 6,
-      "deaths": 2,
-      "assists": 3
-    },
-    {
-      "match_id": "EUW1_7458419416",
-      "champion": "Diana",
-      "won": true,
-      "kda": 0.0,
-      "cs_per_min": 0.6,
-      "damage_share": 1.8,
-      "duration": 27.3,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.149111",
-      "kills": 0,
-      "deaths": 0,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7446143483",
-      "champion": "Nasus",
-      "won": false,
-      "kda": 0.75,
-      "cs_per_min": 4.6,
-      "damage_share": 12.4,
-      "duration": 28.5,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.149259",
-      "kills": 2,
-      "deaths": 8,
-      "assists": 4
-    },
-    {
-      "match_id": "EUW1_7446116095",
-      "champion": "Nasus",
-      "won": true,
-      "kda": 3.5,
-      "cs_per_min": 4.9,
-      "damage_share": 13.9,
-      "duration": 15.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.149412",
-      "kills": 3,
-      "deaths": 2,
-      "assists": 4
-    },
-    {
-      "match_id": "EUW1_7446079291",
-      "champion": "Amumu",
-      "won": true,
-      "kda": 3.0,
-      "cs_per_min": 5.5,
-      "damage_share": 15.8,
-      "duration": 30.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.149581",
-      "kills": 5,
-      "deaths": 5,
-      "assists": 10
-    },
-    {
-      "match_id": "EUW1_7445905129",
-      "champion": "Darius",
-      "won": false,
-      "kda": 1.27,
-      "cs_per_min": 3.3,
-      "damage_share": 13.1,
-      "duration": 32.9,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.149741",
-      "kills": 8,
-      "deaths": 11,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7444695218",
-      "champion": "Darius",
-      "won": false,
-      "kda": 1.62,
-      "cs_per_min": 3.8,
-      "damage_share": 19.2,
-      "duration": 35.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.149887",
-      "kills": 10,
-      "deaths": 13,
-      "assists": 11
-    },
-    {
-      "match_id": "EUW1_7444686784",
-      "champion": "Mordekaiser",
-      "won": false,
-      "kda": 0.0,
-      "cs_per_min": 4.5,
-      "damage_share": 28.1,
-      "duration": 15.2,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.150031",
-      "kills": 0,
-      "deaths": 2,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7444196832",
-      "champion": "Darius",
-      "won": true,
-      "kda": 2.6,
-      "cs_per_min": 4.4,
-      "damage_share": 13.6,
-      "duration": 28.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.150175",
-      "kills": 9,
-      "deaths": 5,
-      "assists": 4
-    },
-    {
-      "match_id": "EUW1_7444142686",
-      "champion": "Darius",
-      "won": false,
-      "kda": 1.71,
-      "cs_per_min": 3.4,
-      "damage_share": 16.4,
-      "duration": 36.0,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.150324",
-      "kills": 8,
-      "deaths": 14,
-      "assists": 16
-    },
-    {
-      "match_id": "EUW1_7443954454",
-      "champion": "Nunu",
-      "won": true,
-      "kda": 9.67,
-      "cs_per_min": 4.1,
-      "damage_share": 15.1,
-      "duration": 34.1,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.150505",
-      "kills": 7,
-      "deaths": 3,
-      "assists": 22
-    },
-    {
-      "match_id": "EUW1_7393425622",
-      "champion": "Mordekaiser",
-      "won": false,
-      "kda": 0.55,
-      "cs_per_min": 4.1,
-      "damage_share": 15.2,
-      "duration": 37.0,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.150685",
-      "kills": 1,
-      "deaths": 11,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7393373774",
-      "champion": "Naafiri",
-      "won": false,
-      "kda": 0.64,
-      "cs_per_min": 5.1,
-      "damage_share": 15.3,
-      "duration": 35.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.150854",
-      "kills": 2,
-      "deaths": 11,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7392186720",
-      "champion": "Naafiri",
-      "won": true,
-      "kda": 2.67,
-      "cs_per_min": 5.5,
-      "damage_share": 16.9,
-      "duration": 26.6,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.151003",
-      "kills": 6,
-      "deaths": 6,
-      "assists": 10
-    },
-    {
-      "match_id": "EUW1_7392147628",
-      "champion": "Naafiri",
-      "won": true,
-      "kda": 6.25,
-      "cs_per_min": 4.7,
-      "damage_share": 25.3,
-      "duration": 35.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.151150",
+      "date": "2025-12-14T10:06:19.586521",
       "kills": 14,
-      "deaths": 4,
+      "deaths": 7,
       "assists": 11
     },
     {
-      "match_id": "EUW1_7388140411",
-      "champion": "Naafiri",
-      "won": true,
-      "kda": 4.67,
-      "cs_per_min": 4.2,
-      "damage_share": 17.3,
-      "duration": 20.7,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.151295",
-      "kills": 9,
-      "deaths": 3,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7315278372",
-      "champion": "Jhin",
-      "won": false,
-      "kda": 1.57,
-      "cs_per_min": 5.1,
-      "damage_share": 16.9,
-      "duration": 31.7,
-      "role": "BOTTOM",
-      "date": "2025-11-25T16:30:54.151468",
-      "kills": 6,
-      "deaths": 7,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7314169861",
-      "champion": "Trundle",
-      "won": false,
-      "kda": 1.0,
-      "cs_per_min": 3.7,
-      "damage_share": 15.1,
-      "duration": 20.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.151664",
-      "kills": 5,
-      "deaths": 7,
-      "assists": 2
-    },
-    {
-      "match_id": "EUW1_7314143869",
-      "champion": "Trundle",
-      "won": false,
-      "kda": 0.55,
-      "cs_per_min": 2.5,
-      "damage_share": 13.0,
-      "duration": 18.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.151823",
-      "kills": 3,
-      "deaths": 11,
-      "assists": 3
-    },
-    {
-      "match_id": "EUW1_7312213833",
-      "champion": "Trundle",
-      "won": true,
-      "kda": 1.4,
-      "cs_per_min": 2.5,
-      "damage_share": 15.0,
-      "duration": 34.2,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.151971",
-      "kills": 3,
-      "deaths": 10,
-      "assists": 11
-    },
-    {
-      "match_id": "EUW1_7311812105",
-      "champion": "Trundle",
-      "won": true,
-      "kda": 4.6,
-      "cs_per_min": 4.3,
-      "damage_share": 24.8,
-      "duration": 30.6,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.152116",
-      "kills": 8,
-      "deaths": 5,
-      "assists": 15
-    },
-    {
-      "match_id": "EUW1_7311789051",
-      "champion": "Nunu",
-      "won": false,
-      "kda": 0.8,
-      "cs_per_min": 2.9,
-      "damage_share": 24.9,
-      "duration": 28.1,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.152263",
-      "kills": 2,
-      "deaths": 10,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7311126754",
-      "champion": "Nunu",
-      "won": true,
-      "kda": 3.25,
-      "cs_per_min": 3.3,
-      "damage_share": 16.2,
-      "duration": 21.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.152399",
-      "kills": 4,
-      "deaths": 4,
-      "assists": 9
-    },
-    {
-      "match_id": "EUW1_7311077339",
-      "champion": "Aatrox",
-      "won": true,
-      "kda": 0.5,
-      "cs_per_min": 4.5,
-      "damage_share": 21.0,
-      "duration": 17.5,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.152624",
-      "kills": 1,
-      "deaths": 2,
-      "assists": 0
-    },
-    {
-      "match_id": "EUW1_7310029179",
-      "champion": "Mordekaiser",
-      "won": true,
-      "kda": 2.0,
-      "cs_per_min": 5.4,
-      "damage_share": 20.1,
-      "duration": 29.1,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.152854",
-      "kills": 5,
-      "deaths": 4,
-      "assists": 3
-    },
-    {
-      "match_id": "EUW1_7308679332",
-      "champion": "Trundle",
-      "won": true,
-      "kda": 1.62,
-      "cs_per_min": 5.2,
-      "damage_share": 17.8,
-      "duration": 34.0,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.153079",
-      "kills": 8,
-      "deaths": 8,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7308442537",
-      "champion": "Aatrox",
-      "won": false,
-      "kda": 0.33,
-      "cs_per_min": 3.4,
-      "damage_share": 16.2,
-      "duration": 24.9,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.153262",
-      "kills": 1,
-      "deaths": 9,
-      "assists": 2
-    },
-    {
-      "match_id": "EUW1_7307711638",
-      "champion": "Veigar",
-      "won": false,
-      "kda": 0.5,
-      "cs_per_min": 6.7,
-      "damage_share": 12.8,
-      "duration": 25.1,
-      "role": "TOP",
-      "date": "2025-11-25T16:30:54.153436",
-      "kills": 1,
-      "deaths": 4,
-      "assists": 1
-    },
-    {
-      "match_id": "EUW1_7307641740",
-      "champion": "Jax",
-      "won": true,
-      "kda": 3.4,
-      "cs_per_min": 4.4,
-      "damage_share": 13.8,
-      "duration": 32.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.153629",
-      "kills": 10,
-      "deaths": 5,
-      "assists": 7
-    },
-    {
-      "match_id": "EUW1_7307247476",
-      "champion": "Mordekaiser",
-      "won": false,
-      "kda": 2.12,
-      "cs_per_min": 4.6,
-      "damage_share": 20.7,
-      "duration": 32.9,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.153805",
-      "kills": 11,
-      "deaths": 8,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7307214253",
-      "champion": "Mordekaiser",
-      "won": false,
-      "kda": 1.0,
-      "cs_per_min": 2.8,
-      "damage_share": 25.0,
-      "duration": 15.5,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.153979",
-      "kills": 4,
-      "deaths": 5,
-      "assists": 1
-    },
-    {
-      "match_id": "EUW1_7304105941",
-      "champion": "Mordekaiser",
-      "won": false,
-      "kda": 1.22,
-      "cs_per_min": 3.0,
-      "damage_share": 19.4,
-      "duration": 30.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.154192",
-      "kills": 6,
-      "deaths": 9,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7303869296",
-      "champion": "Mordekaiser",
-      "won": true,
-      "kda": 3.5,
-      "cs_per_min": 4.3,
-      "damage_share": 19.7,
-      "duration": 24.1,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.154358",
-      "kills": 8,
-      "deaths": 4,
-      "assists": 6
-    },
-    {
-      "match_id": "EUW1_7303750087",
-      "champion": "Mordekaiser",
-      "won": true,
-      "kda": 4.6,
-      "cs_per_min": 4.0,
-      "damage_share": 34.2,
-      "duration": 24.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.154530",
-      "kills": 9,
-      "deaths": 5,
-      "assists": 14
-    },
-    {
-      "match_id": "EUW1_7303626878",
-      "champion": "Gwen",
-      "won": true,
-      "kda": 1.75,
-      "cs_per_min": 4.4,
-      "damage_share": 11.1,
-      "duration": 21.0,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.154686",
-      "kills": 2,
-      "deaths": 4,
-      "assists": 5
-    },
-    {
-      "match_id": "EUW1_7300855032",
-      "champion": "Nunu",
-      "won": true,
-      "kda": 2.18,
-      "cs_per_min": 3.3,
-      "damage_share": 22.3,
-      "duration": 32.2,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.154833",
-      "kills": 6,
-      "deaths": 11,
-      "assists": 18
-    },
-    {
-      "match_id": "EUW1_7300485568",
-      "champion": "Gwen",
-      "won": false,
-      "kda": 0.78,
-      "cs_per_min": 4.5,
-      "damage_share": 16.5,
-      "duration": 39.4,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.154984",
-      "kills": 6,
-      "deaths": 9,
-      "assists": 1
-    },
-    {
-      "match_id": "EUW1_7300435542",
-      "champion": "Nunu",
-      "won": false,
-      "kda": 0.67,
-      "cs_per_min": 3.4,
-      "damage_share": 17.8,
-      "duration": 23.8,
-      "role": "JUNGLE",
-      "date": "2025-11-25T16:30:54.155113",
-      "kills": 3,
-      "deaths": 6,
-      "assists": 1
-    },
-    {
-      "match_id": "EUW1_7618431727",
-      "champion": "Amumu",
-      "won": false,
-      "kda": 2.0,
-      "cs_per_min": 3.6,
-      "damage_share": 19.3,
-      "duration": 37.0,
-      "role": "JUNGLE",
-      "date": "2025-11-26T20:55:19.983035",
-      "kills": 7,
-      "deaths": 11,
-      "assists": 15
-    },
-    {
-      "match_id": "EUW1_7619081358",
-      "champion": "Darius",
-      "won": true,
-      "kda": 7.5,
-      "cs_per_min": 4.0,
-      "damage_share": 23.7,
-      "duration": 18.7,
-      "role": "JUNGLE",
-      "date": "2025-11-27T14:10:32.602179",
-      "kills": 6,
-      "deaths": 2,
-      "assists": 9
-    },
-    {
-      "match_id": "EUW1_7619100988",
+      "match_id": "EUW1_7630139056",
       "champion": "Darius",
       "won": false,
-      "kda": 0.67,
-      "cs_per_min": 3.2,
-      "damage_share": 18.4,
-      "duration": 16.8,
+      "kda": 1.0,
+      "cs_per_min": 3.4,
+      "damage_share": 14.7,
+      "duration": 25.2,
       "role": "JUNGLE",
-      "date": "2025-11-28T10:07:37.909811",
-      "kills": 3,
+      "date": "2025-12-14T10:06:19.586834",
+      "kills": 6,
       "deaths": 9,
       "assists": 3
     },
@@ -7117,7 +5913,7 @@
       "damage_share": 26.7,
       "duration": 23.8,
       "role": "JUNGLE",
-      "date": "2025-12-01T15:28:32.627012",
+      "date": "2025-12-14T10:06:19.587046",
       "kills": 5,
       "deaths": 9,
       "assists": 9
@@ -7131,7 +5927,7 @@
       "damage_share": 24.0,
       "duration": 20.0,
       "role": "JUNGLE",
-      "date": "2025-12-01T15:28:32.627197",
+      "date": "2025-12-14T10:06:19.587232",
       "kills": 7,
       "deaths": 2,
       "assists": 8
@@ -7145,7 +5941,7 @@
       "damage_share": 25.3,
       "duration": 25.1,
       "role": "JUNGLE",
-      "date": "2025-12-01T15:28:32.627346",
+      "date": "2025-12-14T10:06:19.587386",
       "kills": 13,
       "deaths": 3,
       "assists": 6
@@ -7159,7 +5955,7 @@
       "damage_share": 17.4,
       "duration": 22.6,
       "role": "JUNGLE",
-      "date": "2025-12-01T15:28:32.627520",
+      "date": "2025-12-14T10:06:19.587554",
       "kills": 6,
       "deaths": 1,
       "assists": 8
@@ -7173,17 +5969,1237 @@
       "damage_share": 13.1,
       "duration": 29.7,
       "role": "JUNGLE",
-      "date": "2025-12-01T15:28:32.627677",
+      "date": "2025-12-14T10:06:19.588017",
       "kills": 8,
       "deaths": 6,
       "assists": 10
+    },
+    {
+      "match_id": "EUW1_7619100988",
+      "champion": "Darius",
+      "won": false,
+      "kda": 0.67,
+      "cs_per_min": 3.2,
+      "damage_share": 18.4,
+      "duration": 16.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.588230",
+      "kills": 3,
+      "deaths": 9,
+      "assists": 3
+    },
+    {
+      "match_id": "EUW1_7619081358",
+      "champion": "Darius",
+      "won": true,
+      "kda": 7.5,
+      "cs_per_min": 4.0,
+      "damage_share": 23.7,
+      "duration": 18.7,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.588411",
+      "kills": 6,
+      "deaths": 2,
+      "assists": 9
+    },
+    {
+      "match_id": "EUW1_7618431727",
+      "champion": "Amumu",
+      "won": false,
+      "kda": 2.0,
+      "cs_per_min": 3.6,
+      "damage_share": 19.3,
+      "duration": 37.0,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.588617",
+      "kills": 7,
+      "deaths": 11,
+      "assists": 15
+    },
+    {
+      "match_id": "EUW1_7616968658",
+      "champion": "MonkeyKing",
+      "won": false,
+      "kda": 0.17,
+      "cs_per_min": 4.3,
+      "damage_share": 16.0,
+      "duration": 15.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.588812",
+      "kills": 0,
+      "deaths": 6,
+      "assists": 1
+    },
+    {
+      "match_id": "EUW1_7610624342",
+      "champion": "Zaahen",
+      "won": false,
+      "kda": 1.3,
+      "cs_per_min": 4.0,
+      "damage_share": 27.8,
+      "duration": 31.2,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.589015",
+      "kills": 8,
+      "deaths": 10,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7604474334",
+      "champion": "Kayn",
+      "won": false,
+      "kda": 1.47,
+      "cs_per_min": 3.3,
+      "damage_share": 13.3,
+      "duration": 39.0,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.589221",
+      "kills": 12,
+      "deaths": 17,
+      "assists": 13
+    },
+    {
+      "match_id": "EUW1_7604456693",
+      "champion": "Kayn",
+      "won": false,
+      "kda": 0.71,
+      "cs_per_min": 3.5,
+      "damage_share": 20.8,
+      "duration": 18.5,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.589403",
+      "kills": 4,
+      "deaths": 7,
+      "assists": 1
+    },
+    {
+      "match_id": "EUW1_7603901371",
+      "champion": "Kayn",
+      "won": true,
+      "kda": 3.0,
+      "cs_per_min": 4.7,
+      "damage_share": 15.9,
+      "duration": 29.9,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.589604",
+      "kills": 9,
+      "deaths": 6,
+      "assists": 9
+    },
+    {
+      "match_id": "EUW1_7603796035",
+      "champion": "Ornn",
+      "won": false,
+      "kda": 0.38,
+      "cs_per_min": 4.3,
+      "damage_share": 27.3,
+      "duration": 32.7,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.590155",
+      "kills": 0,
+      "deaths": 8,
+      "assists": 3
+    },
+    {
+      "match_id": "EUW1_7603744524",
+      "champion": "Kayn",
+      "won": false,
+      "kda": 1.0,
+      "cs_per_min": 3.6,
+      "damage_share": 20.2,
+      "duration": 25.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.590470",
+      "kills": 4,
+      "deaths": 11,
+      "assists": 7
+    },
+    {
+      "match_id": "EUW1_7603674413",
+      "champion": "XinZhao",
+      "won": false,
+      "kda": 0.58,
+      "cs_per_min": 3.1,
+      "damage_share": 14.3,
+      "duration": 31.3,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.590730",
+      "kills": 3,
+      "deaths": 12,
+      "assists": 4
+    },
+    {
+      "match_id": "EUW1_7603411335",
+      "champion": "Kayn",
+      "won": true,
+      "kda": 2.89,
+      "cs_per_min": 3.6,
+      "damage_share": 17.3,
+      "duration": 32.2,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.590985",
+      "kills": 8,
+      "deaths": 9,
+      "assists": 18
+    },
+    {
+      "match_id": "EUW1_7597737263",
+      "champion": "Nasus",
+      "won": false,
+      "kda": 0.88,
+      "cs_per_min": 2.7,
+      "damage_share": 22.3,
+      "duration": 31.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.591271",
+      "kills": 5,
+      "deaths": 17,
+      "assists": 10
+    },
+    {
+      "match_id": "EUW1_7597703246",
+      "champion": "Nasus",
+      "won": true,
+      "kda": 1.75,
+      "cs_per_min": 4.5,
+      "damage_share": 13.9,
+      "duration": 19.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.591602",
+      "kills": 5,
+      "deaths": 4,
+      "assists": 2
+    },
+    {
+      "match_id": "EUW1_7597471486",
+      "champion": "XinZhao",
+      "won": false,
+      "kda": 1.64,
+      "cs_per_min": 2.7,
+      "damage_share": 23.1,
+      "duration": 27.7,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.591843",
+      "kills": 7,
+      "deaths": 11,
+      "assists": 11
+    },
+    {
+      "match_id": "EUW1_7596831339",
+      "champion": "XinZhao",
+      "won": true,
+      "kda": 9.0,
+      "cs_per_min": 4.4,
+      "damage_share": 16.2,
+      "duration": 22.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.592051",
+      "kills": 7,
+      "deaths": 2,
+      "assists": 11
+    },
+    {
+      "match_id": "EUW1_7596760891",
+      "champion": "XinZhao",
+      "won": false,
+      "kda": 1.46,
+      "cs_per_min": 3.6,
+      "damage_share": 18.4,
+      "duration": 35.9,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.592268",
+      "kills": 4,
+      "deaths": 13,
+      "assists": 15
+    },
+    {
+      "match_id": "EUW1_7596695218",
+      "champion": "XinZhao",
+      "won": true,
+      "kda": 6.0,
+      "cs_per_min": 4.2,
+      "damage_share": 20.7,
+      "duration": 20.5,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.592464",
+      "kills": 8,
+      "deaths": 2,
+      "assists": 4
+    },
+    {
+      "match_id": "EUW1_7590409644",
+      "champion": "Teemo",
+      "won": true,
+      "kda": 2.5,
+      "cs_per_min": 4.8,
+      "damage_share": 22.3,
+      "duration": 35.5,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.592666",
+      "kills": 4,
+      "deaths": 6,
+      "assists": 11
+    },
+    {
+      "match_id": "EUW1_7590362007",
+      "champion": "Veigar",
+      "won": false,
+      "kda": 0.5,
+      "cs_per_min": 6.2,
+      "damage_share": 9.5,
+      "duration": 22.5,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.592897",
+      "kills": 0,
+      "deaths": 2,
+      "assists": 1
+    },
+    {
+      "match_id": "EUW1_7590096119",
+      "champion": "Warwick",
+      "won": true,
+      "kda": 1.27,
+      "cs_per_min": 3.7,
+      "damage_share": 14.6,
+      "duration": 29.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.593155",
+      "kills": 5,
+      "deaths": 11,
+      "assists": 9
+    },
+    {
+      "match_id": "EUW1_7590085221",
+      "champion": "Warwick",
+      "won": false,
+      "kda": 0.0,
+      "cs_per_min": 0.0,
+      "damage_share": 0.0,
+      "duration": 1.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.593384",
+      "kills": 0,
+      "deaths": 0,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7589966502",
+      "champion": "Warwick",
+      "won": true,
+      "kda": 5.75,
+      "cs_per_min": 3.7,
+      "damage_share": 28.6,
+      "duration": 37.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.593647",
+      "kills": 28,
+      "deaths": 8,
+      "assists": 18
+    },
+    {
+      "match_id": "EUW1_7589882412",
+      "champion": "DrMundo",
+      "won": false,
+      "kda": 1.71,
+      "cs_per_min": 3.8,
+      "damage_share": 25.4,
+      "duration": 27.3,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.593958",
+      "kills": 2,
+      "deaths": 7,
+      "assists": 10
+    },
+    {
+      "match_id": "EUW1_7589864405",
+      "champion": "Kayn",
+      "won": false,
+      "kda": 0.5,
+      "cs_per_min": 4.7,
+      "damage_share": 15.1,
+      "duration": 9.5,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.594210",
+      "kills": 1,
+      "deaths": 2,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7589831872",
+      "champion": "Nasus",
+      "won": false,
+      "kda": 0.44,
+      "cs_per_min": 4.3,
+      "damage_share": 22.1,
+      "duration": 26.7,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.594442",
+      "kills": 2,
+      "deaths": 9,
+      "assists": 2
+    },
+    {
+      "match_id": "EUW1_7589302514",
+      "champion": "Nasus",
+      "won": false,
+      "kda": 1.4,
+      "cs_per_min": 3.5,
+      "damage_share": 40.4,
+      "duration": 22.0,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.594692",
+      "kills": 9,
+      "deaths": 10,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7589089429",
+      "champion": "Vi",
+      "won": true,
+      "kda": 1.25,
+      "cs_per_min": 3.5,
+      "damage_share": 17.6,
+      "duration": 26.9,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.594920",
+      "kills": 2,
+      "deaths": 8,
+      "assists": 8
+    },
+    {
+      "match_id": "EUW1_7588860296",
+      "champion": "Malphite",
+      "won": true,
+      "kda": 4.67,
+      "cs_per_min": 4.6,
+      "damage_share": 16.6,
+      "duration": 19.2,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.595130",
+      "kills": 6,
+      "deaths": 3,
+      "assists": 8
+    },
+    {
+      "match_id": "EUW1_7588221482",
+      "champion": "Malphite",
+      "won": true,
+      "kda": 2.44,
+      "cs_per_min": 4.2,
+      "damage_share": 16.7,
+      "duration": 31.1,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.595360",
+      "kills": 11,
+      "deaths": 9,
+      "assists": 11
+    },
+    {
+      "match_id": "EUW1_7588208656",
+      "champion": "Malphite",
+      "won": false,
+      "kda": 0.0,
+      "cs_per_min": 0.0,
+      "damage_share": 0,
+      "duration": 1.9,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.595579",
+      "kills": 0,
+      "deaths": 0,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7588160151",
+      "champion": "Malphite",
+      "won": false,
+      "kda": 2.0,
+      "cs_per_min": 3.6,
+      "damage_share": 23.9,
+      "duration": 26.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.595810",
+      "kills": 10,
+      "deaths": 10,
+      "assists": 10
+    },
+    {
+      "match_id": "EUW1_7588083973",
+      "champion": "Sylas",
+      "won": false,
+      "kda": 0.23,
+      "cs_per_min": 2.5,
+      "damage_share": 9.7,
+      "duration": 34.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.596052",
+      "kills": 2,
+      "deaths": 13,
+      "assists": 1
+    },
+    {
+      "match_id": "EUW1_7588035652",
+      "champion": "XinZhao",
+      "won": false,
+      "kda": 2.14,
+      "cs_per_min": 4.2,
+      "damage_share": 32.3,
+      "duration": 30.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.596296",
+      "kills": 9,
+      "deaths": 7,
+      "assists": 6
+    },
+    {
+      "match_id": "EUW1_7586588818",
+      "champion": "XinZhao",
+      "won": true,
+      "kda": 2.25,
+      "cs_per_min": 4.5,
+      "damage_share": 21.8,
+      "duration": 16.3,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.596505",
+      "kills": 3,
+      "deaths": 4,
+      "assists": 6
+    },
+    {
+      "match_id": "EUW1_7585364558",
+      "champion": "Viego",
+      "won": false,
+      "kda": 0.5,
+      "cs_per_min": 3.7,
+      "damage_share": 10.2,
+      "duration": 40.7,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.596744",
+      "kills": 2,
+      "deaths": 16,
+      "assists": 6
+    },
+    {
+      "match_id": "EUW1_7577122942",
+      "champion": "Morgana",
+      "won": true,
+      "kda": 2.14,
+      "cs_per_min": 4.1,
+      "damage_share": 31.3,
+      "duration": 31.7,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.596968",
+      "kills": 8,
+      "deaths": 7,
+      "assists": 7
+    },
+    {
+      "match_id": "EUW1_7577080368",
+      "champion": "Pantheon",
+      "won": true,
+      "kda": 2.0,
+      "cs_per_min": 2.2,
+      "damage_share": 24.1,
+      "duration": 26.3,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.597182",
+      "kills": 11,
+      "deaths": 7,
+      "assists": 3
+    },
+    {
+      "match_id": "EUW1_7576301823",
+      "champion": "Briar",
+      "won": false,
+      "kda": 1.33,
+      "cs_per_min": 3.9,
+      "damage_share": 42.5,
+      "duration": 15.3,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.597358",
+      "kills": 4,
+      "deaths": 6,
+      "assists": 4
+    },
+    {
+      "match_id": "EUW1_7576250328",
+      "champion": "Nunu",
+      "won": true,
+      "kda": 1.0,
+      "cs_per_min": 3.5,
+      "damage_share": 29.6,
+      "duration": 27.0,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.597549",
+      "kills": 8,
+      "deaths": 9,
+      "assists": 1
+    },
+    {
+      "match_id": "EUW1_7575200477",
+      "champion": "Briar",
+      "won": true,
+      "kda": 2.0,
+      "cs_per_min": 3.6,
+      "damage_share": 17.3,
+      "duration": 31.1,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.597768",
+      "kills": 8,
+      "deaths": 9,
+      "assists": 10
+    },
+    {
+      "match_id": "EUW1_7575154465",
+      "champion": "Briar",
+      "won": false,
+      "kda": 0.86,
+      "cs_per_min": 3.5,
+      "damage_share": 23.2,
+      "duration": 20.9,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.597961",
+      "kills": 6,
+      "deaths": 7,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7574928648",
+      "champion": "Jax",
+      "won": true,
+      "kda": 3.17,
+      "cs_per_min": 3.8,
+      "damage_share": 29.6,
+      "duration": 25.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.598225",
+      "kills": 14,
+      "deaths": 6,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7574915384",
+      "champion": "Jax",
+      "won": true,
+      "kda": 0.0,
+      "cs_per_min": 2.0,
+      "damage_share": 0.0,
+      "duration": 2.0,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.598502",
+      "kills": 0,
+      "deaths": 0,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7574738052",
+      "champion": "Jax",
+      "won": false,
+      "kda": 0.33,
+      "cs_per_min": 3.1,
+      "damage_share": 16.5,
+      "duration": 18.1,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.598759",
+      "kills": 1,
+      "deaths": 9,
+      "assists": 2
+    },
+    {
+      "match_id": "EUW1_7574048704",
+      "champion": "DrMundo",
+      "won": true,
+      "kda": 3.75,
+      "cs_per_min": 4.5,
+      "damage_share": 20.9,
+      "duration": 23.9,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.599018",
+      "kills": 6,
+      "deaths": 4,
+      "assists": 9
+    },
+    {
+      "match_id": "EUW1_7573995186",
+      "champion": "Garen",
+      "won": false,
+      "kda": 3.2,
+      "cs_per_min": 4.7,
+      "damage_share": 28.1,
+      "duration": 25.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.599299",
+      "kills": 10,
+      "deaths": 5,
+      "assists": 6
+    },
+    {
+      "match_id": "EUW1_7573758620",
+      "champion": "Diana",
+      "won": false,
+      "kda": 1.33,
+      "cs_per_min": 3.7,
+      "damage_share": 28.7,
+      "duration": 16.3,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.599535",
+      "kills": 3,
+      "deaths": 6,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7573712158",
+      "champion": "Darius",
+      "won": true,
+      "kda": 1.83,
+      "cs_per_min": 4.2,
+      "damage_share": 12.7,
+      "duration": 22.7,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.599791",
+      "kills": 4,
+      "deaths": 6,
+      "assists": 7
+    },
+    {
+      "match_id": "EUW1_7573358523",
+      "champion": "Nasus",
+      "won": false,
+      "kda": 2.88,
+      "cs_per_min": 4.3,
+      "damage_share": 22.7,
+      "duration": 30.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.600048",
+      "kills": 9,
+      "deaths": 8,
+      "assists": 14
+    },
+    {
+      "match_id": "EUW1_7573337428",
+      "champion": "KSante",
+      "won": true,
+      "kda": 0.0,
+      "cs_per_min": 4.1,
+      "damage_share": 7.1,
+      "duration": 8.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.600283",
+      "kills": 0,
+      "deaths": 2,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7573264822",
+      "champion": "Chogath",
+      "won": true,
+      "kda": 1.75,
+      "cs_per_min": 4.2,
+      "damage_share": 14.6,
+      "duration": 19.2,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.600535",
+      "kills": 4,
+      "deaths": 4,
+      "assists": 3
+    },
+    {
+      "match_id": "EUW1_7573229286",
+      "champion": "Chogath",
+      "won": true,
+      "kda": 2.86,
+      "cs_per_min": 3.9,
+      "damage_share": 19.0,
+      "duration": 29.9,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.600747",
+      "kills": 8,
+      "deaths": 7,
+      "assists": 12
+    },
+    {
+      "match_id": "EUW1_7558438467",
+      "champion": "Illaoi",
+      "won": false,
+      "kda": 1.57,
+      "cs_per_min": 4.3,
+      "damage_share": 31.2,
+      "duration": 25.1,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.600938",
+      "kills": 9,
+      "deaths": 7,
+      "assists": 2
+    },
+    {
+      "match_id": "EUW1_7558403917",
+      "champion": "Aatrox",
+      "won": true,
+      "kda": 4.0,
+      "cs_per_min": 6.0,
+      "damage_share": 15.1,
+      "duration": 17.3,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.601130",
+      "kills": 0,
+      "deaths": 0,
+      "assists": 4
+    },
+    {
+      "match_id": "EUW1_7558396597",
+      "champion": "Aatrox",
+      "won": false,
+      "kda": 0.0,
+      "cs_per_min": 2.2,
+      "damage_share": 3.6,
+      "duration": 2.7,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.601307",
+      "kills": 0,
+      "deaths": 0,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7529295520",
+      "champion": "Kayn",
+      "won": true,
+      "kda": 1.38,
+      "cs_per_min": 3.7,
+      "damage_share": 21.2,
+      "duration": 22.1,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.601515",
+      "kills": 4,
+      "deaths": 8,
+      "assists": 7
+    },
+    {
+      "match_id": "EUW1_7529285312",
+      "champion": "Kayn",
+      "won": false,
+      "kda": 0.0,
+      "cs_per_min": 5.0,
+      "damage_share": 0.0,
+      "duration": 3.2,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.601735",
+      "kills": 0,
+      "deaths": 0,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7528832077",
+      "champion": "Kayn",
+      "won": true,
+      "kda": 2.14,
+      "cs_per_min": 3.8,
+      "damage_share": 21.3,
+      "duration": 25.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.601963",
+      "kills": 6,
+      "deaths": 7,
+      "assists": 9
+    },
+    {
+      "match_id": "EUW1_7528474209",
+      "champion": "Kayn",
+      "won": true,
+      "kda": 1.83,
+      "cs_per_min": 4.1,
+      "damage_share": 16.8,
+      "duration": 38.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.602200",
+      "kills": 7,
+      "deaths": 12,
+      "assists": 15
+    },
+    {
+      "match_id": "EUW1_7528461482",
+      "champion": "Kayn",
+      "won": true,
+      "kda": 3.0,
+      "cs_per_min": 5.2,
+      "damage_share": 11.1,
+      "duration": 8.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.602408",
+      "kills": 3,
+      "deaths": 1,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7528409983",
+      "champion": "Gwen",
+      "won": false,
+      "kda": 0.55,
+      "cs_per_min": 4.0,
+      "damage_share": 16.6,
+      "duration": 26.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.602899",
+      "kills": 1,
+      "deaths": 11,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7528361544",
+      "champion": "Nautilus",
+      "won": true,
+      "kda": 1.27,
+      "cs_per_min": 3.9,
+      "damage_share": 12.5,
+      "duration": 38.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.603164",
+      "kills": 2,
+      "deaths": 11,
+      "assists": 12
+    },
+    {
+      "match_id": "EUW1_7528317216",
+      "champion": "Pantheon",
+      "won": false,
+      "kda": 1.0,
+      "cs_per_min": 3.3,
+      "damage_share": 16.2,
+      "duration": 25.2,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.603389",
+      "kills": 9,
+      "deaths": 10,
+      "assists": 1
+    },
+    {
+      "match_id": "EUW1_7527789704",
+      "champion": "Pantheon",
+      "won": false,
+      "kda": 1.14,
+      "cs_per_min": 3.1,
+      "damage_share": 17.6,
+      "duration": 26.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.603591",
+      "kills": 2,
+      "deaths": 7,
+      "assists": 6
+    },
+    {
+      "match_id": "EUW1_7527718571",
+      "champion": "Pantheon",
+      "won": true,
+      "kda": 4.5,
+      "cs_per_min": 4.1,
+      "damage_share": 13.6,
+      "duration": 18.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.603787",
+      "kills": 6,
+      "deaths": 2,
+      "assists": 3
+    },
+    {
+      "match_id": "EUW1_7458419416",
+      "champion": "Diana",
+      "won": true,
+      "kda": 0.0,
+      "cs_per_min": 0.6,
+      "damage_share": 1.8,
+      "duration": 27.3,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.604003",
+      "kills": 0,
+      "deaths": 0,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7446143483",
+      "champion": "Nasus",
+      "won": false,
+      "kda": 0.75,
+      "cs_per_min": 4.6,
+      "damage_share": 12.4,
+      "duration": 28.5,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.604240",
+      "kills": 2,
+      "deaths": 8,
+      "assists": 4
+    },
+    {
+      "match_id": "EUW1_7446116095",
+      "champion": "Nasus",
+      "won": true,
+      "kda": 3.5,
+      "cs_per_min": 4.9,
+      "damage_share": 13.9,
+      "duration": 15.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.604428",
+      "kills": 3,
+      "deaths": 2,
+      "assists": 4
+    },
+    {
+      "match_id": "EUW1_7446079291",
+      "champion": "Amumu",
+      "won": true,
+      "kda": 3.0,
+      "cs_per_min": 5.5,
+      "damage_share": 15.8,
+      "duration": 30.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.604638",
+      "kills": 5,
+      "deaths": 5,
+      "assists": 10
+    },
+    {
+      "match_id": "EUW1_7445905129",
+      "champion": "Darius",
+      "won": false,
+      "kda": 1.27,
+      "cs_per_min": 3.3,
+      "damage_share": 13.1,
+      "duration": 32.9,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.604817",
+      "kills": 8,
+      "deaths": 11,
+      "assists": 6
+    },
+    {
+      "match_id": "EUW1_7444695218",
+      "champion": "Darius",
+      "won": false,
+      "kda": 1.62,
+      "cs_per_min": 3.8,
+      "damage_share": 19.2,
+      "duration": 35.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.604985",
+      "kills": 10,
+      "deaths": 13,
+      "assists": 11
+    },
+    {
+      "match_id": "EUW1_7444686784",
+      "champion": "Mordekaiser",
+      "won": false,
+      "kda": 0.0,
+      "cs_per_min": 4.5,
+      "damage_share": 28.1,
+      "duration": 15.2,
+      "role": "TOP",
+      "date": "2025-12-14T10:06:19.605189",
+      "kills": 0,
+      "deaths": 2,
+      "assists": 0
+    },
+    {
+      "match_id": "EUW1_7444196832",
+      "champion": "Darius",
+      "won": true,
+      "kda": 2.6,
+      "cs_per_min": 4.4,
+      "damage_share": 13.6,
+      "duration": 28.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.605370",
+      "kills": 9,
+      "deaths": 5,
+      "assists": 4
+    },
+    {
+      "match_id": "EUW1_7444142686",
+      "champion": "Darius",
+      "won": false,
+      "kda": 1.71,
+      "cs_per_min": 3.4,
+      "damage_share": 16.4,
+      "duration": 36.0,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.605553",
+      "kills": 8,
+      "deaths": 14,
+      "assists": 16
+    },
+    {
+      "match_id": "EUW1_7443954454",
+      "champion": "Nunu",
+      "won": true,
+      "kda": 9.67,
+      "cs_per_min": 4.1,
+      "damage_share": 15.1,
+      "duration": 34.1,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.605789",
+      "kills": 7,
+      "deaths": 3,
+      "assists": 22
+    },
+    {
+      "match_id": "EUW1_7393425622",
+      "champion": "Mordekaiser",
+      "won": false,
+      "kda": 0.55,
+      "cs_per_min": 4.1,
+      "damage_share": 15.2,
+      "duration": 37.0,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.606008",
+      "kills": 1,
+      "deaths": 11,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7393373774",
+      "champion": "Naafiri",
+      "won": false,
+      "kda": 0.64,
+      "cs_per_min": 5.1,
+      "damage_share": 15.3,
+      "duration": 35.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.606252",
+      "kills": 2,
+      "deaths": 11,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7392186720",
+      "champion": "Naafiri",
+      "won": true,
+      "kda": 2.67,
+      "cs_per_min": 5.5,
+      "damage_share": 16.9,
+      "duration": 26.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.606739",
+      "kills": 6,
+      "deaths": 6,
+      "assists": 10
+    },
+    {
+      "match_id": "EUW1_7392147628",
+      "champion": "Naafiri",
+      "won": true,
+      "kda": 6.25,
+      "cs_per_min": 4.7,
+      "damage_share": 25.3,
+      "duration": 35.8,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.606980",
+      "kills": 14,
+      "deaths": 4,
+      "assists": 11
+    },
+    {
+      "match_id": "EUW1_7388140411",
+      "champion": "Naafiri",
+      "won": true,
+      "kda": 4.67,
+      "cs_per_min": 4.2,
+      "damage_share": 17.3,
+      "duration": 20.7,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.607403",
+      "kills": 9,
+      "deaths": 3,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7315278372",
+      "champion": "Jhin",
+      "won": false,
+      "kda": 1.57,
+      "cs_per_min": 5.1,
+      "damage_share": 16.9,
+      "duration": 31.7,
+      "role": "BOTTOM",
+      "date": "2025-12-14T10:06:19.607650",
+      "kills": 6,
+      "deaths": 7,
+      "assists": 5
+    },
+    {
+      "match_id": "EUW1_7314169861",
+      "champion": "Trundle",
+      "won": false,
+      "kda": 1.0,
+      "cs_per_min": 3.7,
+      "damage_share": 15.1,
+      "duration": 20.4,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.607884",
+      "kills": 5,
+      "deaths": 7,
+      "assists": 2
+    },
+    {
+      "match_id": "EUW1_7314143869",
+      "champion": "Trundle",
+      "won": false,
+      "kda": 0.55,
+      "cs_per_min": 2.5,
+      "damage_share": 13.0,
+      "duration": 18.9,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.608253",
+      "kills": 3,
+      "deaths": 11,
+      "assists": 3
+    },
+    {
+      "match_id": "EUW1_7312213833",
+      "champion": "Trundle",
+      "won": true,
+      "kda": 1.4,
+      "cs_per_min": 2.5,
+      "damage_share": 15.0,
+      "duration": 34.2,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.608554",
+      "kills": 3,
+      "deaths": 10,
+      "assists": 11
+    },
+    {
+      "match_id": "EUW1_7311812105",
+      "champion": "Trundle",
+      "won": true,
+      "kda": 4.6,
+      "cs_per_min": 4.3,
+      "damage_share": 24.8,
+      "duration": 30.6,
+      "role": "JUNGLE",
+      "date": "2025-12-14T10:06:19.608753",
+      "kills": 8,
+      "deaths": 5,
+      "assists": 15
+    },
+    {
+      "match_id": "EUW1_7642516018",
+      "champion": "Darius",
+      "won": false,
+      "kda": 1.38,
+      "cs_per_min": 3.8,
+      "damage_share": 29.2,
+      "duration": 28.1,
+      "role": "JUNGLE",
+      "date": "2025-12-14T11:40:30.307373",
+      "kills": 9,
+      "deaths": 13,
+      "assists": 9
     }
   ],
   "monthly_progress": {
-    "2025-11": {
-      "games": 103,
-      "wins": 50,
+    "2025-12": {
+      "games": 101,
+      "wins": 52,
       "champions_played": [
+        "Darius",
+        "Amumu",
         "MonkeyKing",
         "Zaahen",
         "Kayn",
@@ -7205,31 +7221,375 @@
         "Jax",
         "Garen",
         "Diana",
-        "Darius",
         "KSante",
         "Chogath",
         "Illaoi",
         "Aatrox",
         "Gwen",
         "Nautilus",
-        "Amumu",
         "Mordekaiser",
         "Naafiri",
         "Jhin",
         "Trundle"
       ],
-      "avg_kda": 1.970976673875017
-    },
-    "2025-12": {
-      "games": 5,
-      "wins": 4,
-      "champions_played": [
-        "Darius"
-      ],
-      "avg_kda": 6.477777777777777
+      "avg_kda": 2.5205946661246603
     }
   },
   "matchups": {
+    "Darius_vs_Sett": {
+      "my_champ": "Darius",
+      "enemy_champ": "Sett",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_MasterYi": {
+      "my_champ": "Darius",
+      "enemy_champ": "MasterYi",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius_vs_Qiyana": {
+      "my_champ": "Darius",
+      "enemy_champ": "Qiyana",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius_vs_MissFortune": {
+      "my_champ": "Darius",
+      "enemy_champ": "MissFortune",
+      "games": 3,
+      "wins": 2
+    },
+    "Darius_vs_Soraka": {
+      "my_champ": "Darius",
+      "enemy_champ": "Soraka",
+      "games": 3,
+      "wins": 3
+    },
+    "Darius_vs_Nasus": {
+      "my_champ": "Darius",
+      "enemy_champ": "Nasus",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Kayn": {
+      "my_champ": "Darius",
+      "enemy_champ": "Kayn",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius_vs_Ahri": {
+      "my_champ": "Darius",
+      "enemy_champ": "Ahri",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Yunara": {
+      "my_champ": "Darius",
+      "enemy_champ": "Yunara",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Lux": {
+      "my_champ": "Darius",
+      "enemy_champ": "Lux",
+      "games": 4,
+      "wins": 3
+    },
+    "Darius_vs_Zaahen": {
+      "my_champ": "Darius",
+      "enemy_champ": "Zaahen",
+      "games": 6,
+      "wins": 4
+    },
+    "Darius_vs_Xerath": {
+      "my_champ": "Darius",
+      "enemy_champ": "Xerath",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius_vs_Jhin": {
+      "my_champ": "Darius",
+      "enemy_champ": "Jhin",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Sejuani": {
+      "my_champ": "Darius",
+      "enemy_champ": "Sejuani",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius_vs_Briar": {
+      "my_champ": "Darius",
+      "enemy_champ": "Briar",
+      "games": 4,
+      "wins": 3
+    },
+    "Darius_vs_Zed": {
+      "my_champ": "Darius",
+      "enemy_champ": "Zed",
+      "games": 2,
+      "wins": 0
+    },
+    "Darius_vs_Kaisa": {
+      "my_champ": "Darius",
+      "enemy_champ": "Kaisa",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius_vs_Brand": {
+      "my_champ": "Darius",
+      "enemy_champ": "Brand",
+      "games": 2,
+      "wins": 0
+    },
+    "Darius_vs_Fiora": {
+      "my_champ": "Darius",
+      "enemy_champ": "Fiora",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Ashe": {
+      "my_champ": "Darius",
+      "enemy_champ": "Ashe",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius_vs_Mel": {
+      "my_champ": "Darius",
+      "enemy_champ": "Mel",
+      "games": 3,
+      "wins": 2
+    },
+    "Darius_vs_LeeSin": {
+      "my_champ": "Darius",
+      "enemy_champ": "LeeSin",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Diana": {
+      "my_champ": "Darius",
+      "enemy_champ": "Diana",
+      "games": 3,
+      "wins": 3
+    },
+    "Darius_vs_Chogath": {
+      "my_champ": "Darius",
+      "enemy_champ": "Chogath",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_TahmKench": {
+      "my_champ": "Darius",
+      "enemy_champ": "TahmKench",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Shyvana": {
+      "my_champ": "Darius",
+      "enemy_champ": "Shyvana",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Yone": {
+      "my_champ": "Darius",
+      "enemy_champ": "Yone",
+      "games": 3,
+      "wins": 3
+    },
+    "Darius_vs_Yasuo": {
+      "my_champ": "Darius",
+      "enemy_champ": "Yasuo",
+      "games": 4,
+      "wins": 2
+    },
+    "Darius_vs_Udyr": {
+      "my_champ": "Darius",
+      "enemy_champ": "Udyr",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Vayne": {
+      "my_champ": "Darius",
+      "enemy_champ": "Vayne",
+      "games": 3,
+      "wins": 1
+    },
+    "Darius_vs_Rell": {
+      "my_champ": "Darius",
+      "enemy_champ": "Rell",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Garen": {
+      "my_champ": "Darius",
+      "enemy_champ": "Garen",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius_vs_Rammus": {
+      "my_champ": "Darius",
+      "enemy_champ": "Rammus",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius_vs_Hwei": {
+      "my_champ": "Darius",
+      "enemy_champ": "Hwei",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius_vs_Nilah": {
+      "my_champ": "Darius",
+      "enemy_champ": "Nilah",
+      "games": 2,
+      "wins": 0
+    },
+    "Darius_vs_Karma": {
+      "my_champ": "Darius",
+      "enemy_champ": "Karma",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius_vs_Illaoi": {
+      "my_champ": "Darius",
+      "enemy_champ": "Illaoi",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius_vs_Amumu": {
+      "my_champ": "Darius",
+      "enemy_champ": "Amumu",
+      "games": 2,
+      "wins": 0
+    },
+    "Darius_vs_Morgana": {
+      "my_champ": "Darius",
+      "enemy_champ": "Morgana",
+      "games": 2,
+      "wins": 1
+    },
+    "Darius_vs_Teemo": {
+      "my_champ": "Darius",
+      "enemy_champ": "Teemo",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Nidalee": {
+      "my_champ": "Darius",
+      "enemy_champ": "Nidalee",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_AurelionSol": {
+      "my_champ": "Darius",
+      "enemy_champ": "AurelionSol",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Tristana": {
+      "my_champ": "Darius",
+      "enemy_champ": "Tristana",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius_vs_Malphite": {
+      "my_champ": "Darius",
+      "enemy_champ": "Malphite",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Viktor": {
+      "my_champ": "Darius",
+      "enemy_champ": "Viktor",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius_vs_Katarina": {
+      "my_champ": "Darius",
+      "enemy_champ": "Katarina",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Neeko": {
+      "my_champ": "Darius",
+      "enemy_champ": "Neeko",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius_vs_Nunu": {
+      "my_champ": "Darius",
+      "enemy_champ": "Nunu",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Ezreal": {
+      "my_champ": "Darius",
+      "enemy_champ": "Ezreal",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Zyra": {
+      "my_champ": "Darius",
+      "enemy_champ": "Zyra",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_XinZhao": {
+      "my_champ": "Darius",
+      "enemy_champ": "XinZhao",
+      "games": 1,
+      "wins": 0
+    },
+    "Darius_vs_Aphelios": {
+      "my_champ": "Darius",
+      "enemy_champ": "Aphelios",
+      "games": 2,
+      "wins": 2
+    },
+    "Darius_vs_Twitch": {
+      "my_champ": "Darius",
+      "enemy_champ": "Twitch",
+      "games": 1,
+      "wins": 1
+    },
+    "Darius_vs_Seraphine": {
+      "my_champ": "Darius",
+      "enemy_champ": "Seraphine",
+      "games": 1,
+      "wins": 1
+    },
+    "Amumu_vs_DrMundo": {
+      "my_champ": "Amumu",
+      "enemy_champ": "DrMundo",
+      "games": 1,
+      "wins": 0
+    },
+    "Amumu_vs_Pantheon": {
+      "my_champ": "Amumu",
+      "enemy_champ": "Pantheon",
+      "games": 1,
+      "wins": 0
+    },
+    "Amumu_vs_Malzahar": {
+      "my_champ": "Amumu",
+      "enemy_champ": "Malzahar",
+      "games": 1,
+      "wins": 0
+    },
+    "Amumu_vs_Shen": {
+      "my_champ": "Amumu",
+      "enemy_champ": "Shen",
+      "games": 1,
+      "wins": 0
+    },
+    "Amumu_vs_Lillia": {
+      "my_champ": "Amumu",
+      "enemy_champ": "Lillia",
+      "games": 1,
+      "wins": 0
+    },
     "MonkeyKing_vs_Zaahen": {
       "my_champ": "MonkeyKing",
       "enemy_champ": "Zaahen",
@@ -8253,14 +8613,14 @@
     "Nunu_vs_DrMundo": {
       "my_champ": "Nunu",
       "enemy_champ": "DrMundo",
-      "games": 2,
+      "games": 1,
       "wins": 1
     },
     "Nunu_vs_Warwick": {
       "my_champ": "Nunu",
       "enemy_champ": "Warwick",
-      "games": 2,
-      "wins": 2
+      "games": 1,
+      "wins": 1
     },
     "Nunu_vs_Vex": {
       "my_champ": "Nunu",
@@ -8373,8 +8733,8 @@
     "Jax_vs_Zoe": {
       "my_champ": "Jax",
       "enemy_champ": "Zoe",
-      "games": 2,
-      "wins": 2
+      "games": 1,
+      "wins": 1
     },
     "Jax_vs_Milio": {
       "my_champ": "Jax",
@@ -8483,30 +8843,6 @@
       "enemy_champ": "Lux",
       "games": 1,
       "wins": 0
-    },
-    "Darius_vs_Tristana": {
-      "my_champ": "Darius",
-      "enemy_champ": "Tristana",
-      "games": 2,
-      "wins": 2
-    },
-    "Darius_vs_Diana": {
-      "my_champ": "Darius",
-      "enemy_champ": "Diana",
-      "games": 2,
-      "wins": 2
-    },
-    "Darius_vs_Yone": {
-      "my_champ": "Darius",
-      "enemy_champ": "Yone",
-      "games": 2,
-      "wins": 2
-    },
-    "Darius_vs_Aphelios": {
-      "my_champ": "Darius",
-      "enemy_champ": "Aphelios",
-      "games": 2,
-      "wins": 2
     },
     "Darius_vs_Bard": {
       "my_champ": "Darius",
@@ -8661,13 +8997,13 @@
     "Aatrox_vs_Tryndamere": {
       "my_champ": "Aatrox",
       "enemy_champ": "Tryndamere",
-      "games": 2,
-      "wins": 2
+      "games": 1,
+      "wins": 1
     },
     "Aatrox_vs_MasterYi": {
       "my_champ": "Aatrox",
       "enemy_champ": "MasterYi",
-      "games": 2,
+      "games": 1,
       "wins": 1
     },
     "Aatrox_vs_Lux": {
@@ -9096,12 +9432,6 @@
       "games": 1,
       "wins": 0
     },
-    "Darius_vs_Amumu": {
-      "my_champ": "Darius",
-      "enemy_champ": "Amumu",
-      "games": 2,
-      "wins": 0
-    },
     "Darius_vs_Zoe": {
       "my_champ": "Darius",
       "enemy_champ": "Zoe",
@@ -9114,33 +9444,15 @@
       "games": 1,
       "wins": 0
     },
-    "Darius_vs_Xerath": {
-      "my_champ": "Darius",
-      "enemy_champ": "Xerath",
-      "games": 1,
-      "wins": 0
-    },
     "Darius_vs_Shen": {
       "my_champ": "Darius",
       "enemy_champ": "Shen",
       "games": 1,
       "wins": 0
     },
-    "Darius_vs_Zed": {
-      "my_champ": "Darius",
-      "enemy_champ": "Zed",
-      "games": 1,
-      "wins": 0
-    },
     "Darius_vs_Ziggs": {
       "my_champ": "Darius",
       "enemy_champ": "Ziggs",
-      "games": 1,
-      "wins": 0
-    },
-    "Darius_vs_Nilah": {
-      "my_champ": "Darius",
-      "enemy_champ": "Nilah",
       "games": 1,
       "wins": 0
     },
@@ -9171,8 +9483,8 @@
     "Mordekaiser_vs_MissFortune": {
       "my_champ": "Mordekaiser",
       "enemy_champ": "MissFortune",
-      "games": 3,
-      "wins": 1
+      "games": 1,
+      "wins": 0
     },
     "Mordekaiser_vs_Yuumi": {
       "my_champ": "Mordekaiser",
@@ -9186,28 +9498,10 @@
       "games": 1,
       "wins": 1
     },
-    "Darius_vs_Neeko": {
-      "my_champ": "Darius",
-      "enemy_champ": "Neeko",
-      "games": 2,
-      "wins": 2
-    },
     "Darius_vs_Galio": {
       "my_champ": "Darius",
       "enemy_champ": "Galio",
       "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Kaisa": {
-      "my_champ": "Darius",
-      "enemy_champ": "Kaisa",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Lux": {
-      "my_champ": "Darius",
-      "enemy_champ": "Lux",
-      "games": 2,
       "wins": 1
     },
     "Darius_vs_Mordekaiser": {
@@ -9226,12 +9520,6 @@
       "my_champ": "Darius",
       "enemy_champ": "Akshan",
       "games": 1,
-      "wins": 0
-    },
-    "Darius_vs_Vayne": {
-      "my_champ": "Darius",
-      "enemy_champ": "Vayne",
-      "games": 2,
       "wins": 0
     },
     "Darius_vs_Nautilus": {
@@ -9297,7 +9585,7 @@
     "Mordekaiser_vs_Morgana": {
       "my_champ": "Mordekaiser",
       "enemy_champ": "Morgana",
-      "games": 2,
+      "games": 1,
       "wins": 0
     },
     "Naafiri_vs_Camille": {
@@ -9537,8 +9825,8 @@
     "Trundle_vs_Xerath": {
       "my_champ": "Trundle",
       "enemy_champ": "Xerath",
-      "games": 2,
-      "wins": 2
+      "games": 1,
+      "wins": 1
     },
     "Trundle_vs_MissFortune": {
       "my_champ": "Trundle",
@@ -9552,587 +9840,11 @@
       "games": 1,
       "wins": 1
     },
-    "Nunu_vs_Vayne": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Vayne",
-      "games": 2,
-      "wins": 1
-    },
-    "Nunu_vs_Kayn": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Kayn",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu_vs_Viktor": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Viktor",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu_vs_Nilah": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Nilah",
-      "games": 2,
-      "wins": 1
-    },
-    "Nunu_vs_Lulu": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Lulu",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu_vs_Sion": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Sion",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu_vs_Elise": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Elise",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu_vs_Sivir": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Sivir",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu_vs_Mordekaiser": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Mordekaiser",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox_vs_Gragas": {
-      "my_champ": "Aatrox",
-      "enemy_champ": "Gragas",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox_vs_Akali": {
-      "my_champ": "Aatrox",
-      "enemy_champ": "Akali",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox_vs_Vayne": {
-      "my_champ": "Aatrox",
-      "enemy_champ": "Vayne",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox_vs_Neeko": {
-      "my_champ": "Aatrox",
-      "enemy_champ": "Neeko",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Garen": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Garen",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Vi": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Vi",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Lux": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Lux",
-      "games": 2,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Draven": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Draven",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Nautilus": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Nautilus",
-      "games": 1,
-      "wins": 1
-    },
-    "Trundle_vs_Sett": {
-      "my_champ": "Trundle",
-      "enemy_champ": "Sett",
-      "games": 1,
-      "wins": 1
-    },
-    "Trundle_vs_LeeSin": {
-      "my_champ": "Trundle",
-      "enemy_champ": "LeeSin",
-      "games": 1,
-      "wins": 1
-    },
-    "Trundle_vs_Seraphine": {
-      "my_champ": "Trundle",
-      "enemy_champ": "Seraphine",
-      "games": 1,
-      "wins": 1
-    },
-    "Trundle_vs_Jhin": {
-      "my_champ": "Trundle",
-      "enemy_champ": "Jhin",
-      "games": 1,
-      "wins": 1
-    },
-    "Aatrox_vs_Chogath": {
-      "my_champ": "Aatrox",
-      "enemy_champ": "Chogath",
-      "games": 1,
-      "wins": 0
-    },
-    "Aatrox_vs_Mel": {
-      "my_champ": "Aatrox",
-      "enemy_champ": "Mel",
-      "games": 1,
-      "wins": 0
-    },
-    "Aatrox_vs_Jinx": {
-      "my_champ": "Aatrox",
-      "enemy_champ": "Jinx",
-      "games": 1,
-      "wins": 0
-    },
-    "Aatrox_vs_Velkoz": {
-      "my_champ": "Aatrox",
-      "enemy_champ": "Velkoz",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar_vs_Yorick": {
-      "my_champ": "Veigar",
-      "enemy_champ": "Yorick",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar_vs_Skarner": {
-      "my_champ": "Veigar",
-      "enemy_champ": "Skarner",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar_vs_Vex": {
-      "my_champ": "Veigar",
-      "enemy_champ": "Vex",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar_vs_MissFortune": {
-      "my_champ": "Veigar",
-      "enemy_champ": "MissFortune",
-      "games": 1,
-      "wins": 0
-    },
-    "Veigar_vs_TahmKench": {
-      "my_champ": "Veigar",
-      "enemy_champ": "TahmKench",
-      "games": 1,
-      "wins": 0
-    },
-    "Jax_vs_Illaoi": {
-      "my_champ": "Jax",
-      "enemy_champ": "Illaoi",
-      "games": 1,
-      "wins": 1
-    },
-    "Jax_vs_Teemo": {
-      "my_champ": "Jax",
-      "enemy_champ": "Teemo",
-      "games": 1,
-      "wins": 1
-    },
-    "Jax_vs_Jinx": {
-      "my_champ": "Jax",
-      "enemy_champ": "Jinx",
-      "games": 1,
-      "wins": 1
-    },
-    "Jax_vs_Taliyah": {
-      "my_champ": "Jax",
-      "enemy_champ": "Taliyah",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Sion": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Sion",
-      "games": 2,
-      "wins": 1
-    },
-    "Mordekaiser_vs_MasterYi": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "MasterYi",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Ahri": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Ahri",
-      "games": 2,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Aphelios": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Aphelios",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Rakan": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Rakan",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Kalista": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Kalista",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Kayn": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Kayn",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Neeko": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Neeko",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Twitch": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Twitch",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Sett": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Sett",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Graves": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Graves",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Akali": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Akali",
-      "games": 1,
-      "wins": 0
-    },
-    "Mordekaiser_vs_Olaf": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Olaf",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Ambessa": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Ambessa",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Xerath": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Xerath",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Pyke": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Pyke",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Khazix": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Khazix",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Yasuo": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Yasuo",
-      "games": 1,
-      "wins": 1
-    },
-    "Mordekaiser_vs_Ornn": {
-      "my_champ": "Mordekaiser",
-      "enemy_champ": "Ornn",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen_vs_Garen": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Garen",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen_vs_Sejuani": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Sejuani",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen_vs_Syndra": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Syndra",
-      "games": 2,
-      "wins": 1
-    },
-    "Gwen_vs_Hwei": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Hwei",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen_vs_Pyke": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Pyke",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu_vs_Irelia": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Irelia",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu_vs_Heimerdinger": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Heimerdinger",
-      "games": 1,
-      "wins": 1
-    },
-    "Nunu_vs_Yuumi": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Yuumi",
-      "games": 1,
-      "wins": 1
-    },
-    "Gwen_vs_Volibear": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Volibear",
-      "games": 1,
-      "wins": 0
-    },
-    "Gwen_vs_Shyvana": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Shyvana",
-      "games": 1,
-      "wins": 0
-    },
-    "Gwen_vs_Vayne": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Vayne",
-      "games": 1,
-      "wins": 0
-    },
-    "Gwen_vs_Sett": {
-      "my_champ": "Gwen",
-      "enemy_champ": "Sett",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu_vs_Yone": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Yone",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu_vs_Vladimir": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Vladimir",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu_vs_Jinx": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Jinx",
-      "games": 1,
-      "wins": 0
-    },
-    "Nunu_vs_Soraka": {
-      "my_champ": "Nunu",
-      "enemy_champ": "Soraka",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu_vs_DrMundo": {
-      "my_champ": "Amumu",
-      "enemy_champ": "DrMundo",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu_vs_Pantheon": {
-      "my_champ": "Amumu",
-      "enemy_champ": "Pantheon",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu_vs_Malzahar": {
-      "my_champ": "Amumu",
-      "enemy_champ": "Malzahar",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu_vs_Shen": {
-      "my_champ": "Amumu",
-      "enemy_champ": "Shen",
-      "games": 1,
-      "wins": 0
-    },
-    "Amumu_vs_Lillia": {
-      "my_champ": "Amumu",
-      "enemy_champ": "Lillia",
-      "games": 1,
-      "wins": 0
-    },
-    "Darius_vs_Garen": {
+    "Darius_vs_KSante": {
       "my_champ": "Darius",
-      "enemy_champ": "Garen",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_MasterYi": {
-      "my_champ": "Darius",
-      "enemy_champ": "MasterYi",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Twitch": {
-      "my_champ": "Darius",
-      "enemy_champ": "Twitch",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Seraphine": {
-      "my_champ": "Darius",
-      "enemy_champ": "Seraphine",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Zaahen": {
-      "my_champ": "Darius",
-      "enemy_champ": "Zaahen",
-      "games": 3,
-      "wins": 2
-    },
-    "Darius_vs_XinZhao": {
-      "my_champ": "Darius",
-      "enemy_champ": "XinZhao",
+      "enemy_champ": "KSante",
       "games": 1,
       "wins": 0
-    },
-    "Darius_vs_Yasuo": {
-      "my_champ": "Darius",
-      "enemy_champ": "Yasuo",
-      "games": 2,
-      "wins": 0
-    },
-    "Darius_vs_Brand": {
-      "my_champ": "Darius",
-      "enemy_champ": "Brand",
-      "games": 1,
-      "wins": 0
-    },
-    "Darius_vs_Illaoi": {
-      "my_champ": "Darius",
-      "enemy_champ": "Illaoi",
-      "games": 1,
-      "wins": 0
-    },
-    "Darius_vs_Morgana": {
-      "my_champ": "Darius",
-      "enemy_champ": "Morgana",
-      "games": 2,
-      "wins": 1
-    },
-    "Darius_vs_Teemo": {
-      "my_champ": "Darius",
-      "enemy_champ": "Teemo",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Nidalee": {
-      "my_champ": "Darius",
-      "enemy_champ": "Nidalee",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_AurelionSol": {
-      "my_champ": "Darius",
-      "enemy_champ": "AurelionSol",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Mel": {
-      "my_champ": "Darius",
-      "enemy_champ": "Mel",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Malphite": {
-      "my_champ": "Darius",
-      "enemy_champ": "Malphite",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Viktor": {
-      "my_champ": "Darius",
-      "enemy_champ": "Viktor",
-      "games": 2,
-      "wins": 2
-    },
-    "Darius_vs_Ashe": {
-      "my_champ": "Darius",
-      "enemy_champ": "Ashe",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Briar": {
-      "my_champ": "Darius",
-      "enemy_champ": "Briar",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Katarina": {
-      "my_champ": "Darius",
-      "enemy_champ": "Katarina",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Nunu": {
-      "my_champ": "Darius",
-      "enemy_champ": "Nunu",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Ezreal": {
-      "my_champ": "Darius",
-      "enemy_champ": "Ezreal",
-      "games": 1,
-      "wins": 1
-    },
-    "Darius_vs_Zyra": {
-      "my_champ": "Darius",
-      "enemy_champ": "Zyra",
-      "games": 1,
-      "wins": 1
     }
   }
 }

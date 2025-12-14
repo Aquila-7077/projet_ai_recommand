@@ -2303,315 +2303,483 @@ class AIRecommender:
         recommendations.sort(key=lambda x: x["score"], reverse=True)
         return recommendations[:5]
     
+    """
+PATCH AMÉLIORÉ POUR AIRecommender
+Remplace la méthode recommend_build() par une version complète et intelligente
+"""
+
     def recommend_build(self, my_champion, enemy_champions, live_game=None, my_team_id=None):
-        """Recommande un build basé sur TES stats + composition ennemie + stats items"""
-        
-        enemy_analysis = self.analyze_enemy_composition(enemy_champions)
-        champ_data = self.api.champions_data.get(my_champion)
-        
-        if not champ_data:
-            return {"error": f"Champion {my_champion} non trouvé"}
-        
-        champ_class = BuildDatabase.get_champion_class(champ_data)
-        champ_dmg = BuildDatabase.get_champion_damage_type(champ_data)
-        
-        build = {
-            "champion": my_champion,
-            "boots": {"name": "", "why": ""},
-            "your_best_items": [],
-            "recommended_first": None,
-            "best_combo": None,
-            "situational": [],
-            "anti_heal": None,
-            "warnings": [],
-            "item_reasons": {}  # NEW: raisons mathématiques pour chaque item
-        }
-        
-        # Get personal build stats (min_games=3 for higher confidence)
-        your_builds = self.stats.get_best_builds(my_champion, min_games=3)
-        
-        if your_builds:
-            best_items = your_builds.get("best_items", [])
-            
-            # Score each item based on composition
-            scored_items = []
-            for item in best_items:
-                item_id = item.get('item_id', 0)
-                personal_wr = item.get('winrate', 50)
-                composition_score = self.score_item_for_composition(item_id, my_champion, enemy_analysis, champ_dmg)
-                
-                # Combine: 60% personal WR + 40% composition fit
-                combined_score = (personal_wr * 0.6) + (composition_score * 0.4)
-                
-                item_stats = self.items_db.extract_item_stats(item_id)
-                item_passives = self.items_db.get_item_passives(item_id)
-                
-                # Generate reason
-                reasons = []
-                if item.get('games', 0) >= 3:
-                    reasons.append(f"Ton WR: {personal_wr}% ({item.get('games')}g)")
-                if item_stats["ad"] > 0 and champ_dmg == "ad":
-                    reasons.append(f"+{item_stats['ad']:.0f} AD")
-                if item_stats["ap"] > 0 and champ_dmg == "ap":
-                    reasons.append(f"+{item_stats['ap']:.0f} AP")
-                if enemy_analysis["healing_threat"] and "antiheal" in item_passives:
-                    reasons.append("Anti-heal (vs heal threat)")
-                if enemy_analysis["tank_count"] >= 2 and ("armor_pen" in item_passives or "pen" in item_passives):
-                    reasons.append(f"Pen ({enemy_analysis['tank_count']} tanks)")
-                if enemy_analysis["ad_damage"] >= 2 and item_stats["armor"] > 0:
-                    reasons.append(f"+{item_stats['armor']:.0f} Armor (vs {enemy_analysis['ad_damage']} AD)")
-                
-                scored_items.append({
-                    **item,
-                    "composition_score": round(composition_score, 1),
-                    "combined_score": round(combined_score, 1),
-                    "reasons": reasons
-                })
-            
-            # Sort by combined score
-            scored_items.sort(key=lambda x: x['combined_score'], reverse=True)
-            
-            build["your_best_items"] = scored_items[:5]
-            build["recommended_first"] = your_builds.get("best_first_item")
-            build["best_combo"] = your_builds.get("best_combo")
-            
-            worst = your_builds.get("worst_items", [])
-            if worst:
-                build["warnings"].append("❌ Items à éviter (mauvais WR pour toi):")
-                for item in worst:
-                    build["warnings"].append(f"   • {item.get('name', 'Unknown')}: {item.get('winrate', 0)}%")
-        
-        if enemy_analysis["cc_heavy"] or enemy_analysis["ap_damage"] >= 3:
-            build["boots"] = {
-                "name": "Mercury's Treads",
-                "why": f"{'CC Heavy' if enemy_analysis['cc_heavy'] else ''} {enemy_analysis['ap_damage']} AP ennemis"
+            """Recommande un build COMPLET basé sur:
+            - TES stats personnelles (WR par item)
+            - Stats GLOBALES des items (WR global)
+            - Stats du champion (AD/AP, classe)
+            - Composition ennemie (champions, items qu'ils build)
+            - Synergies items (combos)
+            """
+
+            enemy_analysis = self.analyze_enemy_composition(enemy_champions)
+            champ_data = self.api.champions_data.get(my_champion)
+
+            if not champ_data:
+                return {"error": f"Champion {my_champion} non trouvé"}
+
+            champ_class = BuildDatabase.get_champion_class(champ_data)
+            champ_dmg = BuildDatabase.get_champion_damage_type(champ_data)
+
+            build = {
+                "champion": my_champion,
+                "class": champ_class,
+                "damage_type": champ_dmg,
+                "boots": {"name": "", "why": ""},
+                "mythic": None,
+                "core_items": [],
+                "defensive_items": [],
+                "situational": [],
+                "anti_heal": None,
+                "warnings": [],
+                "analysis": {
+                    "enemy_composition": enemy_analysis,
+                    "your_stats": {
+                        "class": champ_class,
+                        "damage_type": champ_dmg
+                    }
+                }
             }
-        elif enemy_analysis["ad_damage"] >= 3:
-            build["boots"] = {
-                "name": "Plated Steelcaps",
-                "why": f"{enemy_analysis['ad_damage']} AD ennemis"
-            }
-        elif champ_class == "adc":
-            build["boots"] = {"name": "Berserker's Greaves", "why": "ADC standard"}
-        elif champ_dmg == "ap":
-            build["boots"] = {"name": "Sorcerer's Shoes", "why": "Pen magique"}
+
+            # ===== ÉTAPE 1: ANALYSER LES STATS DU CHAMPION =====
+            your_builds = self.stats.get_best_builds(my_champion, min_games=2)
+            
+            # ===== ÉTAPE 2: SÉLECTIONNER MYTHIQUE =====
+            mythic_item = self._select_mythic_item(my_champion, champ_dmg, champ_class, enemy_analysis, your_builds)
+            if mythic_item:
+                build["mythic"] = mythic_item
+
+            # ===== ÉTAPE 3: SÉLECTIONNER BOOTS =====
+            boots = self._select_boots(champ_class, champ_dmg, enemy_analysis)
+            build["boots"] = boots
+
+            # ===== ÉTAPE 4: ITEMS OFFENSIFS CORE =====
+            core_items = self._select_core_items(my_champion, champ_dmg, champ_class, enemy_analysis, your_builds)
+            build["core_items"] = core_items
+
+            # ===== ÉTAPE 5: ITEMS DÉFENSIFS =====
+            defensive_items = self._select_defensive_items(my_champion, champ_dmg, champ_class, enemy_analysis)
+            build["defensive_items"] = defensive_items
+
+            # ===== ÉTAPE 6: ANTI-HEAL SI NÉCESSAIRE =====
+            if enemy_analysis["healing_threat"]:
+                anti_heal = self._select_anti_heal(my_champion, champ_dmg, champ_class, enemy_analysis)
+                if anti_heal:
+                    build["anti_heal"] = anti_heal
+
+            # ===== ÉTAPE 7: ITEMS SITUATIONNELS =====
+            situational = self._select_situational_items(my_champion, champ_dmg, champ_class, enemy_analysis)
+            build["situational"] = situational
+
+            # ===== ÉTAPE 8: GÉNÉRER LA SÉQUENCE PRIORITAIRE =====
+            build["priority_sequence"] = self._generate_priority_sequence(build)
+
+            # ===== ÉTAPE 9: ADAPTER SI PARTIE EN COURS =====
+            if live_game and my_team_id is not None:
+                try:
+                    adaptive_build = self._adapt_build_to_live_game(build, live_game, my_team_id, my_champion)
+                    return adaptive_build
+                except Exception as e:
+                    print(f"⚠️ Erreur adaptation live: {e}")
+                    return build
+
+            return build
+    def _select_mythic_item(self, champion, dmg_type, champ_class, enemy_analysis, your_builds):
+        """Sélectionne le meilleur item mythique basé sur les stats"""
+            
+        mythic_candidates = []
+            
+        # Mythiques AD
+        if dmg_type == "ad":
+            mythic_candidates = [
+                {"id": 6631, "name": "Stridebreaker", "for": ["fighter", "tank"]},
+                {"id": 6630, "name": "Goredrinker", "for": ["fighter"]},
+                {"id": 6632, "name": "Divine Sunderer", "for": ["fighter"]},
+                {"id": 3078, "name": "Trinity Force", "for": ["fighter"]},
+                {"id": 6673, "name": "Immortal Shieldbow", "for": ["adc"]},
+                {"id": 6672, "name": "Kraken Slayer", "for": ["adc"]},
+                {"id": 6671, "name": "Galeforce", "for": ["adc"]},
+            ]
+        # Mythiques AP
+        elif dmg_type == "ap":
+            mythic_candidates = [
+                {"id": 6655, "name": "Luden's Companion", "for": ["mage"]},
+                {"id": 6653, "name": "Liandry's Torment", "for": ["mage"]},
+                {"id": 6656, "name": "Everfrost", "for": ["mage"]},
+                {"id": 6657, "name": "Rod of Ages", "for": ["mage"]},
+                {"id": 4633, "name": "Riftmaker", "for": ["mage"]},
+            ]
+        # Mythiques Support/Tank
         else:
-            build["boots"] = {"name": "Ionian Boots", "why": "Ability Haste"}
-        
-        # ANTI-HEAL: Vérifier si c'est vraiment utile pour TON champion
-        if enemy_analysis["healing_threat"]:
-            # Évaluer si anti-heal est pertinent pour ce champion
-            anti_heal_useful = self._should_build_anti_heal(my_champion, champ_dmg, champ_class)
-            
-            if anti_heal_useful:
-                build["anti_heal"] = {
-                    "name": "Mortal Reminder" if champ_dmg == "ad" else "Morellonomicon",
-                    "why": "Heal champions détectés: " + ", ".join(enemy_analysis["healing_champions"]),
-                    "when": "Après 1er item"
+            mythic_candidates = [
+                {"id": 3190, "name": "Locket of the Iron Solari", "for": ["support", "tank"]},
+                {"id": 6662, "name": "Iceborn Gauntlet", "for": ["tank"]},
+                {"id": 6664, "name": "Hollow Radiance", "for": ["tank"]},
+                {"id": 3084, "name": "Heartsteel", "for": ["tank"]},
+            ]
+
+        best_mythic = None
+        best_score = 0
+
+        for mythic in mythic_candidates:
+            # Vérifier si c'est approprié pour la classe
+            if champ_class not in mythic.get("for", []):
+                continue
+
+            score = 50  # baseline
+
+            # Bonus si tu as joué cet item avec succès
+            if your_builds:
+                best_items = your_builds.get("best_items", [])
+                for item in best_items:
+                    if item.get("item_id") == mythic["id"]:
+                        score += item.get("winrate", 50) - 50
+                        score += 10  # Bonus pour expérience personnelle
+
+            # Bonus basé sur la composition ennemie
+            item_stats = self.items_db.extract_item_stats(mythic["id"])
+            item_passives = self.items_db.get_item_passives(mythic["id"])
+
+            # Défense vs composition
+            if enemy_analysis["ad_damage"] >= 2 and item_stats["armor"] > 0:
+                score += 5
+            if enemy_analysis["ap_damage"] >= 2 and item_stats["mr"] > 0:
+                score += 5
+
+            # Passifs utiles
+            if enemy_analysis["tank_count"] >= 2 and ("pen" in item_passives or "armor_pen" in item_passives):
+                score += 15
+            if enemy_analysis["assassin_count"] >= 2 and ("survival" in item_passives or "shield" in item_passives):
+                score += 10
+
+            if score > best_score:
+                best_score = score
+                best_mythic = {
+                    "id": mythic["id"],
+                    "name": mythic["name"],
+                    "score": round(best_score, 1),
+                    "why": f"Mythique optimal pour {champ_class} vs cette compo"
                 }
-                build["warnings"].insert(0, "🩹 ANTI-HEAL RECOMMANDÉ!")
-            else:
-                # Signaler que anti-heal existe mais ce n'est pas prioritaire
-                build["anti_heal"] = {
-                    "name": "Mortal Reminder" if champ_dmg == "ad" else "Morellonomicon",
-                    "why": "Heal champions détectés: " + ", ".join(enemy_analysis["healing_champions"]),
-                    "when": "Optionnel - Pas prioritaire pour " + my_champion
-                }
+
+        return best_mythic
+    def _select_boots(self, champ_class, dmg_type, enemy_analysis):
+        """Sélectionne les boots optimales"""
         
-        if enemy_analysis["tank_count"] >= 2:
-            if champ_dmg == "ad":
-                build["situational"].append({
-                    "name": "Lord Dominik's Regards",
-                    "why": f"{enemy_analysis['tank_count']} tanks détectés"
-                })
-            else:
-                build["situational"].append({
-                    "name": "Void Staff",
-                    "why": f"{enemy_analysis['tank_count']} tanks détectés"
-                })
-        
-        if enemy_analysis["assassin_count"] >= 2:
-            build["situational"].append({
-                "name": "Zhonya's Hourglass" if champ_dmg == "ap" else "Guardian Angel",
-                "why": f"{enemy_analysis['assassin_count']} assassins (survie)"
+        boots_options = []
+
+        # Défense magique
+        if enemy_analysis["cc_heavy"] or enemy_analysis["ap_damage"] >= 3:
+            boots_options.append({
+                "name": "Mercury's Treads",
+                "why": f"CC heavy + {enemy_analysis['ap_damage']:.0f} AP ennemis",
+                "priority": 10
             })
-        
-        # Build prioritized sequence: 1st item → anti-heal → boots → pen/dmg → defensive
-        build["priority_sequence"] = []
-        
-        # 1. First item from your best builds
-        if build.get("recommended_first"):
-            build["priority_sequence"].append({
-                "step": 1,
-                "item": build["recommended_first"].get("name", "First Item"),
-                "reason": "1er item avec meilleur WR pour toi"
+
+        # Défense physique
+        if enemy_analysis["ad_damage"] >= 3:
+            boots_options.append({
+                "name": "Plated Steelcaps",
+                "why": f"{enemy_analysis['ad_damage']:.0f} AD ennemis",
+                "priority": 9
             })
-        
-        # 2. Anti-heal if needed AND useful for this champion
-        if build.get("anti_heal") and "RECOMMANDÉ" in build["warnings"][0] if build["warnings"] else False:
-            build["priority_sequence"].append({
-                "step": 2,
-                "item": build["anti_heal"].get("name", "Anti-Heal"),
-                "reason": build["anti_heal"].get("why", "Heal threat")
+
+        # Offensif
+        if dmg_type == "ap":
+            boots_options.append({
+                "name": "Sorcerer's Shoes",
+                "why": "Pénétration magique",
+                "priority": 5
             })
+        elif champ_class == "adc":
+            boots_options.append({
+                "name": "Berserker's Greaves",
+                "why": "Vitesse d'attaque ADC",
+                "priority": 5
+            })
+        else:
+            boots_options.append({
+                "name": "Ionian Boots of Lucidity",
+                "why": "Ability Haste",
+                "priority": 3
+            })
+
+        # Sélectionner les meilleures boots
+        if boots_options:
+            boots_options.sort(key=lambda x: x["priority"], reverse=True)
+            return boots_options[0]
+
+        return {"name": "Plated Steelcaps", "why": "Défense standard"}
+
+    def _select_core_items(self, champion, dmg_type, champ_class, enemy_analysis, your_builds):
+        """Sélectionne les items offensifs core"""
         
-        # 3. Boots
+        core_items = []
+
+        if not your_builds:
+            return core_items
+
+        best_items = your_builds.get("best_items", [])
+
+        for item in best_items[:5]:
+            item_id = item.get("item_id", 0)
+            item_name = item.get("name", "Unknown")
+            personal_wr = item.get("winrate", 50)
+            games = item.get("games", 0)
+
+            # Extraire les stats
+            item_stats = self.items_db.extract_item_stats(item_id)
+            item_passives = self.items_db.get_item_passives(item_id)
+
+            # Calculer un score composite
+            score = personal_wr  # Commencer par ton WR personnel
+
+            # Bonus si stats correspondent au champion
+            if dmg_type == "ad" and item_stats["ad"] > 0:
+                score += min(item_stats["ad"] / 50 * 10, 15)
+            elif dmg_type == "ap" and item_stats["ap"] > 0:
+                score += min(item_stats["ap"] / 30 * 10, 15)
+
+            # Bonus si utile vs composition
+            if enemy_analysis["tank_count"] >= 2 and ("pen" in item_passives or "armor_pen" in item_passives):
+                score += 10
+            if enemy_analysis["ad_damage"] >= 2 and item_stats["armor"] > 0:
+                score += 5
+            if enemy_analysis["ap_damage"] >= 2 and item_stats["mr"] > 0:
+                score += 5
+
+            reasons = []
+            if games >= 3:
+                reasons.append(f"Ton WR: {personal_wr:.0f}% ({games}g)")
+            if item_stats["ad"] > 0:
+                reasons.append(f"+{item_stats['ad']:.0f} AD")
+            if item_stats["ap"] > 0:
+                reasons.append(f"+{item_stats['ap']:.0f} AP")
+            if item_stats["ah"] > 0:
+                reasons.append(f"+{item_stats['ah']:.0f}% AH")
+            if "pen" in item_passives or "armor_pen" in item_passives:
+                reasons.append("Pénétration")
+
+            core_items.append({
+                "id": item_id,
+                "name": item_name,
+                "score": round(score, 1),
+                "personal_wr": round(personal_wr, 1),
+                "stats": item_stats,
+                "passives": item_passives,
+                "reasons": reasons
+            })
+
+        core_items.sort(key=lambda x: x["score"], reverse=True)
+        return core_items[:3]
+
+    def _generate_priority_sequence(self, build):
+        """Génère la séquence d'achat prioritaire"""
+        
+        sequence = []
+        step = 1
+
+        # 1. Mythique
+        if build.get("mythic"):
+            sequence.append({
+                "step": step,
+                "item": build["mythic"]["name"],
+                "reason": build["mythic"]["why"],
+                "type": "mythic"
+            })
+            step += 1
+
+        # 2. Boots
         if build.get("boots") and build["boots"].get("name"):
-            build["priority_sequence"].append({
-                "step": 3,
-                "item": build["boots"].get("name", "Boots"),
-                "reason": build["boots"].get("why", "Standard")
+            sequence.append({
+                "step": step,
+                "item": build["boots"]["name"],
+                "reason": build["boots"]["why"],
+                "type": "boots"
             })
+            step += 1
+
+        # 3. Items core offensifs
+        for item in build.get("core_items", [])[:2]:
+            sequence.append({
+                "step": step,
+                "item": item["name"],
+                "reason": f"Core: {', '.join(item['reasons'][:2])}",
+                "type": "core"
+            })
+            step += 1
+
+        # 4. Anti-heal si nécessaire
+        if build.get("anti_heal"):
+            sequence.append({
+                "step": step,
+                "item": build["anti_heal"]["name"],
+                "reason": build["anti_heal"]["why"],
+                "type": "anti_heal"
+            })
+            step += 1
+
+        # 5. Défensif si nécessaire
+        for item in build.get("defensive_items", [])[:1]:
+            sequence.append({
+                "step": step,
+                "item": item["name"],
+                "reason": item["why"],
+                "type": "defensive"
+            })
+            step += 1
+
+        # 6. Situationnel
+        for item in build.get("situational", [])[:1]:
+            sequence.append({
+                "step": step,
+                "item": item["name"],
+                "reason": item["why"],
+                "type": "situational"
+            })
+            step += 1
+
+        return sequence
+
+    def _adapt_build_to_live_game(self, build, live_game, my_team_id, champion):
+        """Adapte la build si la partie est en cours"""
         
-        # 4. Defensive if needed (assassins, cc, etc.)
-        defensive_added = False
-        for sit in build.get("situational", []):
-            if "assassin" in sit.get("why", "").lower() or "survie" in sit.get("why", "").lower():
-                if not defensive_added:
-                    build["priority_sequence"].append({
-                        "step": 4,
-                        "item": sit.get("name", "Defensive"),
-                        "reason": sit.get("why", "")
-                    })
-                    defensive_added = True
-        
-        # 5. Pen/Dmg for tanks
-        for sit in build.get("situational", []):
-            if "tank" in sit.get("why", "").lower():
-                build["priority_sequence"].append({
-                    "step": 5,
-                    "item": sit.get("name", "Tank Counter"),
-                    "reason": sit.get("why", "")
-                })
-        
-        # If live game data is provided, analyze enemy items/gold and adapt build
-        if live_game and my_team_id is not None:
-            try:
-                enemy_items_analysis = self._analyze_enemy_items(live_game, my_team_id)
-                adaptive_build = self._adapt_build_to_game_state(build, enemy_items_analysis, my_champion)
-                # Propagate original item reasons if present
-                if 'your_best_items' in build:
-                    adaptive_build.setdefault('your_best_items', build['your_best_items'])
-                return adaptive_build
-            except Exception:
-                # On error, fallback to base build
-                return build
+        try:
+            # Analyser les items ennemis
+            enemy_items = []
+            for participant in live_game.get("participants", []):
+                if participant.get("teamId") != my_team_id:
+                    enemy_items.extend(participant.get("items", []))
+
+            # Si ennemis build beaucoup d'armure, recommander pénétration
+            armor_count = sum(1 for item_id in enemy_items if self.items_db.is_armor_item(item_id))
+            if armor_count >= 3:
+                build["warnings"] = build.get("warnings", [])
+                build["warnings"].append("⚠️ Ennemis build beaucoup d'armure - Priorité pénétration!")
+
+            # Si ennemis build beaucoup de MR
+            mr_count = sum(1 for item_id in enemy_items if self.items_db.is_mr_item(item_id))
+            if mr_count >= 3:
+                build["warnings"] = build.get("warnings", [])
+                build["warnings"].append("⚠️ Ennemis build beaucoup de MR - Priorité pénétration magique!")
+
+        except Exception:
+            pass
 
         return build
-    
-    def recommend_runes_and_spells(self, my_champion, enemy_champions):
-        """Recommande les meilleures runes et spells basés sur TES stats + composition ennemie"""
+
+    def _select_defensive_items(self, champion, dmg_type, champ_class, enemy_analysis):
+        """Sélectionne les items défensifs"""
         
-        recommendations = {
-            "champion": my_champion,
-            "runes": {
-                "keystone": None,
-                "secondaries": [],
-                "explanation": ""
-            },
-            "spells": {
-                "primary": None,
-                "secondary": None,
-                "explanation": ""
-            }
-        }
-        
-        # Récupérer tes meilleures runes avec ce champion
-        builds_data = self.stats.stats.get("builds_history", {}).get(my_champion, {})
-        runes_data = builds_data.get("runes", {})
-        spells_data = builds_data.get("spells", {})
-        
-        # Recommander les meilleures runes par WR
-        if runes_data:
-            rune_list = []
-            for rune_id_str, rune_info in runes_data.items():
-                games = rune_info.get("games", 0)
-                if games >= 2:  # Min 2 games de confiance
-                    wins = rune_info.get("wins", 0)
-                    wr = (wins / games * 100) if games > 0 else 0
-                    rune_list.append({
-                        "id": int(rune_id_str),
-                        "wr": wr,
-                        "games": games,
-                        "wins": wins
-                    })
-            
-            if rune_list:
-                rune_list.sort(key=lambda x: x["wr"], reverse=True)
-                best_rune = rune_list[0]
-                recommendations["runes"]["keystone"] = {
-                    "id": best_rune["id"],
-                    "wr": round(best_rune["wr"], 1),
-                    "games": best_rune["games"]
-                }
-                recommendations["runes"]["explanation"] = f"Ton meilleur keystone: {best_rune['wr']:.1f}% WR ({best_rune['games']} games)"
-        
-        # Recommander les meilleurs spells par WR
-        if spells_data:
-            spell_list = []
-            for spell_id_str, spell_info in spells_data.items():
-                games = spell_info.get("games", 0)
-                if games >= 3:
-                    wins = spell_info.get("wins", 0)
-                    wr = (wins / games * 100) if games > 0 else 0
-                    spell_list.append({
-                        "id": int(spell_id_str),
-                        "wr": wr,
-                        "games": games,
-                        "wins": wins
-                    })
-            
-            if spell_list:
-                spell_list.sort(key=lambda x: x["wr"], reverse=True)
-                primary_spell = spell_list[0]
-                secondary_spell = spell_list[1] if len(spell_list) > 1 else spell_list[0]
-                
-                recommendations["spells"]["primary"] = {
-                    "id": primary_spell["id"],
-                    "wr": round(primary_spell["wr"], 1),
-                    "games": primary_spell["games"]
-                }
-                recommendations["spells"]["secondary"] = {
-                    "id": secondary_spell["id"],
-                    "wr": round(secondary_spell["wr"], 1),
-                    "games": secondary_spell["games"]
-                }
-                recommendations["spells"]["explanation"] = f"Ton combo préféré basé sur ton WR perso"
-        
-        return recommendations
-    
+        defensive_items = []
+
+        # Défense vs AD
+        if enemy_analysis["ad_damage"] >= 2:
+            defensive_items.append({
+                "name": "Thornmail" if champ_class == "tank" else "Randuin's Omen",
+                "why": f"{enemy_analysis['ad_damage']:.0f} AD ennemis",
+                "priority": 8
+            })
+
+        # Défense vs AP
+        if enemy_analysis["ap_damage"] >= 2:
+            defensive_items.append({
+                "name": "Banshee's Veil" if dmg_type == "ad" else "Spirit Visage",
+                "why": f"{enemy_analysis['ap_damage']:.0f} AP ennemis",
+                "priority": 8
+            })
+
+        # Survie vs assassins
+        if enemy_analysis["assassin_count"] >= 2:
+            defensive_items.append({
+                "name": "Zhonya's Hourglass" if dmg_type == "ap" else "Guardian Angel",
+                "why": f"{enemy_analysis['assassin_count']} assassins",
+                "priority": 9
+            })
+
+        # Survie vs engage
+        if enemy_analysis["engage_threat"]:
+            defensive_items.append({
+                "name": "Abyssal Mask" if dmg_type == "ap" else "Kaenic Rookern",
+                "why": "Réduction des dégâts vs engage",
+                "priority": 6
+            })
+
+        defensive_items.sort(key=lambda x: x["priority"], reverse=True)
+        return defensive_items[:2]
+
     def _should_build_anti_heal(self, champion, dmg_type, champ_class):
-        """Évalue si l'anti-heal est vraiment utile pour ce champion"""
-        # Champions qui n'ont pas vraiment besoin d'anti-heal (contrôle à distance limité)
-        no_anti_heal = ["Amumu", "Sejuani", "Zac", "Rammus", "Malphite", "Evelynn"]
-        
-        # Champions qui bénéficient beaucoup d'anti-heal (attaques fréquentes)
-        high_benefit = ["Vayne", "Draven", "Ashe", "Caitlyn", "Leona", "Pyke", "Renekton", "Darius"]
-        
-        if champion in no_anti_heal:
-            # Ces champions font rarement des attaques rapides (surtout tanks AP)
-            return False
-        
-        if champion in high_benefit:
-            # Ces champions ont des attaques fréquentes/pénétrantes
+        """Heuristique simple pour décider si on autorise l'anti-heal pour ce champion.
+        L'appelant (_select_anti_heal) est déjà conditionné par la menace de soins ennemie.
+        On retourne True par défaut pour ne pas bloquer la recommandation.
+        """
+        try:
             return True
-        
-        # Heuristique: Les ADCs et les bruisers bénéficient d'anti-heal
-        if champ_class in ["adc", "fighter", "marksman"]:
+        except Exception:
             return True
+
+    def _select_anti_heal(self, champion, dmg_type, champ_class, enemy_analysis):
+        """Sélectionne l'item anti-heal si vraiment utile"""
         
-        # Les mages AP purs n'en ont pas vraiment besoin
-        if dmg_type == "ap" and champ_class == "mage":
-            return False
+        # Vérifier si ce champion bénéficie d'anti-heal
+        if not self._should_build_anti_heal(champion, dmg_type, champ_class):
+            return None
+
+        if dmg_type == "ad":
+            return {
+                "name": "Mortal Reminder",
+                "why": f"Anti-heal vs {', '.join(enemy_analysis['healing_champions'][:2])}",
+                "priority": 7
+            }
+        else:
+            return {
+                "name": "Morellonomicon",
+                "why": f"Anti-heal vs {', '.join(enemy_analysis['healing_champions'][:2])}",
+                "priority": 7
+            }
+    def _select_situational_items(self, champion, dmg_type, champ_class, enemy_analysis):
+        """Sélectionne les items situationnels"""
         
-        # Par défaut, support/tanks → utile (souvent des attaques régulières)
-        if champ_class in ["support", "tank"]:
-            return True
-        
-        return False
-        # ╔═══════════════════════════════════════════════════════════════════════════════╗
-# ║                    APPLICATION PRINCIPALE                                      ║
-# ╚═══════════════════════════════════════════════════════════════════════════════╝
+        situational = []
+
+        # Pénétration vs tanks
+        if enemy_analysis["tank_count"] >= 2:
+            if dmg_type == "ad":
+                situational.append({
+                    "name": "Lord Dominik's Regards",
+                    "why": f"{enemy_analysis['tank_count']} tanks avec armure",
+                    "priority": 8
+                })
+            else:
+                situational.append({
+                    "name": "Void Staff",
+                    "why": f"{enemy_analysis['tank_count']} tanks avec MR",
+                    "priority": 8
+                })
+
+        # Mobilité vs CC
+        if enemy_analysis["cc_heavy"]:
+            situational.append({
+                "name": "Kaenic Rookern" if dmg_type == "ad" else "Abyssal Mask",
+                "why": "Réduction dégâts vs CC",
+                "priority": 6
+            })
+
+        # Sustain vs poke
+        if enemy_analysis["mage_count"] >= 2:
+            situational.append({
+                "name": "Maw of Malmortius" if dmg_type == "ad" else "Adaptive Helm",
+                "why": "Sustain vs poke mages",
+                "priority": 5
+            })
+
+        situational.sort(key=lambda x: x["priority"], reverse=True)
+        return situational[:2]
+
 
 class LoLCoachAI:
     """Application principale V4 avec apprentissage avancé"""
@@ -2901,14 +3069,15 @@ class LoLCoachAI:
         # --- Début: Trend ---
         trend = self.stats.get_recent_trend()
         if trend and total_games >= 10:
-            print(f"\n🔄 FORME ACTUELLE ({trend['recent_games']} dernières games):")
+            print(f"\n���� FORME ACTUELLE ({trend['recent_games']} dernières games):")
             print(f"   {trend['trend_text']}")
             print(f"   WR: {trend['recent_wr']:.1f}% | KDA: {trend['recent_kda']:.2f} | {trend['last_5']}")
         
-        if trend['hot_streak']:
-            print("   🔥 HOT STREAK! Continue comme ça!")
-        elif trend['tilt_alert']:
-            print("   ⚠️ LOSING STREAK - Prends une pause de 10min!")
+        if trend:
+            if trend.get('hot_streak'):
+                print("   🔥 HOT STREAK! Continue comme ça!")
+            elif trend.get('tilt_alert'):
+                print("   ⚠️ LOSING STREAK - Prends une pause de 10min!")
 
         # ════════════════════════════════════════════════════════════
         # 🏆 TES CHAMPIONS (adaptation selon le nombre)
@@ -3092,8 +3261,6 @@ class LoLCoachAI:
         else:
             print(f"   ❌ Évite {champion} en ranked pour le moment")
 
-    
-    print(f"{'═' * 80}")
     
     def get_recommendations(self):
         """Obtient des recommandations avec prédiction de victoire"""
@@ -3358,6 +3525,14 @@ class LoLCoachAI:
             else:
                 self._handle_in_game(game)
     
+    def _handle_in_game(self, game):
+        """Wrapper pour utiliser la version améliorée en jeu"""
+        return self._handle_in_game_improved(game)
+
+    def _handle_in_game(self, game):
+        """Wrapper pour utiliser la version améliorée en jeu"""
+        return self._handle_in_game_improved(game)
+
     def _handle_champ_select(self, game):
         """Gère l'affichage et recommandations pour le champion select"""
         
@@ -3403,118 +3578,197 @@ class LoLCoachAI:
         else:
             print("\n⏳ En attente de plus de picks pour générer des recommandations...")
 
-    def _handle_in_game(self, game):
-        """Gère l'affichage et recommandations pour une partie en cours"""
-        
+    def _handle_in_game_improved(self, game):
+        """Gère l'affichage et recommandations pour une partie en cours - VERSION AMÉLIORÉE"""
+
         my_champion = game.get("my_champion")
         my_team = game.get("my_team", [])
         enemy_team = game.get("enemy_team", [])
         game_time = game.get("game_time_seconds", 0)
         is_ranked = game.get("is_ranked", False)
-        
-        print(f"\n🔴 TU ES EN GAME!")
+
+        print(f"\n🎮 TU ES EN GAME!")
         print(f"   Mode: {'RANKED' if is_ranked else 'Normal/Practice'}")
-        
+
         if game_time > 0:
             mins = game_time // 60
             secs = game_time % 60
             print(f"   Durée: {mins}:{secs:02d}")
-        
+
         if my_champion:
             print(f"\n   🎮 Tu joues: {my_champion}")
         else:
             print(f"\n   ⚠️ Champion non détecté")
             return
-        
+
         # Nettoyer les équipes (enlever None/vides)
         my_team_clean = [c for c in my_team if c]
         enemy_team_clean = [c for c in enemy_team if c]
-        
+
         if my_team_clean:
-            print(f"   👥 Ton équipe: {', '.join(my_team_clean)}")
-            
+            print(f"   👥 Ton équipe: {' '.join(my_team_clean)}")
+
         if enemy_team_clean:
-            print(f"   👹 Ennemis: {', '.join(enemy_team_clean)}")
+            print(f"   👹 Ennemis: {' '.join(enemy_team_clean)}")
         else:
             print(f"   👹 Ennemis: Non détectés (Practice Tool?)")
-        
+
         # ===== PRÉDICTION DE VICTOIRE =====
         if enemy_team_clean:  # Seulement si on a des ennemis
             prediction = self.stats.predict_win_chance(my_champion, my_team_clean, enemy_team_clean)
-            
+
             print(f"\n{'─' * 80}")
             print(f"🔮 PRÉDICTION DE VICTOIRE")
             print(f"{'─' * 80}")
-            
+
             confidence_icon = "🟢" if prediction['confidence'] == "HIGH" else "🟡" if prediction['confidence'] == "MEDIUM" else "🔴"
             print(f"\n   {prediction['win_chance']:.0f}% de chances de victoire {confidence_icon}")
             print(f"   Confiance: {prediction['confidence']}")
-            
-        if prediction['factors']:
-            print(f"\n   Facteurs:")
-            for key, value in list(prediction['factors'].items())[:3]:
-                print(f"   • {key}: {value}")
-       
-        if prediction['recommendations']:
-            print(f"\n   Conseils:")
-            for rec in prediction['recommendations'][:2]:
-                print(f"   {rec}")
-     
-        # ===== RECOMMANDATIONS BUILD =====
+
+            if prediction['factors']:
+                print(f"\n   Facteurs:")
+                for key, value in list(prediction['factors'].items())[:3]:
+                    print(f"   • {key}: {value}")
+
+            if prediction['recommendations']:
+                print(f"\n   Conseils:")
+                for rec in prediction['recommendations'][:2]:
+                    print(f"   {rec}")
+
+        # ===== RECOMMANDATIONS BUILD COMPLÈTES =====
         print(f"\n{'─' * 80}")
-        print(f"⚡ RECOMMANDATIONS BUILD")
+        print(f"⚡ RECOMMANDATIONS BUILD COMPLÈTES")
         print(f"{'─' * 80}")
-        
+
         # Utiliser enemy_team même vide (pour Practice Tool)
         build = self.recommender.recommend_build(
-            my_champion, 
+            my_champion,
             enemy_team_clean if enemy_team_clean else [],
             live_game=game,
             my_team_id=game.get('participants', [{}])[0].get('teamId') if game.get('participants') else None
         )
-        
-        # Afficher warnings
+
+        # ===== 1. AFFICHER WARNINGS =====
         if build.get('warnings'):
             print(f"\n⚠️ ALERTES:")
             for w in build['warnings'][:3]:
                 print(f"   {w}")
-                
-        # Afficher boots
+
+        # ===== 2. AFFICHER MYTHIQUE =====
+        mythic = build.get('mythic')
+        if mythic:
+            print(f"\n🏆 MYTHIQUE (1er item):")
+            print(f"   {mythic.get('name', 'N/A')}")
+            print(f"   → {mythic.get('why', 'Optimal')}")
+            print(f"   Score: {mythic.get('score', 0)}/100")
+
+        # ===== 3. AFFICHER BOOTS =====
         boots = build.get('boots', {})
         if boots and boots.get('name'):
-            print(f"\n🥾 BOTTES: {boots.get('name', 'N/A')}")
+            print(f"\n🥾 BOTTES:")
+            print(f"   {boots.get('name', 'N/A')}")
             print(f"   → {boots.get('why', 'Standard')}")
-     
-        # Afficher meilleurs items
-        your_best = build.get('your_best_items', [])
-        if your_best:
-            print(f"\n📊 TES MEILLEURS ITEMS SUR {my_champion.upper()}:")
-            for item in your_best[:4]:
-                wr = item.get('winrate', 0)
-                games = item.get('games', 0)
-                star = "⭐" if wr >= 55 else ""
-                print(f"   • {item.get('name', 'Unknown')}: {wr}% WR ({games}g) {star}")
-                
-        # Afficher anti-heal si nécessaire
-        anti_heal = build.get('anti_heal')
 
+        # ===== 4. AFFICHER ITEMS CORE OFFENSIFS =====
+        core_items = build.get('core_items', [])
+        if core_items:
+            print(f"\n📊 ITEMS CORE OFFENSIFS (Top 3):")
+            for i, item in enumerate(core_items[:3], 1):
+                wr = item.get('personal_wr', 0)
+                games = item.get('games', 0)
+                score = item.get('score', 0)
+                star = "⭐" if wr >= 55 else ""
+                
+                print(f"\n   {i}. {item.get('name', 'Unknown')} {star}")
+                print(f"      Ton WR: {wr}% ({games}g)")
+                print(f"      Score: {score}/100")
+                
+                # Afficher les raisons
+                reasons = item.get('reasons', [])
+                if reasons:
+                    print(f"      Raisons:")
+                    for reason in reasons[:3]:
+                        print(f"        • {reason}")
+
+        # ===== 5. AFFICHER ITEMS DÉFENSIFS =====
+        defensive_items = build.get('defensive_items', [])
+        if defensive_items:
+            print(f"\n🛡️ ITEMS DÉFENSIFS:")
+            for item in defensive_items[:2]:
+                print(f"   • {item.get('name', 'Unknown')}")
+                print(f"     → {item.get('why', '')}")
+
+        # ===== 6. AFFICHER ANTI-HEAL =====
+        anti_heal = build.get('anti_heal')
         if anti_heal:
             when_text = anti_heal.get('when', 'Quand nécessaire')
             if "Optionnel" in when_text:
-                print(f"\n🟡 ANTI-HEAL (optionnel): {anti_heal.get('name', 'N/A')}")
+                print(f"\n🟡 ANTI-HEAL (optionnel):")
             else:
-                print(f"\n🩹 ANTI-HEAL: {anti_heal.get('name', 'N/A')}")
-                print(f"   → {anti_heal.get('why', '')}")
-        else:
-            # 🔥 Ici on NE DOIT PAS appeler anti_heal.get(), car anti_heal == None
-            print("\n🩹 ANTI-HEAL: Aucun anti-heal recommandé")
+                print(f"\n💊 ANTI-HEAL (RECOMMANDÉ):")
+            print(f"   {anti_heal.get('name', 'N/A')}")
+            print(f"   → {anti_heal.get('why', '')}")
 
-        # Afficher playstyle
+        # ===== 7. AFFICHER ITEMS SITUATIONNELS =====
+        situational = build.get('situational', [])
+        if situational:
+            print(f"\n🎯 ITEMS SITUATIONNELS:")
+            for item in situational[:2]:
+                print(f"   • {item.get('name', 'Unknown')}")
+                print(f"     → {item.get('why', '')}")
+
+        # ===== 8. AFFICHER SÉQUENCE D'ACHAT PRIORITAIRE =====
+        priority_seq = build.get('priority_sequence', [])
+        if priority_seq:
+            print(f"\n📋 SÉQUENCE D'ACHAT PRIORITAIRE:")
+            for seq in priority_seq[:6]:
+                step = seq.get('step', 0)
+                item = seq.get('item', 'Unknown')
+                reason = seq.get('reason', '')
+                item_type = seq.get('type', '')
+                
+                # Emoji par type
+                emoji_map = {
+                    'mythic': '🏆',
+                    'boots': '🥾',
+                    'core': '📊',
+                    'anti_heal': '💊',
+                    'defensive': '🛡️',
+                    'situational': '🎯'
+                }
+                emoji = emoji_map.get(item_type, '•')
+                
+                print(f"   {step}. {emoji} {item}")
+                print(f"      → {reason}")
+
+        # ===== 9. AFFICHER PLAYSTYLE =====
         playstyle = self.stats.get_playstyle_analysis(my_champion)
         if playstyle:
-            print(f"\n💡 RAPPEL PLAYSTYLE:")
+            print(f"\n��� RAPPEL PLAYSTYLE:")
             print(f"   🎯 Tu es {playstyle['playstyle']} player sur {my_champion}")
             print(f"   💬 {playstyle['tip']}")
+            print(f"   📊 Avg CS/min: {playstyle['avg_cs_per_min']}")
+            print(f"   💰 Avg Gold/min: {playstyle['avg_gold_per_min']:.0f}")
+
+        # ===== 10. AFFICHER ANALYSE COMPOSITION ENNEMIE =====
+        if build.get('analysis'):
+            analysis = build['analysis'].get('enemy_composition', {})
+            if analysis:
+                print(f"\n🔍 ANALYSE COMPOSITION ENNEMIE:")
+                print(f"   Tanks: {analysis.get('tank_count', 0)}")
+                print(f"   Assassins: {analysis.get('assassin_count', 0)}")
+                print(f"   Mages: {analysis.get('mage_count', 0)}")
+                print(f"   ADCs: {analysis.get('adc_count', 0)}")
+                print(f"   Dégâts AD: {analysis.get('ad_damage', 0):.1f}")
+                print(f"   Dégâts AP: {analysis.get('ap_damage', 0):.1f}")
+
+        print(f"\n{'─' * 80}")
+        print("✅ Recommandations générées basées sur:")
+        print("   • Tes stats personnelles (WR par item)")
+        print("   • Composition ennemie")
+        print("   • Stats du champion")
+        print("   • Tendances récentes")
+        print(f"{'─' * 80}\n")
     
     def _get_suggested_runes(self, champion, enemy_champions):
         """Retourne les runes suggérées basées sur la composition ennemie"""
